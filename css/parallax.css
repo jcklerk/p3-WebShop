@@ -1,6 +1,4 @@
-.parallax-home {
-    /* The image used */
-    background-image: url("../img/asiandecor.jpg");
+.parallax {
     /* Full height */
     height: 100%;
 
@@ -9,4 +7,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.img-home{
+  /* The image used */
+  background-image: url("../img/asiandecor.jpg");
 }

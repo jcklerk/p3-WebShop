@@ -5,9 +5,9 @@
 </head>
 <body>
   <!-- Footer -->
-  <footer class="bg-dark text-center text-white">
+  <footer class="bg-dark text-center text-white" style="background: #B53333!important;">
     <!-- Grid container -->
-    <div class="container p-4" style="background: #B53333">
+    <div class="container p-4">
       <!--Grid row-->
       <div class="row">
         <!--Grid column-->
@@ -30,7 +30,7 @@
     <!-- Grid container -->
 
     <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: #AA2525">
+    <div class="text-center p-3" style="background-color: #AA2525; color: #C1B90A;">
       © 2020 Copyright:
       <a>SD20-1</a>
     </div>

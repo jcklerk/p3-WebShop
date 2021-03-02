@@ -21,7 +21,7 @@ require __DIR__ . '/webshop_config.php';
             </ul>
             <ul class="navbar-nav float-end" style="margin-right: 32px">
 
-                        <?php if (!empty($_SESSION)) {
+                        <?php if (empty($_SESSION)) {
                             echo ' 
                                     <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle c-yellow" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

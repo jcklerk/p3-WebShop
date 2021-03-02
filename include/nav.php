@@ -20,14 +20,24 @@ require __DIR__ . '/webshop_config.php';
                 </li>
             </ul>
             <ul class="navbar-nav float-end" style="margin-right: 32px">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle c-yellow" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown link
-                    </a>
-                    <ul class="dropdown-menu bc-gray-black" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item c-yellow" href="#">Action</a></li>
-                        <li><a class="dropdown-item c-yellow" href="#">Another action</a></li>
-                        <li><a class="dropdown-item c-yellow" href="#">Something else here</a></li>
+
+                        <?php if (!empty($_SESSION)) {
+                            echo ' 
+                                    <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle c-yellow" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dropdown link
+                                    </a>
+                                    <ul class="dropdown-menu bc-gray-black" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item c-yellow" href="'.$url.'account.php">Account</a></li>
+                                    <li><a class="dropdown-item c-yellow" href="'.$url.'logout.php">Logout</a></li>';
+                        }else{
+                            echo ' 
+                                    <li class="nav-item">
+                                     <a class="nav-link c-yellow" href="'.$url.'login.php">Login</a>
+                                    </li>';
+                        }
+
+                        ?>
                     </ul>
                 </li
             </ul>

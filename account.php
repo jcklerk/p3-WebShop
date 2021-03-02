@@ -5,4 +5,5 @@ $getusers->execute();
 
 foreach ($getusers as $user) {
   echo $user['username'] . "<br>";
+  echo "test";
 }

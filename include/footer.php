@@ -24,7 +24,7 @@
     <!-- Grid container -->
 
     <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: #AA2525;">
+    <div class="text-center p-3" style=" background-color: rgba(151, 0, 0, 0.5);">
       © 2020 Copyright:
       <a>SD20-1</a>
     </div>

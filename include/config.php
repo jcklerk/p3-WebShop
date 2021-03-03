@@ -14,6 +14,9 @@ if(!isset($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] != "on"){
     //Prevent the rest of the script from executing.
     exit;
 }
+
+
+
 if (!isset($_SESSION['lang'])) {
   // 2 is engels (Defalt)
   $_SESSION['lang_id'] = 2;
@@ -31,6 +34,15 @@ if (!isset($_SESSION['lang'])) {
     }
   }
 }
+// get database data of the correct lang text
+$getnav = $pdo->prepare("SELECT * FROM `taal_nav` WHERE `taal_id` = :taal_id");
+$getnav->bindParam(':taal_id', $_SESSION['lang_id']);
+$getnav->execute();
+$arraynav = $getnav->fetchAll();
+//
+
+echo '<html lang="'. $arraylang[$_SESSION['lang_array']]['taal'] .'">';
+
 ?>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">

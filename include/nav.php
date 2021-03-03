@@ -1,11 +1,6 @@
 <?php
 require __DIR__ . '/config.php';
-// get database data of the correct lang text
-$getnav = $pdo->prepare("SELECT * FROM `taal_nav` WHERE `taal_id` = :taal_id");
-$getnav->bindParam(':taal_id', $_SESSION['lang_id']);
-$getnav->execute();
-$arraynav = $getnav->fetchAll();
-//
+
  ?>
 <nav class="navbar navbar-expand-lg bc-gray-black fixed-top">
     <div class="container-fluid">

@@ -14,9 +14,11 @@ require "include/nav.php";
     </div>
 
 
-    <div >
-    <div class="text-center p-1">
-        <h2 class="c-red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, deleniti hic ipsa laborum laudantium veritatis? Eaque, minus praesentium. Aliquam animi beatae ea illo modi nesciunt, porro quaerat quos repellat sequi!</h2>
+    <div>
+    <div class="text-center">
+
+        <h2 class="c-red p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, deleniti hic ipsa laborum laudantium veritatis? Eaque, minus praesentium. Aliquam animi beatae ea illo modi nesciunt, porro quaerat quos repellat sequi!</h2>
+
     </div>
 
     </div>

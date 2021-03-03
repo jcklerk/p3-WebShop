@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/webshop_config.php';
+require __DIR__ . '/User.php';
  ?>
 <nav class="navbar navbar-expand-lg bc-gray-black fixed-top">
     <div class="container-fluid">

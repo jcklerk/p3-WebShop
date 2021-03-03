@@ -11,7 +11,7 @@ require "include/nav.php";
 
         <div class="text-center">
             <h1 class="fos-2">Chinese food</h1>
-
+            <a href="workshops.php">Temp so i can get to the page</a>
         </div>
     </div>
     <div class="parallax-halfheight img-japanesefood d-flex align-items-center justify-content-center">

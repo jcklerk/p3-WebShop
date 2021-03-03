@@ -9,8 +9,8 @@
     background-size: cover;
 }
 
-.parallax-halfsize {
-    /* Full height */
+.parallax-halfheight {
+    /* Half height */
     height: 50%;
 
     /* Create the parallax scrolling effect */

@@ -7,21 +7,21 @@ require "include/nav.php";
 
 
 
-    <div class="parallax-halfsize img-chinesefood d-flex align-items-center justify-content-center">
+    <div class="parallax-halfheight img-chinesefood d-flex align-items-center justify-content-center">
 
         <div class="text-center">
             <h1 class="fos-2">Chinese food</h1>
 
         </div>
     </div>
-    <div class="parallax-halfsize img-japanesefood d-flex align-items-center justify-content-center">
+    <div class="parallax-halfheight img-japanesefood d-flex align-items-center justify-content-center">
 
         <div class="text-center">
             <h1 class="fos-2">Japanese food</h1>
 
         </div>
     </div>
-    <div class="parallax-halfsize img-koreanfood d-flex align-items-center justify-content-center">
+    <div class="parallax-halfheight img-koreanfood d-flex align-items-center justify-content-center">
 
         <div class="text-center">
             <h1 class="fos-2">Korean food</h1>

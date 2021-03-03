@@ -1,5 +1,4 @@
 <?php
-require "include/config.php";
 require "include/nav.php";
 ?>
 

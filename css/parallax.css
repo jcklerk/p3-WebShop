@@ -20,6 +20,18 @@
     background-size: cover;
 }
 
+.parallax-halfheight-width {
+    /* Half height */
+    height: 100%;
+    width: 33.33%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 .img-home{
   /* The image used */

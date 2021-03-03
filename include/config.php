@@ -9,14 +9,18 @@ if(!isset($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] != "on")
     exit;
 }
 $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-if (isset($_GET['lang']) &&$_GET['lang'] == 'nl' ) {
-    $_SESSION['lang'] = 'nl';
-    $reload_url = str_replace("?lang=nl","",$url);
-    header('Location: '.$reload_url);
-} elseif (isset($_GET['lang']) &&$_GET['lang'] == 'en' ) {
-    $_SESSION['lang'] = 'en';
-    $reload_url = str_replace("?lang=en","",$url);
-    header('Location: '.$reload_url);
+if (empty($_SESSION['lang']) {
+  $_SESSION['lang'] = 'en';
+} else{
+  if (isset($_GET['lang']) &&$_GET['lang'] == 'nl' ) {
+      $_SESSION['lang'] = 'nl';
+      $reload_url = str_replace("?lang=nl","",$url);
+      header('Location: '.$reload_url);
+  } elseif (isset($_GET['lang']) &&$_GET['lang'] == 'en' ) {
+      $_SESSION['lang'] = 'en';
+      $reload_url = str_replace("?lang=en","",$url);
+      header('Location: '.$reload_url);
+  }
 }
 ?>
 

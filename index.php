@@ -1,5 +1,4 @@
 <?php
-require "include/config.php";
 require "include/nav.php";
 ?>
 <body class="bc-gray-black">
@@ -20,7 +19,7 @@ require "include/nav.php";
         <h2 class="c-red p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, deleniti hic ipsa laborum laudantium veritatis? Eaque, minus praesentium. Aliquam animi beatae ea illo modi nesciunt, porro quaerat quos repellat sequi!</h2>
 
     </div>
-
+    <?php print_r($arraylang) ?>
     </div>
 
 </body>

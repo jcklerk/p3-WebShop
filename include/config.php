@@ -1,4 +1,11 @@
 <?php
+require __DIR__ . '/database.php';
+//
+//$test = $pdo->prepare('')
+//$test->bindParam(':test', $test_);
+//$test->execute();
+//
+
 session_start();
 //If the HTTPS is not found to be "on"
 if(!isset($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] != "on"){
@@ -7,19 +14,22 @@ if(!isset($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] != "on"){
     //Prevent the rest of the script from executing.
     exit;
 }
-$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-if (empty($_SESSION['lang'])) {
-  $_SESSION['lang'] = 'en';
+if (!isset($_SESSION['lang'])) {
+  // 2 is engels (Defalt)
+  $_SESSION['lang_id'] = 2;
+  $_SESSION['lang_array'] = $_SESSION['lang_array'] - 1;
 } else{
-  if (isset($_GET['lang']) && $_GET['lang'] == 'nl'){
-      $_SESSION['lang'] = 'nl';
-      $reload_url = str_replace("?lang=nl","",$url);
-      header('Location: '.$reload_url);
-  } elseif (isset($_GET['lang']) && $_GET['lang'] == 'en'){
-      $_SESSION['lang'] = 'en';
-      $reload_url = str_replace("?lang=en","",$url);
-      header('Location: '.$reload_url);
-  } 
+  $getlang = $pdo->prepare("SELECT * FROM `talen`");
+  $getlang->execute();
+  $arraylang = $getlang->fetchAll();
+  foreach ($arraylang as $forlang) {
+    if (isset($_GET['lang']) && $_GET['lang'] == $forlang['taal_id']){
+        $_SESSION['lang_array'] =  $forlang['taal_id'] - 1;
+        $_SESSION['lang_id'] =  $forlang['taal_id'];
+        $reload_url = str_replace("?lang=".$forlang['taal_id'],"",$url);
+        header('Location: '.$reload_url);
+    }
+  }
 }
 ?>
 

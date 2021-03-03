@@ -1,26 +1,25 @@
 <?php
 session_start();
 //If the HTTPS is not found to be "on"
-if(!isset($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] != "on")
-{
+if(!isset($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] != "on"){
     //Tell the browser to redirect to the HTTPS URL.
     header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"], true, 301);
     //Prevent the rest of the script from executing.
     exit;
 }
 $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-if (empty($_SESSION['lang']) {
+if (empty($_SESSION['lang'])) {
   $_SESSION['lang'] = 'en';
 } else{
-  if (isset($_GET['lang']) &&$_GET['lang'] == 'nl' ) {
+  if (isset($_GET['lang']) && $_GET['lang'] == 'nl'){
       $_SESSION['lang'] = 'nl';
       $reload_url = str_replace("?lang=nl","",$url);
       header('Location: '.$reload_url);
-  } elseif (isset($_GET['lang']) &&$_GET['lang'] == 'en' ) {
+  } elseif (isset($_GET['lang']) && $_GET['lang'] == 'en'){
       $_SESSION['lang'] = 'en';
       $reload_url = str_replace("?lang=en","",$url);
       header('Location: '.$reload_url);
-  }
+  } 
 }
 ?>
 

@@ -11,7 +11,7 @@ require "include/nav.php";
     </div>
 </div>
 
-<div class="text" style="margin: 8px;">
+<div style="margin: 8px;">
 <h1>
     Ingredients:
    <br> human meat, Anime titties, Anime thighs, souls of the innocent, virgin sacrifice

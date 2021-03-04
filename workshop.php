@@ -12,7 +12,7 @@ $arrayworkshop = $getworkshop->fetchAll();
             <h1 class="fos-2"><?php echo $forworkshop['workshop_title']; ?></h1>
         </div>
   </div>
-  <div class=" bc-gray-black" style="height: 2px;"></div>
+  <div class=" bc-gray-black" style="height: 5px;"></div>
 <?php endforeach; ?>
 </body>
 

@@ -4,7 +4,7 @@ class DBClass
   private $PDO_database = '';
   private $PDO_user = '';
   private $PDO_passwd = '';
-  private $PDO_domain = '';
+  private $PDO_domain = 'a';
   public $url = '';
     public function makeConnection()
     {

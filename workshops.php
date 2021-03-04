@@ -26,9 +26,7 @@ if (empty($arrayworkshop['0'])) {
 
 <div class="c-white" style="margin: 8px;">
 <h1>
-    <iframe width="420" height="315" style="float: right;"
-            src="https://www.youtube.com/watch?v=w-HvWl89GGA">
-    </iframe>
+    <iframe style="float: right" width="560" height="315" src="https://www.youtube.com/embed/w-HvWl89GGA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     Ingredients:
    <br> human meat, Anime titties, Anime thighs, souls of the innocent, virgin sacrifice
 

@@ -1,32 +1,30 @@
 <?php
 require __DIR__ ."/include/nav.php";
+require "include/class/WorkShopClass.php";
  if (isset($_GET['workshops'])) {
   $_SESSION['workshops'] = $_GET['workshops'];
   echo '<script type="text/javascript"> window.location.href = "'. $url .'workshops.php";</script>';
   exit();
 }
-$getworkshop = $pdo->prepare("SELECT * FROM `workshop` WHERE `workshop_id` = :workshop_id");
-$getworkshop->bindParam(':workshop_id', $_SESSION['workshops']);
-$getworkshop->execute();
-$arrayworkshop = $getworkshop->fetchAll();
-if (empty($arrayworkshop['0'])) {
+$arrayworkshop = (new WorkShopsClass($url, $_SESSION['workshops']))->GetWorkShop();
+if (empty($arrayworkshop)) {
  echo '<script type="text/javascript"> window.location.href = "'. $url .'workshop.php";</script>';
  exit();
 }
 ?>
 
 <body class="bc-gray-black">
-<div class="parallax-halfheight d-flex align-items-center justify-content-center" style="background-image: url(<?php echo $arrayworkshop['0']['workshop_img']; ?>);">
+<div class="parallax-halfheight d-flex align-items-center justify-content-center" style="background-image: url(<?php echo $arrayworkshop['workshop_img']; ?>);">
 
     <div class="text-center">
-        <h1 class="fos-2"><?php echo $arrayworkshop['0']['workshop_title']; ?></h1>
+        <h1 class="fos-2"><?php echo $arrayworkshop['workshop_title']; ?></h1>
 
     </div>
 </div>
 
 <div class="c-white" style="margin: 8px;">
 <h1>
-    <iframe style="float: right" width="560" height="315" src="https://www.youtube.com/embed/yCNUP2NAt-A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe style="float: right" width="560" height="315" src="<?php echo $arrayworkshop['video'];?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     Ingredients:
    <br> human meat, Anime titties, Anime thighs, souls of the innocent, virgin sacrifice
 

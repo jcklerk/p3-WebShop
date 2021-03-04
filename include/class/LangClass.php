@@ -1,5 +1,8 @@
 <?php
-require __DIR__ . '/DBClass.php';
+// in productie de DBClass gebruiken PLZ
+//require __DIR__ . '/DBClass.php';
+// Met git deze gebruiken in plaats van hier boven PLZ
+require __DIR__ . '/../webshop_config.php';
 /**
  *
  */

@@ -75,7 +75,7 @@ fabric.properties
 .idea
 
 # WebShop login database
-webshop_config.php
+DBClass.php
 
 
 

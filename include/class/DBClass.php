@@ -1,5 +1,5 @@
 <?php
-//Coppy file content to Webshop_config.php !!
+//Coppy file content to webshop_config.php !!
 class DBClass
 {
   private $PDO_database = '';

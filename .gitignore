@@ -75,11 +75,6 @@ fabric.properties
 .idea
 
 # WebShop login database
-DBClass.php
+webshop_config.php
 
 include/class/DBClass.php
-
-
-
-# jarik bescherming
-jarik.php

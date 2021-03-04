@@ -4,6 +4,7 @@ require __DIR__ . '/database.php';
 //$test = $pdo->prepare('')
 //$test->bindParam(':test', $test_);
 //$test->execute();
+//$arraytest = $test->fetchAll();
 //
 
 session_start();
@@ -47,9 +48,9 @@ echo '<html lang="'. $arraylang[$_SESSION['lang_array']]['taal'] .'">';
 ?>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-<link href="./css/color.css"    rel="stylesheet">
-<link href="css/parallax.css"   rel="stylesheet">
-<link href="css/text.css"   rel="stylesheet">
+<link href="<?php echo $url; ?>css/color.css"    rel="stylesheet">
+<link href="<?php echo $url; ?>css/parallax.css"   rel="stylesheet">
+<link href="<?php echo $url; ?>css/text.css"   rel="stylesheet">
 <!-- Bootstrap icons -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
 

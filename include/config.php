@@ -16,6 +16,7 @@ if(!isset($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] != "on"){
 }
 
 $cur_url = "https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+echo $cur_url;
 
 if (!isset($_SESSION['lang_id']) || !isset($_SESSION['lang_array']) || empty($_SESSION)) {
   // 2 is engels (Defalt)

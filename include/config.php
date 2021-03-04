@@ -51,6 +51,7 @@ echo '<html lang="'. $arraylang[$_SESSION['lang_array']]['taal'] .'">';
 <link href="<?php echo $url; ?>css/color.css"    rel="stylesheet">
 <link href="<?php echo $url; ?>css/parallax.css"   rel="stylesheet">
 <link href="<?php echo $url; ?>css/text.css"   rel="stylesheet">
+<link href="<?php echo $url; ?>css/webshop.css"   rel="stylesheet">
 <!-- Bootstrap icons -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
 

@@ -50,4 +50,7 @@
     /* The image used */
     background-image: url("../img/koreanfood.jpg");
 }
+.card {
+    border: 0px;
+}
 

@@ -1,12 +1,20 @@
 <?php
-require "include/nav.php";
+require __DIR__ ."/include/nav.php";
+if (empty($_GET['get'])) {
+  echo '<script type="text/javascript"> window.location.href = "'. $url .'workshop.php";</script>';
+  exit();
+}
+$getworkshop = $pdo->prepare("SELECT * FROM `workshop` WHERE `workshop_id` = :workshop_id");
+$getworkshop->bindParam(':workshop_id', $_GET['get']);
+$getworkshop->execute();
+$arrayworkshop = $getworkshop->fetchAll();
 ?>
 
 <body class="bc-gray-black">
-<div class="parallax-halfheight img-japanesefood d-flex align-items-center justify-content-center">
+<div class="parallax-halfheight d-flex align-items-center justify-content-center" style="background-image: url(<?php echo $arrayworkshop['0']['workshop_img']; ?>);">
 
     <div class="text-center">
-        <h1 class="fos-2">idk like sushi or something</h1>
+        <h1 class="fos-2"><?php echo $arrayworkshop['0']['workshop_title']; ?></h1>
 
     </div>
 </div>

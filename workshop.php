@@ -1,37 +1,20 @@
 <?php
 require "include/nav.php";
+$getworkshop = $pdo->prepare("SELECT * FROM `workshop` ");
+$getworkshop->execute();
+$arrayworkshop = $getworkshop->fetchAll();
 ?>
-
-    <body class="bc-gray-black">
-
-
-
-    <div class="parallax-halfheight img-chinesefood d-flex align-items-center justify-content-center">
-
+<body class="bc-gray-black">
+<?php foreach ($arrayworkshop as $forworkshop): ?>
+  <div class="parallax-halfheight d-flex align-items-center justify-content-center" style="background-image: url(<?php echo $forworkshop['workshop_img']; ?>);">
+      <a href="<?php echo $url;?>workshops.php/?get=<?php echo $forworkshop['workshop_id'];?>">
         <div class="text-center">
-            <h1 class="fos-2">Chinese food</h1>
-            <a href="workshops.php">Temp so i can get to the page</a>
+            <h1 class="fos-2"><?php echo $forworkshop['workshop_title']; ?></h1>
         </div>
-    </div>
-    <div class="parallax-halfheight img-japanesefood d-flex align-items-center justify-content-center">
-
-        <div class="text-center">
-            <h1 class="fos-2">Japanese food</h1>
-
-        </div>
-    </div>
-    <div class="parallax-halfheight img-koreanfood d-flex align-items-center justify-content-center">
-
-        <div class="text-center">
-            <h1 class="fos-2">Korean food</h1>
-
-        </div>
-    </div>
-
-
-
-
-    </body>
+      </a>
+  </div>
+<?php endforeach; ?>
+</body>
 
 <?php
 require "include/footer.php";

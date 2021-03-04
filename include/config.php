@@ -21,7 +21,7 @@ if (!isset($_SESSION['lang_id']) || !isset($_SESSION['lang_array']) || empty($_S
   // 2 is engels (Defalt)
   $_SESSION['lang_id'] = 2;
   $_SESSION['lang_array'] = 2 - 1;
-  header('Location: '.$reload_url);
+  header('Location: '.$url);
 } else{
   $getlang = $pdo->prepare("SELECT * FROM `talen`");
   $getlang->execute();

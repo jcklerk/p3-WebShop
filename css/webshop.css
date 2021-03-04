@@ -1,0 +1,23 @@
+.container-web {
+    width: 100%!important;
+    max-width: 100%!important;
+}
+.row-web {
+
+    flex-wrap: nowrap!important;
+    padding-top: 3%!important;
+    height: 50%!important;
+}
+
+.row-web-prod {
+    padding: 3%!important;
+    margin-left: 0%!important;
+    margin-right: 0%!important;
+}
+transbox {
+    opacity: 0.4;
+    background-color: black;
+}
+.op {
+    opacity: 1!important;
+}

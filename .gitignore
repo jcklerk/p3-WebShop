@@ -76,3 +76,8 @@ fabric.properties
 
 # WebShop login database
 webshop_config.php
+
+
+
+# jarik bescherming
+jarik.php

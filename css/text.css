@@ -5,3 +5,7 @@
     font-size: 400%; !important;
 }
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css");
+
+.ts-1 {
+    text-shadow: 0px 0px 20px #e3b84a;
+}

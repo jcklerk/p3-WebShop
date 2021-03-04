@@ -2,8 +2,8 @@
 require "include/nav.php";
 ?>
 
-<body>
-<div class="parallax-halfheight img-chinesefood d-flex align-items-center justify-content-center">
+<body class="bc-gray-black">
+<div class="parallax-halfheight img-japanesefood d-flex align-items-center justify-content-center">
 
     <div class="text-center">
         <h1 class="fos-2">idk like sushi or something</h1>
@@ -11,10 +11,10 @@ require "include/nav.php";
     </div>
 </div>
 
-<div class="text" style="margin: 8px; background-color: #353030">
+<div class="c-yellow" style="margin: 8px;">
 <h1>
     Ingredients:
-   <br> human meat, Anime titties, Anime thighs
+   <br> human meat, Anime titties, Anime thighs, souls of the innocent, virgin sacrifice
 
     <br><br>
     <br><br>

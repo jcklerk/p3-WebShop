@@ -10,15 +10,18 @@ require "include/nav.php";
 
     </div>
 </div>
+
+<div class="text" style="margin: 8px;">
 <h1>
     Ingredients:
-   <br> human meat
+   <br> human meat, Anime titties, Anime thighs, souls of the innocent, virgin sacrifice
 
     <br><br>
     <br><br>
     How to make blyat:
-   <br> cooking it ofc dumbass
+   <br>cooking it ofc dumbass
 </h1>
+</div>
     </body>
 <?php
 require "include/footer.php";

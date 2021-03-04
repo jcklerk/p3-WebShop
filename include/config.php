@@ -17,7 +17,7 @@ if(!isset($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] != "on"){
 
 
 
-if (!isset($_SESSION['lang_id']) || !isset($_SESSION['lang_array'])) {
+if (!isset($_SESSION['lang_id']) || !isset($_SESSION['lang_array']) || empty($_SESSION)) {
   // 2 is engels (Defalt)
   $_SESSION['lang_id'] = 2;
   $_SESSION['lang_array'] = 2 - 1;

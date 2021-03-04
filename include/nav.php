@@ -11,13 +11,13 @@ require __DIR__ . '/config.php';
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active c-yellow" aria-current="page" href="<?php echo $url; ?>"><?php echo $arraynav['0']['home']; ?></a>
+                    <a class="nav-link active c-yellow" aria-current="page" href="<?php echo $url; ?>"><?php echo $arraynav['home']; ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link c-yellow" href="<?php echo $url; ?>webshop.php"><?php echo $arraynav['0']['webshop']; ?></a>
+                    <a class="nav-link c-yellow" href="<?php echo $url; ?>webshop.php"><?php echo $arraynav['webshop']; ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link c-yellow" href="<?php echo $url; ?>workshop.php"><?php echo $arraynav['0']['workshop']; ?></a>
+                    <a class="nav-link c-yellow" href="<?php echo $url; ?>workshop.php"><?php echo $arraynav['workshop']; ?></a>
                 </li>
             </ul>
             <ul class="navbar-nav float-end" style="margin-right: 32px">
@@ -62,9 +62,9 @@ require __DIR__ . '/config.php';
                                     <h2> <i class="bi bi-cart4"></i></h2>
                                     </a>
                                     <ul class="dropdown-menu bc-gray-black" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a class="dropdown-item c-yellow" href=""><?php echo $arraynav['0']['totaal']; ?></a></li>
-                                    <li><a class="dropdown-item c-yellow" href=""><?php echo $arraynav['0']['afrekenen']; ?></a></li>
-                                    <li><a class="dropdown-item c-yellow" href=""><?php echo $arraynav['0']['btw']; ?></a></li>
+                                    <li><a class="dropdown-item c-yellow" href=""><?php echo $arraynav['totaal']; ?></a></li>
+                                    <li><a class="dropdown-item c-yellow" href=""><?php echo $arraynav['afrekenen']; ?></a></li>
+                                    <li><a class="dropdown-item c-yellow" href=""><?php echo $arraynav['btw']; ?></a></li>
 
                     </ul>
                 </li>

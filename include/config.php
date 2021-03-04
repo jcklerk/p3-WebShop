@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/database.php';
+require __DIR__ . '/include.php';
 //
 //$test = $pdo->prepare('')
 //$test->bindParam(':test', $test_);
@@ -24,9 +24,7 @@ if (!isset($_SESSION['lang_id']) || !isset($_SESSION['lang_array']) || empty($_S
   $_SESSION['lang_array'] = 2 - 1;
   header('Location: '.$url);
 } else{
-  $getlang = $pdo->prepare("SELECT * FROM `talen`");
-  $getlang->execute();
-  $arraylang = $getlang->fetchAll();
+   $arraylang = (new LangClass())->LangGetAll();
   foreach ($arraylang as $forlang) {
     if (isset($_GET['lang']) && $_GET['lang'] == $forlang['taal_id']){
         $_SESSION['lang_array'] =  $forlang['taal_id'] - 1;
@@ -37,10 +35,7 @@ if (!isset($_SESSION['lang_id']) || !isset($_SESSION['lang_array']) || empty($_S
   }
 }
 // get database data of the correct lang text
-$getnav = $pdo->prepare("SELECT * FROM `taal_nav` WHERE `taal_id` = :taal_id");
-$getnav->bindParam(':taal_id', $_SESSION['lang_id']);
-$getnav->execute();
-$arraynav = $getnav->fetchAll();
+$arraynav = (new LangClass())->LangGetNav();
 //
 
 echo '<html lang="'. $arraylang[$_SESSION['lang_array']]['taal'] .'">';

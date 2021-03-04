@@ -1,5 +1,9 @@
 <?php
 require "include/nav.php";
+
+$getproducts = $pdo->prepare("SELECT * FROM `products`");
+$getproducts->execute();
+$allproduct = $getproducts->fetchAll();
 ?>
 
     <body class="bc-gray-black">
@@ -33,6 +37,50 @@ require "include/nav.php";
             </div>
         </div>
     </div>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4 c-red" style="margin-top: 2%; padding: 2%">
+        <div class="card bc-gray-black ">
+            <img src="img/<?php echo $allproduct['0']['product-img']?>" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><?php echo $allproduct['0']['product']; ?> </h5>
+                <p class="card-text"><?php echo $allproduct['0']['description']; ?></p>
+                <p class="card-text">€<?php echo $allproduct['0']['price']; ?></p>
+            </div>
+        </div>
+        <div class="card bc-gray-black">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card bc-gray-black"">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    <div class="card bc-gray-black"">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+    </div>
+    <div class="card bc-gray-black"">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+    </div>
+    </div>
+
 
 
 

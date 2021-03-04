@@ -2,7 +2,7 @@
 require "include/nav.php";
 ?>
 
-<body>
+<body class="bc-gray-black">
 <div class="parallax-halfheight img-chinesefood d-flex align-items-center justify-content-center">
 
     <div class="text-center">
@@ -11,7 +11,7 @@ require "include/nav.php";
     </div>
 </div>
 
-<div class="text" style="margin: 8px;">
+<div class="c-yellow" style="margin: 8px;">
 <h1>
     Ingredients:
    <br> human meat, Anime titties, Anime thighs, souls of the innocent, virgin sacrifice

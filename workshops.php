@@ -1,13 +1,12 @@
 <?php
-session_start();
 require __DIR__ ."/include/nav.php";
- if (empty($_GET['workshops'])) {
-  echo '<script type="text/javascript"> window.location.href = "'. $url .'workshop.php";</script>';
+ if (isset($_GET['workshops'])) {
+  $_SESSION['workshops'] = $_GET['workshops'];
+  echo '<script type="text/javascript"> window.location.href = "'. $url .'workshops.php";</script>';
   exit();
 }
-echo $_SESSION['workshops'];
 $getworkshop = $pdo->prepare("SELECT * FROM `workshop` WHERE `workshop_id` = :workshop_id");
-$getworkshop->bindParam(':workshop_id', $_GET['workshops']);
+$getworkshop->bindParam(':workshop_id', $_SESSION['workshops']);
 $getworkshop->execute();
 $arrayworkshop = $getworkshop->fetchAll();
 if (empty($arrayworkshop['0'])) {

@@ -10,7 +10,8 @@ require "include/nav.php";
 
     </div>
 </div>
-<div class="text" style="margin: 8px;">
+
+<div class="text" style="margin: 8px; background-color: #353030">
 <h1>
     Ingredients:
    <br> human meat, Anime titties, Anime thighs
@@ -18,7 +19,7 @@ require "include/nav.php";
     <br><br>
     <br><br>
     How to make blyat:
-   <br> cooking it ofc dumbass
+   <br>cooking it ofc dumbass
 </h1>
 </div>
     </body>

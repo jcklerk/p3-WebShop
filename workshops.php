@@ -12,7 +12,7 @@ require "include/nav.php";
 </div>
 <h1>
     Ingredients:
-   <br> human meat
+   <br> human meat, Anime titties
 
     <br><br>
     <br><br>

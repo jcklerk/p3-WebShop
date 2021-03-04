@@ -1,10 +1,11 @@
 <?php
+//Coppy file content to Webshop_config.php !!
 class DBClass
 {
   private $PDO_database = '';
   private $PDO_user = '';
   private $PDO_passwd = '';
-  private $PDO_domain = 'a';
+  private $PDO_domain = '';
   public $url = '';
     public function makeConnection()
     {

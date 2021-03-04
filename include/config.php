@@ -1,5 +1,6 @@
 <?php
-require __DIR__ . '/include.php';
+include __DIR__.'/class/LangClass.php';
+$url = (new DBClass())->ServerUrl();
 //
 //$test = $pdo->prepare('')
 //$test->bindParam(':test', $test_);

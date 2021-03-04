@@ -11,7 +11,6 @@ class LangClass
    function __construct()
   {
     $this->dbClass = new DBClass();
-    $pdo = $this->dbClass->makeConnection();
   }
   // get vertaling functie
   public function LangGetAll(){

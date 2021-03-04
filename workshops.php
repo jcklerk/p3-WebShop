@@ -3,7 +3,7 @@ require "include/nav.php";
 ?>
 
 <body class="bc-gray-black">
-<div class="parallax-halfheight img-chinesefood d-flex align-items-center justify-content-center">
+<div class="parallax-halfheight img-japanesefood d-flex align-items-center justify-content-center">
 
     <div class="text-center">
         <h1 class="fos-2">idk like sushi or something</h1>

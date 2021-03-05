@@ -30,7 +30,7 @@ require __DIR__ . '/include/login.php';
                                     <?php echo $error; ?>
                                 </div>
                                 <div class="col-lg-6 login-btm login-button-twee">
-                                    <a href="#" class="btn btn-outline-primary">CREATE NEW USER</a>
+                                    <a href="https://localhost/p3-WebShop/register.php" class="btn btn-outline-primary">CREATE NEW USER</a>
                                 </div>
                                 <div class="col-lg-6 login-btm login-button">
                                     <input type="submit" class="btn btn-outline-primary" value="LOGIN" name="LOGIN">

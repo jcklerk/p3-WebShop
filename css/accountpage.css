@@ -1,0 +1,10 @@
+.table-edit {
+    width: 70%;
+    height: 20%;
+    margin: 10% auto;
+    font-size: 125%;
+    border-color: rgba(222, 226, 230, 0.7);
+}
+.c-border {
+    border-color: rgba(222, 226, 230, 1);
+}

@@ -36,6 +36,20 @@
   /* The image used */
   background-image: url("../img/asiandecor.png");
 }
+.img-chinesefood{
+    /* The image used */
+    background-image: url("../img/chinesefood.jpg");
+}
+
+.img-japanesefood{
+    /* The image used */
+    background-image: url("../img/japanesefood.jpg");
+}
+
+.img-koreanfood{
+    /* The image used */
+    background-image: url("../img/koreanfood.jpg");
+}
 .card {
     border: 0px;
 }

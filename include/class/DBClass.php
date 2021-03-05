@@ -2,11 +2,11 @@
 //Coppy file content to webshop_config.php !!
 class DBClass
 {
-  private $PDO_database = '';
-  private $PDO_user = '';
-  private $PDO_passwd = '';
-  private $PDO_domain = '';
-  public $url = '';
+  private $PDO_database = 'deb9339_webshop';
+  private $PDO_user = 'deb9339_Milan';
+  private $PDO_passwd = 'Milan+31613171703';
+  private $PDO_domain = 's209.webhostingserver.nl:3306';
+  public $url = 'https://localhost/p3-WebShop/';
     public function makeConnection()
     {
       try{

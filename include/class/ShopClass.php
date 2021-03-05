@@ -11,12 +11,12 @@ class ShopClass
   }
 }
 
-//$getproducts = $pdo->prepare("SELECT * FROM `products`");
-//$getproducts->execute();
-//$allproduct = $getproducts->fetchAll();
+
+$getproducts = $pdo->prepare("SELECT * FROM `products`");
+$getproducts->execute();
+$allproduct = $getproducts->fetchAll();
 
 
-<?php
 foreach ($allproduct as $x) { ?>
         <div class="col">
     <div class="card h-100 bc-gray-black ">
@@ -29,4 +29,3 @@ foreach ($allproduct as $x) { ?>
     </div>
         </div>
 <?php }
-?>

@@ -74,5 +74,9 @@ fabric.properties
 
 .idea
 
+# .SD_Store disable
+.DS_Store
+include/.DS_Store
+
 # WebShop login database
 webshop_config.php

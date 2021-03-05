@@ -18,15 +18,14 @@ class ShopClass
       $getproducts->bindParam(':cat', $this->cat);
       $getproducts->execute();
       $allproduct = $getproducts->fetchAll();
-      print_r($allproduct);
       foreach ($allproduct as $x) { ?>
           <div class="col">
               <div class="card h-100 bc-gray-black ">
-                  <img src="img/<?php echo $x['1']?>" class="card-img-top" alt="...">
+                  <img src="<?php echo $x['img']?>" class="card-img-top" alt="...">
                   <div class="card-body">
-                      <h5 class="card-title"><?php echo $x['2']; ?> </h5>
-                      <p class="card-text"><?php echo $x['3']; ?></p>
-                      <p class="card-text">€<?php echo $x['4']; ?></p>
+                      <h5 class="card-title"><?php echo $x['naam']; ?> </h5>
+                      <p class="card-text"><?php echo $x['categorie']; ?></p>
+                      <p class="card-text">€<?php echo $x['prijs']; ?></p>
                   </div>
               </div>
           </div>

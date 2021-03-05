@@ -26,10 +26,11 @@ require "include/class/ShopClass.php";
             </div>
         </div>
     </div>
-    <div class="row row-web-prod row-cols-1 row-cols-md-4 g-4 c-red"></div>
-<?php
-(new ShopClass($_GET['cat']))->GetProductCat();
-?>
+    <div class="row row-web-prod row-cols-1 row-cols-md-4 g-4 c-red">
+    <?php
+    (new ShopClass($_GET['cat']))->GetProductCat();
+    ?>
+    </div>
     </body>
 
 <?php

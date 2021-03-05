@@ -25,7 +25,7 @@
 
     <!-- Copyright -->
     <div class="text-center p-3 fw-bold" style=" background-color: rgba(151, 0, 0, 0.5);">
-      © 2020 Copyright:
+      © 2021 Copyright:
       <a>SD20-1</a>
     </div>
     <!-- Copyright -->

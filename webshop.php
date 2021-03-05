@@ -1,6 +1,6 @@
 <?php
 require "include/nav.php";
-echo $_GET['cat'];
+require "include/class/ShopClass.php";
 
 ?>
 

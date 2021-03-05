@@ -33,9 +33,3 @@ class ShopClass
       <?php }
   }
 }
-
-
-
-
-
-

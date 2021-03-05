@@ -23,13 +23,20 @@ if (empty($arrayworkshop)) {
 </div>
 
 <div class="c-white" style="margin: 8px;">
-<h1>
-    <iframe style="float: right" width="560" height="315" src="<?php echo $arrayworkshop['video'];?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    Ingredients:
-   <br> human meat, Anime titties, Anime thighs, souls of the innocent, virgin sacrifice
-
-    <br><br>
-    what u need: <br> een pan, een koelkast, een fiets om stroom op te wekken, een palingworst
+  <div class="row">
+    <div class="col-sm">
+      <h1>Ingredients:</h1>
+      <h3>human meat, Anime titties, Anime thighs, souls of the innocent, virgin sacrifice</h3>
+       <br>
+      <h1>what u need:</h1>
+      <h3>een pan, een koelkast, een fiets om stroom op te wekken, een palingworst</h3>
+   </div>
+   <div class="col-sm">
+     <iframe style="float: right" width="560" height="315" src="<?php echo $arrayworkshop['video'];?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
 
     <br><br>
     How to make blyat:
@@ -37,8 +44,10 @@ if (empty($arrayworkshop)) {
     Roer de currypasta door de kokosmelk en schenk over de vis. Vouw het bakpapier of de aluminiumfolie tot pakketjes dicht. Bind ze eventueel vast met een stukje keukentouw of zet ze vast met (metalen!) paperclips.
     Leg de pakketjes op een bakplaat en bak de vis in circa 20 minuten gaar in de voorverwarmde oven. Kook intussen de rijst volgens de aanwijzingen op de verpakking.
     Leg de pakketjes op 4 borden. Vouw ze aan tafel open en bestrooi met de basilicumblaadjes. Serveer er de rijst en partjes limoen bij.
-    <img src="img/ja.jpg" style="float: right;">
-</h1>
+    </div><div class="col-sm">
+    <img src="<?php echo $arrayworkshop['img'];?>"  style="float: right" width="auto" height="315">
+  </div>
+</div>
 </div>
     </body>
 <?php

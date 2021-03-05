@@ -76,5 +76,3 @@ fabric.properties
 
 # WebShop login database
 webshop_config.php
-
-include/class/DBClass.php

@@ -1,9 +1,9 @@
 <?php
 require "include/nav.php";
 
-$getproducts = $pdo->prepare("SELECT * FROM `products`");
-$getproducts->execute();
-$allproduct = $getproducts->fetchAll();
+//$getproducts = $pdo->prepare("SELECT * FROM `products`");
+//$getproducts->execute();
+//$allproduct = $getproducts->fetchAll();
 ?>
 
     <body class="bc-gray-black">

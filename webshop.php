@@ -1,9 +1,7 @@
 <?php
 require "include/nav.php";
 
-//$getproducts = $pdo->prepare("SELECT * FROM `products`");
-//$getproducts->execute();
-//$allproduct = $getproducts->fetchAll();
+
 ?>
 
     <body class="bc-gray-black">
@@ -40,20 +38,7 @@ require "include/nav.php";
 
 
             <div class="row row-web-prod row-cols-1 row-cols-md-4 g-4 c-red">
-                <?php
-                foreach ($allproduct as $x) { ?>
-                        <div class="col">
-                    <div class="card h-100 bc-gray-black ">
-            <img src="img/<?php echo $x['1']?>" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title"><?php echo $x['2']; ?> </h5>
-                <p class="card-text"><?php echo $x['3']; ?></p>
-                <p class="card-text">€<?php echo $x['4']; ?></p>
-            </div>
-                    </div>
-                        </div>
-               <?php }
-                ?>
+
 
     </div>
 

@@ -30,6 +30,9 @@ require "include/class/ShopClass.php";
     <?php
     if (isset($_GET['cat'])) {
       (new ShopClass($_GET['cat'],$url))->GetProductCat();
+    }else{
+      $empty = '';
+      (new ShopClass($empty, $url))->GetProductall();
     }
     ?>
     </div>

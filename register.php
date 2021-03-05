@@ -37,9 +37,6 @@
 
       </div>
 
-         <div class=" login-btm login-button-twee mar">
-             <a href="https://localhost/p3-WebShop/login.php" class="btn btn-outline-primary">go back</a>
-         </div>
 </div>
 
     </form>

@@ -28,7 +28,7 @@ require "include/class/ShopClass.php";
     </div>
     <div class="row row-web-prod row-cols-1 row-cols-md-4 g-4 c-red">
     <?php
-    (new ShopClass($_GET['cat']))->GetProductCat();
+    (new ShopClass($_GET['cat'], $url))->GetProductCat();
     ?>
     </div>
     </body>

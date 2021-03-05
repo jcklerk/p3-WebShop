@@ -2,11 +2,11 @@
 //Coppy file content to webshop_config.php !!
 class DBClass
 {
-  private $PDO_database = 'deb9339_webshop';
-  private $PDO_user = 'deb9339_Milan';
-  private $PDO_passwd = 'Milan+31613171703';
-  private $PDO_domain = 's209.webhostingserver.nl:3306';
-  public $url = 'https://localhost/p3-WebShop/';
+  private $PDO_database = ''; // niet in vullen maar vul het in in webshop_config.php
+  private $PDO_user = '';     // niet in vullen maar vul het in in webshop_config.php
+  private $PDO_passwd = '';   // niet in vullen maar vul het in in webshop_config.php
+  private $PDO_domain = '';   // niet in vullen maar vul het in in webshop_config.php
+  public $url = '';
     public function makeConnection()
     {
       try{
@@ -19,7 +19,7 @@ class DBClass
       return $pdo;
     }
     public function ServerUrl(){
-      $url = 'https://192.168.1.119/p3-WebShop/';
+      $url = 'https://localhost/p3-WebShop/';
       return $url;
     }
 

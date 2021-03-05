@@ -29,7 +29,7 @@ require "include/class/ShopClass.php";
     <div class="row row-web-prod row-cols-1 row-cols-md-4 g-4 c-red">
     <?php
     if (isset($_GET['cat'])) {
-      (new ShopClass($_GET['cat']))->GetProductCat();
+      (new ShopClass($_GET['cat'],$url))->GetProductCat();
     }
     ?>
     </div>

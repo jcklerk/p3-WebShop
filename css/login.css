@@ -109,13 +109,15 @@ label {
 .login-btm {
     float: left;
 }
-
-.login-button {
+.login-button-twee {
     padding-right: 0px;
-    text-align: right;
     margin-bottom: 25px;
 }
-
+.login-button {
+    padding-right: 0px;
+    float: right;
+    margin-bottom: 25px;
+}
 .login-text {
     text-align: left;
     padding-left: 0px;

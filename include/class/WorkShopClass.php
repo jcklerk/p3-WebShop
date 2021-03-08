@@ -38,12 +38,14 @@ class WorkShopsClass
   private $pdo;
   public $url;
   public $workshop_id;
+  public $taal_id;
   // maak niuewe database connection op dbClass
-   function __construct($url, $workshop_id)
+   function __construct($url, $workshop_id, $taal_id)
   {
     $this->dbClass = new DBClass();
     $this->url = $url;
     $this->workshop_id = $workshop_id;
+    $this->taal_id = $taal_id;
   }
   public function GetWorkShop(){
     $pdo = $this->dbClass->makeConnection();
@@ -54,4 +56,16 @@ class WorkShopsClass
     $arrayworkshop['video'] = str_replace("/watch?v=","/embed/",$arrayworkshop['video']);
     return $arrayworkshop;
   }
+
+    public function WorkshopGet(){
+        $pdo = $this->dbClass->makeConnection();
+//        $workshopget dit vervangen met $getworkshop neem ik aan :shrug:
+        $workshopget = $pdo->prepare("SELECT * FROM `taal_workshop` WHERE `workshop_id` = :workshop_id AND `taal_id` = :taal_id");
+        $workshopget->bindParam(':workshop_id', $this->workshop_id);
+        $workshopget->bindParam(':taal_id', $this->taal_id);
+        $workshopget->execute();
+        $arrayworkshops = $workshopget->fetch();
+        $arrayworkshops['ingredienten'] = str_replace("/watch?v=","/embed/",$arrayworkshops['video']);
+        return $arrayworkshops;
+    }
 }

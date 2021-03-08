@@ -35,7 +35,7 @@ require __DIR__ . '/config.php';
 
             <ul class="navbar-nav float-end" style="margin-right: 32px">
                         <!-- to do! Add lang support -->
-                        <?php if (empty($_SESSION)) {
+                        <?php if (isset($_SESSION['user_id'])) {
                             echo '
                                     <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle c-yellow" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

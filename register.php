@@ -57,7 +57,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['voor
       <div class="row">
            <div class="col-md-4 col-sm-4 col-lg-4">
               <label for="huisnummer">HUISNUMMER</label>
-               <input name="huisnummer" class="form-control" type="text" required>
+               <input name="huisnummer" class="form-control" type="number" required>
            </div>
       </div>
       <div class="row">
@@ -77,7 +77,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['voor
            <button class="btn btn-default regbutton">Register</button>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-           <a href="login.php" class="btn btn-default logbutton">Sign up</a>
+           <a href="login.php" class="btn btn-default logbutton">Login</a>
           </div>
       </div>
     </form>

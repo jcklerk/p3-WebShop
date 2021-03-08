@@ -6,7 +6,7 @@ require "include/class/WorkShopClass.php";
   echo '<script type="text/javascript"> window.location.href = "'. $url .'workshops.php";</script>';
   exit();
 }
-$arrayworkshop = (new WorkShopsClass($url, $_SESSION['workshops']))->GetWorkShop();
+$arrayworkshop = (new WorkShopsClass($url, $_SESSION['workshops'], $_SESSION['lang_id']))->GetWorkShop();
 if (empty($arrayworkshop)) {
  echo '<script type="text/javascript"> window.location.href = "'. $url .'workshop.php";</script>';
  exit();

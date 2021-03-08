@@ -5,7 +5,8 @@
 //$user->login();
 
 require "include/nav.php";
-require "include/class/ShopClass.php";
+require "include/class/FactuurClass.php";
+
 ?>
 
 <body class="bc-gray-black">
@@ -19,29 +20,9 @@ require "include/class/ShopClass.php";
         <th scope="col">Status</th>
         <th scope="col">totaal</th>
     </tr>
-    <tr>
-        <th scope="row">1</th>
-        <td>beker</td>
-        <td>3-3-2021</td>
-        <td>onderweg</td>
-        <td>€20.42</td>
-    </tr>
-    <tr>
-        <th scope="row">2</th>
-        <td>knufel</td>
-        <td>5-3-2021</td>
-        <td>onderweg</td>
-        <td>€24.-</td>
 
-    </tr>
-    <tr>
-        <th scope="row">3</th>
-        <td>banaan</td>
-        <td>27-2-2021</td>
-        <td>bezorgt</td>
-        <td>€20.-</td>
+    <?php (new FactuurClass($_SESSION['user_id']))->GetFacatuur(); ?>
 
-    </tr>
     </tbody>
 </table>
 

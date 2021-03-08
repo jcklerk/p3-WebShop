@@ -82,6 +82,6 @@ require __DIR__ . "/include/class/RegisterClass.php";
 </body>
 <?php
 if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['voornaam']) && isset($_POST['achternaam']) && isset($_POST['straatnaam']) && isset($_POST['huisnummer']) && isset($_POST['postcode']) && isset($_POST['woonplaats'])) {
-	(new RegisterClass($_POST['username'], $_POST['password'], ($_POST['voornaam'], $_POST['tussenvoegsel'], $_POST['achternaam'], $_POST['straatnaam'], $_POST['huisnummer'], $_POST['postcode'], $_POST['woonplaats']))->Register();
+	(new RegisterClass($_POST['username'], $_POST['password'], $_POST['voornaam'], $_POST['tussenvoegsel'], $_POST['achternaam'], $_POST['straatnaam'], $_POST['huisnummer'], $_POST['postcode'], $_POST['woonplaats']))->Register();
 }
 ?>

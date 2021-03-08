@@ -40,7 +40,7 @@ class ShopClass
   }
   public function GetProductall(){
       $pdo = $this->dbClass->makeConnection();
-      $getproducts = $pdo->prepare("SELECT * FROM `product`");
+      $getproducts = $pdo->prepare("SELECT * FROM `product` WHERE `categorie` = :cat ");
       $getproducts->bindParam(':cat', $this->cat);
       $getproducts->execute();
       $allproduct = $getproducts->fetchAll();

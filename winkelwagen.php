@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $_SESSION['cart'] = array('1', '6');
+    $_SESSION['cart'] = array('1', '2');
     require 'include/nav.php';
     $arraycart = (new LangClass())->LangGetCart();
     require 'include/class/ShoppingCartClass.php';

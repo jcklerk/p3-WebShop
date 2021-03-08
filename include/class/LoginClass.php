@@ -2,7 +2,7 @@
 /**
  *
  */
-class AccountClass
+class LoginClass
 {
   private $dbClass;
   private $pdo;
@@ -36,4 +36,5 @@ class AccountClass
     return $error;
   }
 }
+
 ?>

@@ -1,6 +1,6 @@
 <?php
-require __DIR__ . "/nav.php";
-require __DIR__ . "/class/AccountClass.php";
+include __DIR__ . '/config.php';
+require __DIR__ . "/class/LoginClass.php";
 if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
   header("Location: ".$url."account.php");
 }
@@ -15,7 +15,7 @@ $error = "";
 if (isset($_POST['LOGIN'])) {
   $username = $_POST['username'];
   $password = $_POST['password'];
-  $error = (new AccountClass($username, $password))->Login();
+  $error = (new LoginClass($username, $password))->Login();
   echo $error;
 
 }

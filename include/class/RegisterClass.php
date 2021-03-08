@@ -32,18 +32,18 @@ class RegisterClass
   public function Register(){
     $pdo = $this->dbClass->makeConnection();
     if (isset($this->username) && isset($this->password) && isset($this->voornaam) && isset($this->achternaam) && isset($this->straatnaam) && isset($this->huisnummer) && isset($this->postcode) && isset($this->woonplaats)) {
-        $q = $pdo->prepare('INSERT INTO `user` (`username`, `password`, `voornaam`, `tussenvoegsel`, `achternaam`, `straatnaam`, `huisnummer`, `postcode`, `woonplaats`) VALUES (NULL, :ui, :u, :p, :v, :t, :a, :s, :h, :pc, :w)');
-        $q->bindParam(':u', $_POST['username']);
-        $q->bindParam(':p', $_POST['password']);
-        $q->bindParam(':v', $_POST['vornaam']);
-        $q->bindParam(':t', $_POST['tussenvoegsel']);
-        $q->bindParam(':a', $_POST['achternaam']);
-        $q->bindParam(':s', $_POST['straatnaam']);
-        $q->bindParam(':h', $_POST['huisnummer']);
-        $q->bindParam(':pc', $_POST['postcode']);
-        $q->bindParam(':w', $_POST['woonplaats']);
+        $q = $pdo->prepare('INSERT INTO `user` (`username`, `password`, `voornaam`, `tussenvoegsel`, `achternaam`, `straatnaam`, `huisnummer`, `postcode`, `woonplaats`) VALUES ( :u, :p, :v, :t, :a, :s, :h, :pc, :w)');
+        $q->bindParam(':u', $this->username);
+        $q->bindParam(':p', $this->password);
+        $q->bindParam(':v', $this->voornaam);
+        $q->bindParam(':t', $this->tussenvoegsel);
+        $q->bindParam(':a', $this->achternaam);
+        $q->bindParam(':s', $this->straatnaam);
+        $q->bindParam(':h', $this->huisnummer);
+        $q->bindParam(':pc',$this->postcode);
+        $q->bindParam(':w', $this->woonplaats);
         $q->execute();
-        header('Location: http://localhost/gebruiker/');
+        //header('Location: http://localhost/gebruiker/');
         return;
     }
   }

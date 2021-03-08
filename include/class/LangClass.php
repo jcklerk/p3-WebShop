@@ -39,5 +39,13 @@ class LangClass
     $arrayhome = $gethome->fetch();
     return $arrayhome;
   }
-
+    public function LangGetCart()
+    {
+        $pdo = $this->dbClass->makeConnection();
+        $getcart = $pdo->prepare("SELECT * FROM `taal_shoppingcart` WHERE `taal_id` = :taal_id");
+        $getcart->bindParam(':taal_id', $_SESSION['lang_id']);
+        $getcart->execute();
+        $arraycart = $getcart->fetch();
+        return $arraycart;
+    }
 }

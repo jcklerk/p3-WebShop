@@ -24,7 +24,7 @@ $arrayworkshoptext = (new WorkShopsClass($url, $_SESSION['workshops'], $_SESSION
 </div>
 
 <div class="c-white" style="margin: 8px;">
-  <div class="row">
+  <div class="row" style="--bs-gutter-x: 0 rem !important;">
     <div class="col-sm">
       <h2>Ingredients:</h2>
       <h4><?php echo $arrayworkshoptext['ingredienten']?></h4>

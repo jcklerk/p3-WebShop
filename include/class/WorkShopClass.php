@@ -59,7 +59,6 @@ class WorkShopsClass
 
     public function WorkshopGet(){
         $pdo = $this->dbClass->makeConnection();
-//        $workshopget dit vervangen met $getworkshop neem ik aan :shrug:
         $workshopget = $pdo->prepare("SELECT * FROM `taal_workshop` WHERE `workshop_id` = :workshop_id AND `taal_id` = :taal_id");
         $workshopget->bindParam(':workshop_id', $this->workshop_id);
         $workshopget->bindParam(':taal_id', $this->taal_id);

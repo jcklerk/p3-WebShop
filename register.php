@@ -1,6 +1,9 @@
 <?php
 include __DIR__ . '/include/config.php';
 require __DIR__ . "/include/class/RegisterClass.php";
+if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['voornaam']) && isset($_POST['achternaam']) && isset($_POST['straatnaam']) && isset($_POST['huisnummer']) && isset($_POST['postcode']) && isset($_POST['woonplaats'])) {
+	echo (new RegisterClass($_POST['username'], $_POST['password'], $_POST['voornaam'], $_POST['tussenvoegsel'], $_POST['achternaam'], $_POST['straatnaam'], $_POST['huisnummer'], $_POST['postcode'], $_POST['woonplaats']))->Register();
+}
 ?>
 <head>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -13,7 +16,7 @@ require __DIR__ . "/include/class/RegisterClass.php";
 <body>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <div class="container-fluid">
-	 <form action="" method="" class="register-form">
+	 <form action="" method="post" class="register-form">
       <div class="row">
            <div class="col-md-4 col-sm-4 col-lg-4">
               <label for="username">USERNAME</label>
@@ -81,7 +84,5 @@ require __DIR__ . "/include/class/RegisterClass.php";
 </div>
 </body>
 <?php
-if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['voornaam']) && isset($_POST['achternaam']) && isset($_POST['straatnaam']) && isset($_POST['huisnummer']) && isset($_POST['postcode']) && isset($_POST['woonplaats'])) {
-	(new RegisterClass($_POST['username'], $_POST['password'], $_POST['voornaam'], $_POST['tussenvoegsel'], $_POST['achternaam'], $_POST['straatnaam'], $_POST['huisnummer'], $_POST['postcode'], $_POST['woonplaats']))->Register();
-}
+
 ?>

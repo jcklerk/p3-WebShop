@@ -57,7 +57,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['voor
       <div class="row">
            <div class="col-md-4 col-sm-4 col-lg-4">
               <label for="huisnummer">HUISNUMMER</label>
-               <input name="huisnummer" class="form-control" type="text" required>
+               <input name="huisnummer" class="form-control" type="number" required>
            </div>
       </div>
       <div class="row">

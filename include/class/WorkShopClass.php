@@ -64,8 +64,7 @@ class WorkShopsClass
         $workshopget->bindParam(':workshop_id', $this->workshop_id);
         $workshopget->bindParam(':taal_id', $this->taal_id);
         $workshopget->execute();
-        $arrayworkshops = $workshopget->fetch();
-        $arrayworkshops['ingredienten'] = str_replace("/watch?v=","/embed/",$arrayworkshops['video']);
-        return $arrayworkshops;
+        $arrayworkshoptext = $workshopget->fetch();
+        return $arrayworkshoptext;
     }
 }

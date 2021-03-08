@@ -5,6 +5,15 @@
     $arraycart = (new LangClass())->LangGetCart();
     require 'include/class/ShoppingCartClass.php';
 ?>
+<style media="screen">
+  body{
+    width: 100%;
+    height: 100%
+  }
+</style>
+<body>
+
+
 <link rel="stylesheet" href="css/winkelwagen.css">
 <div class="card list-width">
     <div class="card-header">

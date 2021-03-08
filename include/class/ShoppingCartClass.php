@@ -23,10 +23,10 @@ class ShoppingCartClass
 
       echo '
       <li class="list-group-item">
-      <div class="card mb-3" style="max-width: 540px;">
+      <div class="card mb-3" style="max-width: 70%;">
         <div class="row g-0">
           <div class="col-md-4">
-            <img src="'. $products["img"] .'" alt="...">
+            <img  height="250" width="100%" style="object-fit: cover;" src="'. $products["img"] .'" alt="...">
           </div>
           <div class="col-md-8">
             <div class="card-body">

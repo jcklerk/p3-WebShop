@@ -1,19 +1,42 @@
 <?php
+    session_start();
+    $_SESSION['cart'] = array('fuck', 'of');
     require 'include/nav.php';
+    $arraycart = (new LangClass())->LangGetCart();
 ?>
 <link rel="stylesheet" href="css/winkelwagen.css">
 <div class="card list-width">
     <div class="card-header">
         <?php
-            require 'include/class/ShoppingCartClass.php';
+            echo $arraycart['shoppingcart'];
         ?>
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
+        <?php
+            foreach ($_SESSION['cart'] as $a){
+                echo '
+                <li class="list-group-item"> 
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="..." alt="...">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">'. $a .'</h5>
+                        <p class="card-text"></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </li>';
+            }
+
+        ?>
     </ul>
     <div class="card-footer">
-        Card footer
+        <?php
+        echo $arraycart['checkout'];
+        ?>
     </div>
 </div>

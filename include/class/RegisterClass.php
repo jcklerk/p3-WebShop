@@ -31,20 +31,27 @@ class RegisterClass
   }
   public function Register(){
     $pdo = $this->dbClass->makeConnection();
-    if (isset($this->username) && isset($this->password) && isset($this->voornaam) && isset($this->achternaam) && isset($this->straatnaam) && isset($this->huisnummer) && isset($this->postcode) && isset($this->woonplaats)) {
-        $q = $pdo->prepare('INSERT INTO `user` (`username`, `password`, `voornaam`, `tussenvoegsel`, `achternaam`, `straatnaam`, `huisnummer`, `postcode`, `woonplaats`) VALUES ( :u, :p, :v, :t, :a, :s, :h, :pc, :w)');
-        $q->bindParam(':u', $this->username);
-        $q->bindParam(':p', $this->password);
-        $q->bindParam(':v', $this->voornaam);
-        $q->bindParam(':t', $this->tussenvoegsel);
-        $q->bindParam(':a', $this->achternaam);
-        $q->bindParam(':s', $this->straatnaam);
-        $q->bindParam(':h', $this->huisnummer);
-        $q->bindParam(':pc',$this->postcode);
-        $q->bindParam(':w', $this->woonplaats);
-        $q->execute();
-        //header('Location: http://localhost/gebruiker/');
-        return;
+    $login = $pdo->prepare("SELECT `user_id`,`username`,`password` FROM `user` WHERE `username` = :username");
+    $login->bindParam(':username', $this->username);
+    $login->execute();
+    $arraylogin = $login->fetch();
+    if (empty($arraylogin)) {
+      if (isset($this->username) && isset($this->password) && isset($this->voornaam) && isset($this->achternaam) && isset($this->straatnaam) && isset($this->huisnummer) && isset($this->postcode) && isset($this->woonplaats)) {
+          $hashpass = password_hash($this->password, PASSWORD_DEFAULT);
+          $q = $pdo->prepare('INSERT INTO `user` (`username`, `password`, `voornaam`, `tussenvoegsel`, `achternaam`, `straatnaam`, `huisnummer`, `postcode`, `woonplaats`) VALUES ( :u, :p, :v, :t, :a, :s, :h, :pc, :w)');
+          $q->bindParam(':u', $this->username);
+          $q->bindParam(':p', $hashpass);
+          $q->bindParam(':v', $this->voornaam);
+          $q->bindParam(':t', $this->tussenvoegsel);
+          $q->bindParam(':a', $this->achternaam);
+          $q->bindParam(':s', $this->straatnaam);
+          $q->bindParam(':h', $this->huisnummer);
+          $q->bindParam(':pc',$this->postcode);
+          $q->bindParam(':w', $this->woonplaats);
+          $q->execute();
+          //header('Location: http://localhost/gebruiker/');
+          return;
+      }
     }
   }
 }

@@ -30,11 +30,7 @@ require __DIR__ . '/include/login.php';
                                     <?php echo $error; ?>
                                 </div>
                                 <div class="col-lg-6 login-btm login-button-twee">
-<<<<<<< HEAD
-                                    <a href="register.php" class="btn btn-outline-primary">CREATE NEW USER</a>
-=======
                                     <a href="<?php echo $url;?>/register.php" class="btn btn-outline-primary">CREATE NEW USER</a>
->>>>>>> b1c4a337e649345f891da1cc5bda5e7814f38f7f
                                 </div>
                                 <div class="col-lg-6 login-btm login-button">
                                     <input type="submit" class="btn btn-outline-primary" value="LOGIN" name="LOGIN">

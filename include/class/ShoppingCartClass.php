@@ -16,9 +16,10 @@ class ShoppingCartClass
 
 
 
-          foreach ($this->cart as $product) {
+          foreach ($this->cart as $array) {
+              $aantal = $array['Aantal'];
               $getProducts = $pdo->prepare("SELECT * FROM `product` WHERE `product_nr` = :product");
-              $getProducts->bindParam(':product', $product);
+              $getProducts->bindParam(':product', $array['Prodcut']);
               $getProducts->execute();
               $products = $getProducts->fetch();
 
@@ -32,7 +33,7 @@ class ShoppingCartClass
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title">'. $products["naam"] .'</h5>
-              <p class="card-text"></p>
+              <p class="card-text">'. $aantal .'</p>
             </div>
           </div>
         </div>

@@ -57,15 +57,10 @@ require __DIR__ . '/config.php';
                 </li>
             </ul>
             <ul class="navbar-nav float-end" style="margin-right: 32px">
-
-                                    <li class="nav-item dropdown">
-                                    <a class="nav-link c-yellow" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <li class="nav-item">
+                                    <a class="nav-link c-yellow" href="<?php echo $url; ?>winkelwagen.php" role="button">
                                     <h2> <i class="bi bi-cart4"></i></h2>
-                                    </a>
-                                    <ul class="dropdown-menu bc-gray-black" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a class="dropdown-item c-yellow" href=""><?php echo $arraynav['totaal']; ?></a></li>
-                                    <li><a class="dropdown-item c-yellow" href=""><?php echo $arraynav['afrekenen']; ?></a></li>
-                                    <li><a class="dropdown-item c-yellow" href=""><?php echo $arraynav['btw']; ?></a></li>
+                                  </li>
 
                     </ul>
                 </li>

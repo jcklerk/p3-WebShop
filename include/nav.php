@@ -59,7 +59,7 @@ require __DIR__ . '/config.php';
             <ul class="navbar-nav float-end" style="margin-right: 32px">
                                     <li class="nav-item">
                                     <a class="nav-link c-yellow" href="<?php echo $url; ?>winkelwagen.php" role="button">
-                                    <h2> <i class="bi bi-cart4"></i></h2>
+                                    <h2> <i class="bi bi-cart4"></i></h2></a>
                                   </li>
 
                     </ul>

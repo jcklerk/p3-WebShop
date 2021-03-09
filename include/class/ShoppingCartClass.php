@@ -16,35 +16,40 @@ class ShoppingCartClass
 
 
 
+
           foreach ($this->cart as $array) {
-              $aantal = $array['Aantal'];
               $getProducts = $pdo->prepare("SELECT * FROM `product` WHERE `product_nr` = :product");
-              $getProducts->bindParam(':product', $array['Prodcut']);
+              $getProducts->bindParam(':product', $array['Product']);
               $getProducts->execute();
               $products = $getProducts->fetch();
 
-              echo '
-      <li class="list-group-item">
-      <div class="card mb-3" style="max-width: 70%;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img  height="250" width="100%" style="object-fit: cover;" src="'. $products["img"] .'" alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">'. $products["naam"] .'</h5>
-              <p class="card-text">'. $aantal .'</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      </li>';
+              ?>
+              <li class="list-group-item">
+              <div class="card mb-3" style="max-width: 70%;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img  height="250" width="100%" style="object-fit: cover;" src="<?php echo $products['img'];?>" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title"><?php echo $products["naam"];?></h5>
+                      <p class="card-text">
+                        <form method="post">
+                          <input type="number" name="product" value="<?php echo $array['Product'];?>" hidden>
+                          <input type="number" name="aantal" value="<?php echo $array['Aantal'];?>">
+                          <input type="submit" name="" value="edit">
+                        </form>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+    <?php
           }
       } else  {
           echo 'array is leeg';
       }
-
-  return;
-
-}
+    return;
+  }
 }

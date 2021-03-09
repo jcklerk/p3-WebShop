@@ -1,6 +1,14 @@
 <?php
     session_start();
-    $_SESSION['cart'] = array(array("Prodcut"=>"1","Aantal"=>"2"),array("Prodcut"=>"2","Aantal"=>"25"));
+    $_SESSION['cart'] = array("1"=>array("Product"=>"1","Aantal"=>"2"),"3"=>array("Product"=>"3","Aantal"=>"25"));
+    if (!empty($_POST['product'])) {
+      foreach ($_SESSION['cart'] as $cart) {
+        if($_POST['product'] == $cart['Product']){
+          $aanpassen=array($_POST['product']=>array("Product"=>$_POST['product'],"Aantal"=>$_POST['aantal']));
+          $_SESSION['cart'] = array_replace($_SESSION['cart'], $aanpassen);
+        }
+      }
+    }
     print_r($_SESSION['cart']);
     require 'include/nav.php';
     $arraycart = (new LangClass())->LangGetCart();

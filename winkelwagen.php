@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $_SESSION['cart'] = array("1"=>array("Product"=>"1","Aantal"=>"2"),"3"=>array("Product"=>"3","Aantal"=>"25"));
+    $_SESSION['cart'] = array("1"=>array("Product"=>"1","Aantal"=>"2"),"2"=>array("Product"=>"2","Aantal"=>"5"));
     if (!empty($_POST['product'])) {
       foreach ($_SESSION['cart'] as $cart) {
         if($_POST['product'] == $cart['Product']){

@@ -36,8 +36,14 @@ class ShoppingCartClass
                       <p class="card-text">
                         <form method="post">
                           <input type="number" name="product" value="<?php echo $array['Product'];?>" hidden>
-                          <input type="number" name="aantal" value="<?php echo $array['Aantal'];?>">
-                          <input type="submit" name="" value="edit">
+                          <select onchange="this.form.submit()" name="aantal">
+                            <option><?php echo $array['Aantal'];?></option>
+                            <?php
+                            for ($i=1; $i <= 10 ; $i++) {
+                              echo '<option value="'. $i .'">'. $i .'</option>';
+                            }
+                             ?>
+                          </select>
                         </form>
                       </p>
                     </div>

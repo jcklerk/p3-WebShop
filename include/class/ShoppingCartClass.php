@@ -11,17 +11,18 @@ class ShoppingCartClass
     $this->cart = $cart;
   }
   public function Cart(){// loop door de array en laat de producten zien.
-    $pdo = $this->dbClass->makeConnection();
+      if (!empty($this->cart)){
+          $pdo = $this->dbClass->makeConnection();
 
 
 
-    foreach ($this->cart as $product) {
-        $getProducts = $pdo->prepare("SELECT * FROM `product` WHERE `product_nr` = :product");
-        $getProducts->bindParam(':product', $product);
-        $getProducts->execute();
-        $products = $getProducts->fetch();
+          foreach ($this->cart as $product) {
+              $getProducts = $pdo->prepare("SELECT * FROM `product` WHERE `product_nr` = :product");
+              $getProducts->bindParam(':product', $product);
+              $getProducts->execute();
+              $products = $getProducts->fetch();
 
-      echo '
+              echo '
       <li class="list-group-item">
       <div class="card mb-3" style="max-width: 70%;">
         <div class="row g-0">
@@ -37,7 +38,11 @@ class ShoppingCartClass
         </div>
       </div>
       </li>';
-  }
+          }
+      } else  {
+          echo 'array is leeg';
+      }
+
   return;
 
 }

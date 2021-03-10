@@ -36,8 +36,6 @@ $arrayworkshoptext = (new WorkShopsClass($url, $_SESSION['workshops'], $_SESSION
      <iframe style="float: right" width="560" height="315" src="<?php echo $arrayworkshop['video'];?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    </div>
   </div>
-  <div class="row" style="--bs-gutter-x: 0 rem !important;">
-    <div class="col-sm" style="--bs-gutter-x: 0 rem; !important;">
 
    <h2> How to make <?php echo $arrayworkshop['workshop_title']; ?>:</h2>
    <h4> <?php echo $arrayworkshoptext['maken']?></h4>

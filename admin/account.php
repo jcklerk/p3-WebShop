@@ -58,7 +58,7 @@ require "../include/nav.php";
                 <a href=""></a><br>
             </table>
             menu<br>
-            ---------------------<br>
+            ------------------<br>
             <a href="products.php">Producten</a><br>
             <a href="addproducts.php">add producten</a><br>
             <a href="editproducts.php">edit Producten</a><br>
@@ -66,7 +66,7 @@ require "../include/nav.php";
         <table style="">
             <br>
             Products<br>
-            ---------------------<br>
+            ------------------<br>
             <a href="products.php">Producten</a><br>
             <a href="addproducts.php">add producten</a><br>
             <a href="editproducts.php">edit Producten</a><br>
@@ -75,7 +75,7 @@ require "../include/nav.php";
         <table style="">
             <br>
             workshops<br>
-            ---------------------<br>
+            ------------------<br>
             <a href="workshops.php">Workshops</a><br>
             <a href="addworkshop.php">add workshop</a><br>
             <a href="editworkshop.php">edit workshop</a><br>

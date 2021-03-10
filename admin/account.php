@@ -101,12 +101,9 @@ require "../include/nav.php";
             <a href="editworkshop.php">edit workshop</a><br>
         </table></nav></div>
     <main>
-        <table style="">
-            <a href=""></a><br>
-            <a href=""></a><br>
-            <a href=""></a><br>
-        </table>
-        <form action="" method="post" class="register-form">
+
+
+        <form action="" method="post" style="margin-top: 200px; margin-left: 250px" class="register-form">
 
             <div class="row" style="--bs-gutter-x: 0 rem !important;">
                 <div class="col-md-4 col-sm-4 col-lg-4">

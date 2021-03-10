@@ -34,8 +34,9 @@
       <?php (new ShoppingCartClass($_SESSION['cart']))->Cart(); ?>
     </ul>
     <div class="card-footer">
-        <?php
-        echo $arraycart['checkout'];
-        ?>
+      <a href="<?php echo $url;?>pay.php">
+        <?php // echo $arraycart['checkout'];?>
+        checkout
+      </a>
     </div>
 </div>

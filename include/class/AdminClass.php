@@ -6,35 +6,30 @@ class AdminClass
 {
   private $dbClass;
   private $pdo;
-  public $username;
-  public $error;
-  private $password;
+  private $naam;
+  private $img;
+  private $prijs;
+  private $btw;
+  private $categorie;
 
-  function __construct($username, $password)
+
+  function __construct($naam, $img, $prijs, $btw, $categorie)
   {
     $this->dbClass = new DBClass();
-    $this->username = $username;
-    $this->password = $password;
+    $this->naam = $naam;
+    $this->img = $img;
+    $this->prijs = $prijs;
+    $this->btw = $btw;
+    $this->categorie = $categorie;
   }
-  public function ProductInsert(){
+
+  public function ProductInsert()
+  {
     $pdo = $this->dbClass->makeConnection();
     $login = $pdo->prepare("SELECT `user_id`,`username`,`password` FROM `user` WHERE `username` = :username");
     $login->bindParam(':username', $this->username);
     $login->execute();
-    $arraylogin = $login->fetch();
-    if (!empty($arraylogin)) {
-      if (password_verify($this->password, $arraylogin['password'])) {
-        $_SESSION['user_id'] = $arraylogin['user_id'];
-        $_SESSION['username'] = $arraylogin['username'];
-        echo '<script type="text/javascript"> window.location.href = "'.$url.'account.php"</script>';
-      } else {
-        $error = "Wachtwoord niet Correct!";
-      }
-    } else {
-      $error = "Account niet gevonden";
-    }
-    return $error;
+    return;
   }
 }
-
 ?>

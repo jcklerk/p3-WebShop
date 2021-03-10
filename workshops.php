@@ -38,6 +38,7 @@ $arrayworkshoptext = (new WorkShopsClass($url, $_SESSION['workshops'], $_SESSION
   </div>
   <div class="row" style="--bs-gutter-x: 0 rem !important;">
     <div class="col-sm" style="--bs-gutter-x: 0 rem; !important;">
+
    <h2> How to make <?php echo $arrayworkshop['workshop_title']; ?>:</h2>
    <h4> <?php echo $arrayworkshoptext['maken']?></h4>
     </div><div class="col-sm">
@@ -49,3 +50,4 @@ $arrayworkshoptext = (new WorkShopsClass($url, $_SESSION['workshops'], $_SESSION
 <?php
 require "include/footer.php";
 ?>
+

@@ -129,7 +129,25 @@ require "../include/nav.php";
                 <div class="row" style="--bs-gutter-x: 0 rem !important;">
                     <div class="col-md-4 col-sm-4 col-lg-4">
                         <label for="categorie">CATEGORIE</label>
-                        <input name="categorie" class="form-control" type="text" autocomplete="off" required>
+                        <!DOCTYPE html>
+                        <html>
+                        <body>
+
+
+                        <form action="/action_page.php">
+
+                            <select id="categorie" name="categorie" required>
+                                <option value="0">chinese</option>
+                                <option value="1">koreans</option>
+                                <option value="2">japans</option>
+
+                            </select>
+                            <input type="submit">
+                        </form>
+
+                        </body>
+                        </html>
+
                     </div>
                 </div></main>
     <footer>lelijke footer</footer>

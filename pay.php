@@ -1,8 +1,10 @@
 <?php
 require "include/config.php";
+require "include/class/CreateFactuurClass.php";
 
 if (!empty($_SESSION['cart'])) {
   echo "vol";
+
   foreach ($_SESSION['cart'] as $product) {
   }
 } else {

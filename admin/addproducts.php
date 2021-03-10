@@ -5,7 +5,13 @@ require "../include/nav.php";
 //(new FactuurClass($_SESSION['user_id']))->GetFacatuur();
 
 ?>
+<style>
 
+    body {
+        background-image: url("https://cdn.discordapp.com/attachments/773519839058591754/816963455977652254/unknown.png");
+        background-color: #cccccc;
+    }
+</style>
 <body>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <div class="container-fluid">

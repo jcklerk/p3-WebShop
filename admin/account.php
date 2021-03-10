@@ -4,8 +4,8 @@
 //$user = new User();
 //$user->login();
 
-require "include/nav.php";
-require "include/class/FactuurClass.php";
+require "../include/nav.php";
+require "../include/class/FactuurClass.php";
 
 ?>
 
@@ -35,5 +35,5 @@ require "include/class/FactuurClass.php";
 
 
 <?php
-require "include/footer.php";
+require "../include/footer.php";
 ?>

@@ -71,6 +71,11 @@ require "../include/nav.php";
                 <a href=""></a><br>
                 <a href=""></a><br>
             </table>
+            <table style="">
+                <a href=""></a><br>
+                <a href=""></a><br>
+                <a href=""></a><br>
+            </table>
             <div class="zijkant">
             menu
             <hr style="background-color: red; height: 10px">

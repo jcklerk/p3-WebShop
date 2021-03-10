@@ -1,4 +1,3 @@
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <?php
 require "../include/nav.php";
 //require '../include/class/AdminClass.php';
@@ -8,14 +7,8 @@ if (isset($_POST['naam']) && isset($_POST['img']) && isset($_POST['prijs']) && i
     echo (new RegisterClass($_POST['naam'], $_POST['img'], $_POST['prijs'], $_POST['btw'], $_POST['catogorie']))->Register();
 }
 ?>
-<style>
-
-    body {
-        background-image: url("https://cdn.discordapp.com/attachments/773519839058591754/816963455977652254/unknown.png");
-        background-color: #cccccc;
-    }
-</style>
-<body>
+<br><br><br><br><br><br><br><br>
+<body style="text-align: center">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <div class="container-fluid">
     <form action="" method="post" class="register-form">

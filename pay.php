@@ -4,22 +4,12 @@ require "include/class/CreateFactuurClass.php";
 
 if (!empty($_SESSION['cart'])) {
   echo "vol";
-
-  foreach ($_SESSION['cart'] as $product) {
-  }
+  print_r($_SESSION['cart']);
+  (new CreateFactuurClass($_SESSION['user_id'],$_SESSION['cart']))->Factuur();
 } else {
   //header('Location:'. $url);
   echo "leeg";
 }
 
-
- ?>
-
-
-
-<?php
-$_SESSION['cart']['1']['Product'] = "1";
-$_SESSION['cart']['1']['Aantal']  = "5";
-
-
+unset($_SESSION['cart']);
  ?>

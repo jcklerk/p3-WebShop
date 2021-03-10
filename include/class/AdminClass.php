@@ -26,8 +26,12 @@ class AdminClass
   public function ProductInsert()
   {
     $pdo = $this->dbClass->makeConnection();
-    $login = $pdo->prepare("SELECT `user_id`,`username`,`password` FROM `user` WHERE `username` = :username");
-    $login->bindParam(':username', $this->username);
+    $login = $pdo->prepare("insert into product (naam, img, prijs, btw, categorie) value (:naam, :img, :prijs, :btw, :categorie)");
+    $login->bindParam(':naam', $this->naam);
+    $login->bindParam(':img', $this->img);
+    $login->bindParam(':prijs', $this->prijs);
+    $login->bindParam(':btw', $this->btw);
+    $login->bindParam(':categorie', $this->categorie);
     $login->execute();
     return;
   }

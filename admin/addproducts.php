@@ -16,30 +16,30 @@ if (isset($_POST['naam']) && isset($_POST['img']) && isset($_POST['prijs']) && i
         <div class="row">
             <div class="col-md-4 col-sm-4 col-lg-4">
                 <label for="naam">NAAM</label>
-                <input name="naam" class="form-control" type="text" required>
+                <input name="naam" class="form-control" type="text" autocomplete="off" required>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4 col-sm-4 col-lg-4">
                 <label for="img">IMG</label>
-                <input name="img" class="form-control" type="text" required>
+                <input name="img" class="form-control" type="text" autocomplete="off" required>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4 col-sm-4 col-lg-4">
                 <label for="prijs">PRIJS</label>
-                <input name="prijs" class="form-control" type="text" required>
+                <input name="prijs" class="form-control" type="text" autocomplete="off" required>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4 col-sm-4 col-lg-4">
                 <label for="btw">BTW</label>
-                <input name="btw" class="form-control" type="text">
+                <input name="btw" class="form-control" autocomplete="off" type="text">
             </div>
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-lg-4">
                     <label for="categorie">CATEGORIE</label>
-                    <input name="categorie" class="form-control" type="text" required>
+                    <input name="categorie" class="form-control" type="text" autocomplete="off" required>
                 </div>
             </div>
 </body>

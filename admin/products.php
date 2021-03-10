@@ -1,1 +1,1 @@
-<?php
+hier ga ik dan een lijst met alle producten doen

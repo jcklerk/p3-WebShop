@@ -22,6 +22,7 @@
         background-color: black;
         grid-area: nav;
         color: pink;
+
     }
 
     main {
@@ -36,6 +37,18 @@
         grid-area: foot;
         color: pink;
     }
+    hr {
+        height: 1px;
+        color: blue;
+        background-color: red;
+        border: none;
+    }
+.zijkant {
+    border: 5px solid red;
+}
+a {
+    text-decoration: none;
+}
 </style>
 <?php
 
@@ -49,6 +62,7 @@ require "../include/nav.php";
 ?>
 <section id="page">
     <header></header>
+
     <nav>
 
         <table style="">
@@ -57,8 +71,9 @@ require "../include/nav.php";
                 <a href=""></a><br>
                 <a href=""></a><br>
             </table>
-            menu<br>
-            ------------------<br>
+            <div class="zijkant">
+            menu
+            <hr style="background-color: red; height: 10px">
             <a href="products.php">Producten</a><br>
             <a href="addproducts.php">add producten</a><br>
             <a href="editproducts.php">edit Producten</a><br>
@@ -66,7 +81,7 @@ require "../include/nav.php";
         <table style="">
             <br>
             Products<br>
-            ------------------<br>
+            <hr style="background-color: red; height: 10px">
             <a href="products.php">Producten</a><br>
             <a href="addproducts.php">add producten</a><br>
             <a href="editproducts.php">edit Producten</a><br>
@@ -75,11 +90,11 @@ require "../include/nav.php";
         <table style="">
             <br>
             workshops<br>
-            ------------------<br>
+            <hr style="background-color: red; height: 10px">
             <a href="workshops.php">Workshops</a><br>
             <a href="addworkshop.php">add workshop</a><br>
             <a href="editworkshop.php">edit workshop</a><br>
-        </table></nav>
+        </table></nav></div>
     <main>
         <table style="">
             <a href=""></a><br>

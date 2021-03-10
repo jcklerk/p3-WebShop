@@ -25,7 +25,11 @@ require "../include/class/FactuurClass.php";
 
         </tbody>
     </table>
-
+<table style="">
+    <a href="products.php">Producten</a><br>
+    <a href="addproducts.php">add producten</a><br>
+    <a href="editproducts.php">edit Producten</a><br>
+</table>
 
 
 

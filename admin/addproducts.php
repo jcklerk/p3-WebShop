@@ -5,7 +5,7 @@ require "../include/nav.php";
 //(new FactuurClass($_SESSION['user_id']))->GetFacatuur();
 
 if (isset($_POST['naam']) && isset($_POST['img']) && isset($_POST['prijs']) && isset($_POST['btw']) && isset($_POST['catogorie'])) {
-    echo (new RegisterClass($_POST['naam'], $_POST['img'], $_POST['prijs'], $_POST['btw'], $_POST['achternaam'], $_POST['catogorie']))->Register();
+    echo (new RegisterClass($_POST['naam'], $_POST['img'], $_POST['prijs'], $_POST['btw'], $_POST['catogorie']))->Register();
 }
 ?>
 <style>

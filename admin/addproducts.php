@@ -3,8 +3,8 @@ require "../include/nav.php";
 //require '../include/class/AdminClass.php';
 //(new FactuurClass($_SESSION['user_id']))->GetFacatuur();
 
-if (isset($_POST['naam']) && isset($_POST['img']) && isset($_POST['prijs']) && isset($_POST['btw']) && isset($_POST['catogorie'])) {
-    echo (new RegisterClass($_POST['naam'], $_POST['img'], $_POST['prijs'], $_POST['btw'], $_POST['catogorie']))->Register();
+if (isset($_POST['naam']) && isset($_POST['img']) && isset($_POST['prijs']) && isset($_POST['btw']) && isset($_POST['categorie'])) {
+    echo (new RegisterClass($_POST['naam'], $_POST['img'], $_POST['prijs'], $_POST['btw'], $_POST['categorie']))->Register();
 }
 ?>
 <br><br><br><br><br><br><br><br>
@@ -38,11 +38,10 @@ if (isset($_POST['naam']) && isset($_POST['img']) && isset($_POST['prijs']) && i
             </div>
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-lg-4">
-                    <label for="catogorie">CATOGORIE</label>
-                    <input name="catogorie" class="form-control" type="text" required>
+                    <label for="categorie">CATEGORIE</label>
+                    <input name="categorie" class="form-control" type="text" required>
                 </div>
             </div>
-
 </body>
 
 <?php

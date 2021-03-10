@@ -1,1 +1,1 @@
-<?php
+hier komt neem ik aan een pagine waar je de producten kan editen

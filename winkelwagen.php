@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (empty($_SESSION['cart'])) {
-      $_SESSION['cart'] = array("2"=>array("Product"=>"2","Aantal"=>"5"));
+      $_SESSION['cart'] = array();
     }
     if (!empty($_POST['product'])) {
       foreach ($_SESSION['cart'] as $cart) {

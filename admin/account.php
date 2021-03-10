@@ -30,6 +30,12 @@ require "../include/class/FactuurClass.php";
     <a href="addproducts.php">add producten</a><br>
     <a href="editproducts.php">edit Producten</a><br>
 </table>
+    <br>
+    <table style="">
+        <a href="workshops.php">Workshops</a><br>
+        <a href="addworkshop.php">add workshop</a><br>
+        <a href="editworkshop.php">edit workshop</a><br>
+    </table>
 
 
 

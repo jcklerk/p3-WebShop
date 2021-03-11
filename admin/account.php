@@ -64,18 +64,8 @@ require "../include/nav.php";
 
     <nav>
 
-        <table style="">
-            <table style="">
-                <a href=""></a><br>
-                <a href=""></a><br>
-                <a href=""></a><br>
-            </table>
-            <table style="">
-                <a href=""></a><br>
-                <a href=""></a><br>
-                <a href=""></a><br>
-            </table>
-            <div class="zijkant">
+
+            <div class="zijkant" style="margin-top: 150px">
             menu
             <hr style="background-color: red; height: 10px">
             <a href="products.php">Orders</a><br>

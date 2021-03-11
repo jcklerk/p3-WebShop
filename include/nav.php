@@ -28,7 +28,10 @@ require __DIR__ . '/config.php';
                                     </a>
                                     <ul class="dropdown-menu bc-gray-black" aria-labelledby="navbarDropdownMenuLink">
                                       <?php foreach ($arraylang as $forlang): ?>
-                                        <li><img style="height: 20px;" src="<?php echo $forlang['flag']; ?>"><a class="dropdown-item c-yellow" href="<?php echo $cur_url."?lang=".$forlang["taal_id"];?>"><?php echo $forlang["taal_naam"];?></a></li>
+                                        <form method="post" id="<?php echo $forlang["taal_id"];?>">
+                                          <input type="text" name="lang" value="<?php echo $forlang["taal_id"];?>" hidden>
+                                        </form>
+                                        <li><img style="height: 20px;" src="<?php echo $forlang['flag']; ?>"><a class="dropdown-item c-yellow" onclick="document.getElementById(<?php echo $forlang['taal_id'];?>).submit();"><?php echo $forlang["taal_naam"];?></a></li>
                                       <?php endforeach; ?>
                     </ul>
                 </li>

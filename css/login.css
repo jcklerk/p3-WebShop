@@ -15,15 +15,16 @@ body {
     /*justify-content: center;*/
     height: auto;
     background: #1A2226;
-    text-align: center;
+    text-align: left;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .login-key {
     height: 100px;
-    font-size: 80px;
+    font-size: 20px;
     line-height: 100px;
-    background: -webkit-linear-gradient(#27EF9F, #0DB8DE);
+    /*background: -webkit-linear-gradient(#27EF9F, #0DB8DE);*/
+    background: #B53333;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }

@@ -19,10 +19,10 @@ if (empty($_SESSION["score"])){
     $_SESSION["score"] = 0;
 }
 ?>
-
+    <link rel="stylesheet" href="../css/admin.css">
     <center>
 
-        <h1 style="margin-top: 100px">Stephan is de beste</h1>
+        <h1 style="margin-top: 100px">Editen van de workshop</h1>
 
         <div>
             <?php
@@ -34,7 +34,7 @@ if (empty($_SESSION["score"])){
                     <input type="text"      name="edit_wimg"            value="<?php echo $links[$i]['workshop_img']; ?>">
                     <input type="text"      name="edit_video"           value="<?php echo $links[$i]['video']; ?>">
                     <input type="text"      name="edit_img"             value="<?php echo $links[$i]['img']; ?>">
-                    <input type="submit"    name="edit"                 value="edit">
+                    <input type="submit"    name="edit"                 value="edit" style="background: lightslategray; border-color: transparent">
                 </form>
                 <?php
             }

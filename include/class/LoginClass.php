@@ -26,7 +26,11 @@ class LoginClass
       if (password_verify($this->password, $arraylogin['password'])) {
         $_SESSION['user_id'] = $arraylogin['user_id'];
         $_SESSION['username'] = $arraylogin['username'];
-        echo '<script type="text/javascript"> window.location.href = "'.$url.'account.php"</script>';
+        if (isset($_SESSION['redirect_user'])) {
+          echo '<script type="text/javascript"> window.location.href = "'.$url.$_SESSION['redirect_user'].'"</script>';
+        } else{
+          echo '<script type="text/javascript"> window.location.href = "'.$url.'account.php"</script>';
+        }
       } else {
         $error = "Wachtwoord niet Correct!";
       }

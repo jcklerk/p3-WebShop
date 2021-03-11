@@ -27,7 +27,9 @@ class LoginClass
         $_SESSION['user_id'] = $arraylogin['user_id'];
         $_SESSION['username'] = $arraylogin['username'];
         if (isset($_SESSION['redirect_user'])) {
-          echo '<script type="text/javascript"> window.location.href = "'.$url.$_SESSION['redirect_user'].'"</script>';
+          $redirect = $_SESSION['redirect_user'];
+          unset($_SESSION['redirect_user']);
+          echo '<script type="text/javascript"> window.location.href = "'.$url.$redirect.'"</script>';
         } else{
           echo '<script type="text/javascript"> window.location.href = "'.$url.'account.php"</script>';
         }

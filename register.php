@@ -10,20 +10,18 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['voor
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link rel="stylesheet" href="css/register.css">
-<link rel="stylesheet" href="css/login.css">
+<!--<link rel="stylesheet" href="css/login.css">-->
 <!-- Include the above in your HEAD tag--->
 </head>
 <body>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-<div class="container-fluid">
+<div class="col-lg-6 col-md-8 login-box">
 	 <form action="" method="post" class="register-form">
       <div class="row">
            <div class="col-md-4 col-sm-4 col-lg-4">
-              <label for="username">USERNAME</label>
-               <input name="username" class="col-lg-6 login-btm login-button-twee" type="text" required>
+              <label for="username">USERNAME</label><br>
+               <input name="username" class="form-control" type="text" required>
            </div>
-      </div>
-      <div class="row">
       </div>
       <div class="row">
            <div class="col-md-4 col-sm-4 col-lg-4">
@@ -41,6 +39,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['voor
            <div class="col-md-4 col-sm-4 col-lg-4">
               <label for="tussenvoegsel">TUSSENVOEGSEL</label>
                <input name="tussenvoegsel" class="form-control" type="text">
+           </div>
       </div>
       <div class="row">
            <div class="col-md-4 col-sm-4 col-lg-4">
@@ -73,15 +72,16 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['voor
            </div>
       </div>
       <div class="row">
-           <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+           <div class="btn btn-outline-primary">
            <button class="btn btn-default regbutton">Register</button>
           </div>
-          <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+          <div class="btn btn-outline-primary">
            <a href="login.php" class="btn btn-default logbutton">Login</a>
           </div>
       </div>
     </form>
 </div>
+
 </body>
 <?php
 

@@ -36,11 +36,11 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['voor
                         </div>
                         <div class="from-group">
                             <label class="form-control-label">VOORNAAM</label>
-                            <input name="voornaam" class="form-control" type="text">
+                            <input name="voornaam" class="form-control" type="text" required>
                         </div>
                         <div class="from-group">
                             <label class="form-control-label">TUSSENVOEGSEL</label>
-                            <input name="tussenvoegsel" class="form-control" type="text" required>
+                            <input name="tussenvoegsel" class="form-control" type="text" >
                         </div>
                         <div class="from-group">
                             <label class="form-control-label">ACHTERNAAM</label>

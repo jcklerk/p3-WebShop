@@ -3,7 +3,12 @@ require "../include/nav.php";
 require '../include/class/AdminWorkshopClass.php';
 
 if (isset($_POST['workshop_title']) && isset($_POST['workshop_img']) && isset($_POST['video']) && isset($_POST['img'])) {
-    echo (new AdminWorkshopClass($_POST['workshop_title'], $_POST['workshop_img'], $_POST['video'], $_POST['img']))->WorkshopInsert();
+    $lang_post = array();
+    foreach ($arraylang as $forlang) {
+      $lang_post[$forlang['taal_id']] = array($_POST[$forlang['taal_id'].':ingredienten'], $_POST[$forlang['taal_id'].':benodigdheden'], $_POST[$forlang['taal_id'].':maken']);
+    }
+    //echo (new AdminWorkshopClass($_POST['workshop_title'], $_POST['workshop_img'], $_POST['video'], $_POST['img']))->WorkshopInsert();
+    var_dump($lang_post);
 }
 
 ?>
@@ -37,6 +42,29 @@ if (isset($_POST['workshop_title']) && isset($_POST['workshop_img']) && isset($_
                 <input name="img" class="form-control" autocomplete="off" type="text" required>
             </div>
         </div>
+        <?php foreach ($arraylang as $forlang): ?>
+          <div class="row">
+                  <label for="img">TAAL: <?php echo $forlang["taal_naam"]?></label>
+          </div>
+          <div class="row">
+              <div class="col-md-4 col-sm-4 col-lg-4">
+                  <label for="img">ingredienten</label>
+                  <textarea required rows="4" cols="50" name="<?php echo $forlang['taal_id'];?>:ingredienten" class="form-control"></textarea>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-4 col-sm-4 col-lg-4">
+                  <label for="img">benodigdheden</label>
+                  <textarea required rows="4" cols="50" name="<?php echo $forlang['taal_id'];?>:benodigdheden" class="form-control"></textarea>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-4 col-sm-4 col-lg-4">
+                  <label for="img">maken</label>
+                  <textarea required rows="4" cols="50" name="<?php echo $forlang['taal_id'];?>:maken" class="form-control"></textarea>
+              </div>
+          </div>
+        <?php endforeach; ?>
         <input type="submit" name="add" value="add">
     </form>
 </div><br><br>

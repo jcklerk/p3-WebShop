@@ -61,7 +61,6 @@ require "../include/nav.php";
 
 ?>
 <section id="page">
-    <header></header>
 
     <nav>
 
@@ -79,9 +78,9 @@ require "../include/nav.php";
             <div class="zijkant">
             menu
             <hr style="background-color: red; height: 10px">
-            <a href="products.php">Producten</a><br>
-            <a href="addproducts.php">add producten</a><br>
-            <a href="editproducts.php">edit Producten</a><br>
+            <a href="products.php">Orders</a><br>
+            <a href="addproducts.php">users</a><br>
+            <a href="editproducts.php">logout</a><br>
         </table>
         <table style="">
             <br>
@@ -152,7 +151,6 @@ require "../include/nav.php";
 
                     </div>
                 </div></main>
-    <footer>lelijke footer</footer>
 </section>
 
 <?php

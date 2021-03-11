@@ -1,5 +1,7 @@
 <?php
 session_start();
+require "../include/nav.php";
+
 require ("../include/productconfig.php");
 if (!empty($_POST['edit_img']) && !empty($_POST['edit_id']) && !empty($_POST['edit_naam']) && !empty($_POST['edit_prijs']) && !empty($_POST['edit_btw']) && !empty($_POST['edit_categorie'])) {
     $woordenedit = $pdo->prepare('UPDATE `product` SET `img` = :img, `naam` = :naam, `prijs` = :prijs, `btw` = :btw, `categorie` = :categorie WHERE `product`.`product_nr` = :product_nr ');
@@ -21,7 +23,7 @@ if (empty($_SESSION["score"])){
 
 <center>
 
-    <h1>Stephan is de beste</h1>
+    <h1 style="margin-top: 100px">Stephan is de beste</h1>
 
     <div>
         <?php
@@ -41,3 +43,7 @@ if (empty($_SESSION["score"])){
         ?>
     </div>
 </center>
+
+<?php
+require "../include/footer.php";
+?>

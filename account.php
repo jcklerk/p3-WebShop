@@ -17,7 +17,7 @@ require "include/class/FactuurClass.php";
         <th scope="col" >Oder nummer</th>
         <th scope="col">product</th>
         <th scope="col">datum</th>
-        <th scope="col">Status</th>
+        <th scope="col">aantal</th>
         <th scope="col">totaal</th>
     </tr>
 

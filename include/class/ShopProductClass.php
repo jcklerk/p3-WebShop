@@ -19,15 +19,23 @@ class ShopProductClass
         $allproduct = $getproducts->fetchAll();
         var_dump($allproduct);
         foreach ($allproduct as $x) { ?>
-            <div class="col">
-                <div class="card h-100 bc-gray-black">
-                    <img src="<?php echo $x['img']?>" class="card-img-top mx-auto" alt="..." style="height: 80%; width: 80%;">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $x['naam']; ?> </h5>
-                        <p class="card-text"><?php echo $x['categorie']; ?></p>
-                        <p class="card-text">€<?php echo $x['prijs']; ?></p>
-                        <p class="card-text"><form method="post"><button name="product_nr" value="<?php echo $x['product_nr'];?>">betalen</button></form></p>
-                    </div>
+            <div class="d-flex bd-highlight mb-3">
+                <div class="p-2 bd-highlight"><img src="<?php echo $x['img']?>"></div>
+                <div class="p-2 bd-highlight c-red">
+                    <h2><?php echo $x['naam']?></h2>
+                    <br>
+                    <p><?php echo $x['categorie']; ?></p>
+                </div>
+                <div class="ms-auto p-2 bd-highlight c-red" style="margin-right: 7%;">
+                    <p>€<?php echo $x['prijs'];?></p>
+                    <br>
+                    <p class="card-text c-red">
+                        <form method="post">
+                            <button type="button" class="btn btn-primary btn-lg" name="product_nr" value="<?php echo $x['product_nr'];?>">
+                                betalen
+                            </button>
+                        </form>
+                    </p>
                 </div>
             </div>
         <?php }

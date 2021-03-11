@@ -56,7 +56,7 @@ if (isset($_POST['workshop_title']) && isset($_POST['workshop_img']) && isset($_
         <?php endforeach; ?>
         </div>
         <br>
-        <input type="submit" name="add" value="add">
+        <input type="submit" class="btn btn-outline-primary" name="add" value="add">
     </form>
 </div><br><br>
 </div>

@@ -35,7 +35,8 @@ class ShopProductClass
                 if (isset($_SESSION['cart'][$_POST['product_nr']])){
                     $a = $_SESSION['cart'][$_POST['product_nr']]['Aantal'];
                     $b = $a +1;
-                    $_SESSION['cart'] = array_replace($_SESSION['cart'][$_POST['product_nr']]['Aantal'] = $b);
+                    $c = array($_POST['product_nr']=>array("Product"=>$_POST['product_nr'],"Aantal"=>$b));
+                    $_SESSION['cart'] = array_replace($_SESSION['cart'],$c);
 
                 }else{
                 $_SESSION['cart'][$_POST['product_nr']]['Product'] = $_POST['product_nr'];

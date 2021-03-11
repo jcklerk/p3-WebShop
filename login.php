@@ -8,6 +8,7 @@ require __DIR__ . '/include/login.php';
             <div class="col-lg-6 col-md-8 login-box">
                 <div class="col-lg-12 login-key">
                     <i class="fa fa-key" aria-hidden="true"></i>
+                    <a href='https://localhost/Webshop/p3-WebShop/'>Back</a>
                 </div>
                 <div class="col-lg-12 login-title">
                     Login

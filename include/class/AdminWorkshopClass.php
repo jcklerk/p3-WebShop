@@ -11,9 +11,12 @@ class AdminClass
   private $workshop_img;
   private $video;
   private $img;
+  private $ingredienten;
+  private $benodigdheden;
+  private $maken;
 
 
-  function __construct($workshop_title, $workshop_img, $video, $img)
+  function __construct($workshop_title, $workshop_img, $video, $img, $ingredienten, $benodigdheden, $maken)
   {
     $this->dbClass = new DBClass();
 
@@ -21,18 +24,23 @@ class AdminClass
     $this->workshop_img = $workshop_img;
     $this->video = $video;
     $this->img = $img;
+    $this->ingredienten = $ingredienten;
+    $this->benodigdheden = $benodigdheden;
+    $this->maken = $maken;
   }
 
 
   public function WorkshopInsert()
   {
     $pdo = $this->dbClass->makeConnection();
-    $workshop = $pdo->prepare("insert into workshop (workshop_title, workshop_img, video, img) value (:workshop_title, :workshop_img, :video, :workshop_img2)");
-    $workshop->bindParam(':naam', $this->naam);
+    $workshop = $pdo->prepare("INSERT INTO workshop (workshop_title, workshop_img, video, img) VALUE (:workshop_title, :workshop_img, :video, :img), INSERT INTO taal_workshop(ingredienten, benodigdheden, maken) VALUE (:ingredienten,:benodigdheden, :maken)");
+    $workshop->bindParam(':workshop_title', $this->workshop_title);
+    $workshop->bindParam(':workshop_img', $this->workshop_img);
+    $workshop->bindParam(':video', $this->video);
     $workshop->bindParam(':img', $this->img);
-    $workshop->bindParam(':prijs', $this->prijs);
-    $workshop->bindParam(':btw', $this->btw);
-    $workshop->bindParam(':categorie', $this->categorie);
+    $workshop->bindParam(':ingredienten', $this->ingredienten);
+    $workshop->bindParam(':benodigdheden', $this->benodigdheden);
+    $workshop->bindParam(':maken', $this->maken);
     $workshop->execute();
     return;
   }

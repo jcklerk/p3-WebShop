@@ -29,7 +29,7 @@ class AdminProductClass
   public function ProductInsert()
   {
     $pdo = $this->dbClass->makeConnection();
-    $product = $pdo->prepare("insert into product (naam, img, prijs, btw, categorie) value (:naam, :img, :prijs, :btw, :categorie)");
+    $product = $pdo->prepare("INSERT INTO product (naam, img, prijs, btw, categorie) VALUE (:naam, :img, :prijs, :btw, :categorie)");
     $product->bindParam(':naam', $this->naam);
     $product->bindParam(':img', $this->img);
     $product->bindParam(':prijs', $this->prijs);

@@ -22,6 +22,7 @@
         background-color: black;
         grid-area: nav;
         color: pink;
+
     }
 
     main {
@@ -36,6 +37,18 @@
         grid-area: foot;
         color: pink;
     }
+    hr {
+        height: 1px;
+        color: blue;
+        background-color: red;
+        border: none;
+    }
+.zijkant {
+    border: 5px solid red;
+}
+a {
+    text-decoration: none;
+}
 </style>
 <?php
 
@@ -49,6 +62,7 @@ require "../include/nav.php";
 ?>
 <section id="page">
     <header></header>
+
     <nav>
 
         <table style="">
@@ -57,8 +71,14 @@ require "../include/nav.php";
                 <a href=""></a><br>
                 <a href=""></a><br>
             </table>
-            menu<br>
-            ------------------<br>
+            <table style="">
+                <a href=""></a><br>
+                <a href=""></a><br>
+                <a href=""></a><br>
+            </table>
+            <div class="zijkant">
+            menu
+            <hr style="background-color: red; height: 10px">
             <a href="products.php">Producten</a><br>
             <a href="addproducts.php">add producten</a><br>
             <a href="editproducts.php">edit Producten</a><br>
@@ -66,7 +86,7 @@ require "../include/nav.php";
         <table style="">
             <br>
             Products<br>
-            ------------------<br>
+            <hr style="background-color: red; height: 10px">
             <a href="products.php">Producten</a><br>
             <a href="addproducts.php">add producten</a><br>
             <a href="editproducts.php">edit Producten</a><br>
@@ -75,18 +95,15 @@ require "../include/nav.php";
         <table style="">
             <br>
             workshops<br>
-            ------------------<br>
+            <hr style="background-color: red; height: 10px">
             <a href="workshops.php">Workshops</a><br>
             <a href="addworkshop.php">add workshop</a><br>
             <a href="editworkshop.php">edit workshop</a><br>
-        </table></nav>
+        </table></nav></div>
     <main>
-        <table style="">
-            <a href=""></a><br>
-            <a href=""></a><br>
-            <a href=""></a><br>
-        </table>
-        <form action="" method="post" class="register-form">
+
+
+        <form action="" method="post" style="margin-top: 200px; margin-left: 250px" class="register-form">
 
             <div class="row" style="--bs-gutter-x: 0 rem !important;">
                 <div class="col-md-4 col-sm-4 col-lg-4">
@@ -114,7 +131,25 @@ require "../include/nav.php";
                 <div class="row" style="--bs-gutter-x: 0 rem !important;">
                     <div class="col-md-4 col-sm-4 col-lg-4">
                         <label for="categorie">CATEGORIE</label>
-                        <input name="categorie" class="form-control" type="text" autocomplete="off" required>
+                        <!DOCTYPE html>
+                        <html>
+                        <body>
+
+
+                        <form action="/action_page.php">
+
+                            <select id="categorie" name="categorie" required>
+                                <option value="0">chinese</option>
+                                <option value="1">koreans</option>
+                                <option value="2">japans</option>
+
+                            </select>
+                            <input type="submit">
+                        </form>
+
+                        </body>
+                        </html>
+
                     </div>
                 </div></main>
     <footer>lelijke footer</footer>

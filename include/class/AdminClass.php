@@ -26,13 +26,26 @@ class AdminClass
   public function ProductInsert()
   {
     $pdo = $this->dbClass->makeConnection();
-    $login = $pdo->prepare("insert into product (naam, img, prijs, btw, categorie) value (:naam, :img, :prijs, :btw, :categorie)");
-    $login->bindParam(':naam', $this->naam);
-    $login->bindParam(':img', $this->img);
-    $login->bindParam(':prijs', $this->prijs);
-    $login->bindParam(':btw', $this->btw);
-    $login->bindParam(':categorie', $this->categorie);
-    $login->execute();
+    $product = $pdo->prepare("insert into product (naam, img, prijs, btw, categorie) value (:naam, :img, :prijs, :btw, :categorie)");
+    $product->bindParam(':naam', $this->naam);
+    $product->bindParam(':img', $this->img);
+    $product->bindParam(':prijs', $this->prijs);
+    $product->bindParam(':btw', $this->btw);
+    $product->bindParam(':categorie', $this->categorie);
+    $product->execute();
+    return;
+  }
+
+  public function WorkshopInsert()
+  {
+    $pdo = $this->dbClass->makeConnection();
+    $workshop = $pdo->prepare("insert into taal_workshop (naam, img, prijs, btw, categorie) value (:naam, :img, :prijs, :btw, :categorie)");
+    $workshop->bindParam(':naam', $this->naam);
+    $workshop->bindParam(':img', $this->img);
+    $workshop->bindParam(':prijs', $this->prijs);
+    $workshop->bindParam(':btw', $this->btw);
+    $workshop->bindParam(':categorie', $this->categorie);
+    $workshop->execute();
     return;
   }
 }

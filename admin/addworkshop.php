@@ -15,59 +15,51 @@ if (isset($_POST['workshop_title']) && isset($_POST['workshop_img']) && isset($_
 <br><br><br><br><br>
 <body style="text-align: center">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../css/admin.css">
 <div class="container-fluid">
-    <form action="" method="post" style="margin-top: 200px; margin-left: 40%;="register-form">
-    <link rel="stylesheet" href="../css/admin.css">
-        <div class="row">
-            <div class="col-md-4 col-sm-4 col-lg-4">
+    <form action="" method="post">
+    <div class="container">
+      <div class="row row-cols-2">
+        <div class="col">
                 <label for="workshop_title">NAAM</label>
                 <input name="workshop_title" class="form-control" type="text" autocomplete="off" required>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 col-sm-4 col-lg-4">
+          <div class="col">
                 <label for="workshop_img">IMG</label>
                 <input name="workshop_img" class="form-control" type="text" autocomplete="off" required>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 col-sm-4 col-lg-4">
+          <div class="col">
                 <label for="video">VIDEO</label>
                 <input name="video" class="form-control" type="text" autocomplete="off" required>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 col-sm-4 col-lg-4">
+          <div class="col">
                 <label for="img">IMG 2</label>
                 <input name="img" class="form-control" autocomplete="off" type="text" required>
-            </div>
-        </div>
-        <?php foreach ($arraylang as $forlang): ?>
-          <div class="row">
-                  <label for="img">TAAL: <?php echo $forlang["taal_naam"]?></label>
           </div>
-          <div class="row">
-              <div class="col-md-4 col-sm-4 col-lg-4">
+        <?php foreach ($arraylang as $forlang): ?>
+              <div class="col">
+              <div class="">
+                  <label for="img">TAAL: <?php echo $forlang["taal_naam"]?></label>
+                  <br>
                   <label for="img">ingredienten</label>
                   <textarea required rows="4" cols="50" name="<?php echo $forlang['taal_id'];?>:ingredienten" class="form-control"></textarea>
               </div>
-          </div>
-          <div class="row">
-              <div class="col-md-4 col-sm-4 col-lg-4">
+              <div class="">
                   <label for="img">benodigdheden</label>
                   <textarea required rows="4" cols="50" name="<?php echo $forlang['taal_id'];?>:benodigdheden" class="form-control"></textarea>
               </div>
-          </div>
-          <div class="row">
-              <div class="col-md-4 col-sm-4 col-lg-4">
+              <div class="">
                   <label for="img">maken</label>
                   <textarea required rows="4" cols="50" name="<?php echo $forlang['taal_id'];?>:maken" class="form-control"></textarea>
               </div>
-          </div>
+            </div>
         <?php endforeach; ?>
+        </div>
+        <br>
         <input type="submit" name="add" value="add">
     </form>
 </div><br><br>
+</div>
 </body>
 
 <?php

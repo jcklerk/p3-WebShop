@@ -51,7 +51,7 @@ class RegisterClass
           $q->execute();
           $getuser_id = $pdo->prepare("SELECT LAST_INSERT_ID();");
           $getuser_id->execute();
-          $newuser_id = $getgetuser_id->fetch();
+          $newuser_id = $getuser_id->fetch();
           if (isset($newuser_id['0'])) {
             header('Location: '.$_SESSION['url'].'login.php');
           }else {

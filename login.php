@@ -8,7 +8,10 @@ require __DIR__ . '/include/login.php';
             <div class="col-lg-6 col-md-8 login-box">
                 <div class="col-lg-12 login-key">
                     <i class="fa fa-key" aria-hidden="true"></i>
-                    <a href='https://localhost/Webshop/p3-WebShop/' style="text-decoration: none;">Back</a>
+                    <?php if (!isset($_SESSION['redirect_user'])): ?>
+                      <a href='<?php echo $url;?>' style="text-decoration: none;">Back</a>
+                    <?php endif; ?>
+
                 </div>
                 <div class="col-lg-12 login-title">
                     Login
@@ -30,7 +33,7 @@ require __DIR__ . '/include/login.php';
                                     <?php echo $error; ?>
                                 </div>
                                 <div class="col-lg-6 login-btm login-button-twee">
-                                    <a href="<?php echo $url;?>/register.php" class="btn btn-outline-primary">CREATE NEW USER</a>
+                                    <a href="<?php echo $url;?>register.php" class="btn btn-outline-primary">CREATE NEW USER</a>
                                 </div>
                                 <div class="col-lg-6 login-btm login-button">
                                     <input type="submit" class="btn btn-outline-primary" value="LOGIN" name="LOGIN">

@@ -11,7 +11,7 @@ if (isset($_POST['naam']) && isset($_POST['img']) && isset($_POST['prijs']) && i
 <body style="text-align: center">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <div class="container-fluid">
-    <form action="" method="post" class="register-form">
+    <form action="" method="post" style="margin-top: 200px; margin-left: 40%" class="register-form">
 
         <div class="row">
             <div class="col-md-4 col-sm-4 col-lg-4">
@@ -37,13 +37,18 @@ if (isset($_POST['naam']) && isset($_POST['img']) && isset($_POST['prijs']) && i
                 <input name="btw" class="form-control" autocomplete="off" type="text" required>
             </div>
         </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-4 col-lg-4">
-                    <label for="categorie">CATEGORIE</label>
-                    <input name="categorie" class="form-control" type="text" autocomplete="off" required>
-                </div>
-            </div>
-        <input type="submit" name="add" value="add">
+        <div class="col-md-4 col-sm-4 col-lg-4">
+            <label for="btw">Categorie</label>
+      <br>  <select id="categorie" name="categorie" required>
+            <option value="0">chinese</option>
+            <option value="1">koreans</option>
+            <option value="2">japans</option>
+
+        </select>
+        </div>
+        <div class="col-md-4 col-sm-4 col-lg-4">
+       <br></brf> <input type="submit" name="add" value="add">
+        </div>
     </form>
 </div><br><br>
 </body>

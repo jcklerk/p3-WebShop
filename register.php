@@ -12,13 +12,10 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['voor
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-<div class="container">
-    <div class="row">
+<div class="container" style="height: 100%">
+    <div class="row mx-auto align-self-center" style="height: 100%">
         <div class="col-lg-3 col-md-2"></div>
         <div class="col-lg-6 col-md-8 login-box">
-            <div class="col-lg-12 login-key">
-                <i class="fa fa-key" aria-hidden="true"></i>
-            </div>
             <div class="col-lg-12 login-title">
                 New user
             </div>

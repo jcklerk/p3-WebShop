@@ -114,11 +114,12 @@ label {
 .login-button-twee {
     padding-right: 0px;
     margin-bottom: 25px;
+    width: 480px;
 }
 .login-button {
     padding-right: 0px;
-    float: right;
     margin-bottom: 25px;
+    width: 480px;
 }
 .login-text {
     text-align: left;

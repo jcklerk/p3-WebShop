@@ -53,5 +53,10 @@ class RegisterClass
           return;
       }
     }
+    else {
+      ?> <div class="text-danger fs-1">
+        <p>Username bestaat al! </p>
+      </div> <?php
+    }
   }
 }

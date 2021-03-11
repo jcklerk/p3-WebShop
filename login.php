@@ -24,7 +24,6 @@ require __DIR__ . '/include/login.php';
                                 <label class="form-control-label">PASSWORD</label>
                                 <input type="password" name="password" class="form-control" required>
                             </div>
-
                             <div class="col-lg-12 loginbttm">
                                 <div class="col-lg-6 login-btm login-text">
                                     <?php echo $error; ?>

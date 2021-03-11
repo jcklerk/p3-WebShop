@@ -3,7 +3,7 @@ require "../include/nav.php";
 require '../include/class/AdminWorkshopClass.php';
 
 if (isset($_POST['workshop_title']) && isset($_POST['workshop_img']) && isset($_POST['video']) && isset($_POST['img'])) {
-    echo (new AdminProductClass($_POST['workshop_title'], $_POST['workshop_img'], $_POST['video'], $_POST['img']))->WorkshopInsert();
+    echo (new AdminWorkshopClass($_POST['workshop_title'], $_POST['workshop_img'], $_POST['video'], $_POST['img']))->WorkshopInsert();
 }
 
 ?>

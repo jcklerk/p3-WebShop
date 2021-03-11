@@ -11,10 +11,12 @@ class AdminClass
   private $workshop_img;
   private $video;
   private $img;
+  private $ingredienten;
+  private $benodigdheden;
+  private $maken;
 
 
-
-  function __construct($workshop_title, $workshop_img, $video, $img)
+  function __construct($workshop_title, $workshop_img, $video, $img, $ingredienten, $benodigdheden, $maken)
   {
     $this->dbClass = new DBClass();
 
@@ -22,6 +24,9 @@ class AdminClass
     $this->workshop_img = $workshop_img;
     $this->video = $video;
     $this->img = $img;
+    $this->ingredienten = $ingredienten;
+    $this->benodigdheden = $benodigdheden;
+    $this->maken = $maken;
   }
 
 

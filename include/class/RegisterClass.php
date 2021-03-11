@@ -49,7 +49,16 @@ class RegisterClass
           $q->bindParam(':pc',$this->postcode);
           $q->bindParam(':w', $this->woonplaats);
           $q->execute();
-          //header('Location: http://localhost/gebruiker/');
+          $getuser_id = $pdo->prepare("SELECT LAST_INSERT_ID();");
+          $getuser_id->execute();
+          $newuser_id = $getuser_id->fetch();
+          if (isset($newuser_id['0'])) {
+            header('Location: '.$_SESSION['url'].'login.php');
+          }else {
+            ?> <div class="text-danger fs-1">
+              <p>Account niet aan gemaakt </p>
+            </div> <?php
+          }
           return;
       }
     }

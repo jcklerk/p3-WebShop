@@ -1,6 +1,6 @@
 <?php
 session_start();
-//require "../include/nav.php";
+require "../include/nav.php";
 
 require ("../include/workshopconfig.php");
 if (!empty($_POST['edit_title']) && !empty($_POST['edit_wimg']) && !empty($_POST['edit_video']) && !empty($_POST['edit_img']) && !empty($_POST['edit_id'])) {
@@ -43,5 +43,5 @@ if (empty($_SESSION["score"])){
     </center>
 
 <?php
-//require "../include/footer.php";
+require "../include/footer.php";
 ?>

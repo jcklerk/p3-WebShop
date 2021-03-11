@@ -1,6 +1,6 @@
 <?php
 session_start();
-//require "../include/nav.php";
+require "../include/nav.php";
 
 require ("../include/productconfig.php");
 if (!empty($_POST['edit_img']) && !empty($_POST['edit_nr']) && !empty($_POST['edit_naam']) && !empty($_POST['edit_prijs']) && !empty($_POST['edit_btw']) && !empty($_POST['edit_categorie'])) {

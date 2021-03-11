@@ -13,8 +13,8 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['voor
 </head>
 <body>
 <div class="container" style="height: 100%">
-    <div class="row mx-auto align-self-center" style="height: 100%; text-align: center" >
-        <div class="col-lg-6 col-md-8 login-box">
+    <div class="row mx-auto justify-content-center" >
+        <div class="col-lg-6 login-box mt-3" >
             <div class="col-lg-12 login-key">
                 <i class="fa fa-key" aria-hidden="true"></i>
                 <a href='https://localhost/Webshop/p3-WebShop/' style="text-decoration: none;">Back</a>

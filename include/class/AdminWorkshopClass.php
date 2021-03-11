@@ -33,16 +33,12 @@ class AdminClass
   public function WorkshopInsert()
   {
     $pdo = $this->dbClass->makeConnection();
-    $workshop = $pdo->prepare("INSERT INTO workshop (workshop_title, workshop_img, video, img) VALUE (:workshop_title, :workshop_img, :video, :img), INSERT INTO taal_workshop(ingredienten, benodigdheden, maken) VALUE (:ingredienten,:benodigdheden, :maken)");
+    $workshop = $pdo->prepare("INSERT INTO workshop (workshop_title, workshop_img, video, img) VALUE (:workshop_title, :workshop_img, :video, :img)");
     $workshop->bindParam(':workshop_title', $this->workshop_title);
     $workshop->bindParam(':workshop_img', $this->workshop_img);
     $workshop->bindParam(':video', $this->video);
     $workshop->bindParam(':img', $this->img);
-    $workshop->bindParam(':ingredienten', $this->ingredienten);
-    $workshop->bindParam(':benodigdheden', $this->benodigdheden);
-    $workshop->bindParam(':maken', $this->maken);
     $workshop->execute();
-    return;
   }
 }
 ?>

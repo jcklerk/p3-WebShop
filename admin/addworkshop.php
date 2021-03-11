@@ -1,9 +1,9 @@
 <?php
 require "../include/nav.php";
-require '../include/class/AdminProductClass.php';
+require '../include/class/AdminWorkshopClass.php';
 
-if (isset($_POST['naam']) && isset($_POST['img']) && isset($_POST['prijs']) && isset($_POST['btw']) && isset($_POST['categorie'])) {
-    echo (new AdminProductClass($_POST['naam'], $_POST['img'], $_POST['prijs'], $_POST['btw'], $_POST['categorie']))->ProductInsert();
+if (isset($_POST['workshop_title']) && isset($_POST['workshop_img']) && isset($_POST['video']) && isset($_POST['img']) && isset($_POST['ingredienten']) && isset($_POST['benodigdheden']) && isset($_POST['maken'])) {
+    echo (new AdminWorkshopClass($_POST['workshop_title'], $_POST['workshop_img'], $_POST['video'], $_POST['img'], $_POST['ingredienten'], $_POST['benodigdheden'], $_POST['maken']))->WebshopInsert();
 }
 
 ?>
@@ -15,32 +15,44 @@ if (isset($_POST['naam']) && isset($_POST['img']) && isset($_POST['prijs']) && i
 
         <div class="row">
             <div class="col-md-4 col-sm-4 col-lg-4">
-                <label for="naam">NAAM</label>
-                <input name="naam" class="form-control" type="text" autocomplete="off" required>
+                <label for="workshop_title">NAAM</label>
+                <input name="workshop_title" class="form-control" type="text" autocomplete="off" required>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4 col-sm-4 col-lg-4">
-                <label for="img">IMG</label>
-                <input name="img" class="form-control" type="text" autocomplete="off" required>
+                <label for="workshop_img">IMG</label>
+                <input name="workshop_img" class="form-control" type="text" autocomplete="off" required>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4 col-sm-4 col-lg-4">
-                <label for="prijs">PRIJS</label>
-                <input name="prijs" class="form-control" type="text" autocomplete="off" required>
+                <label for="video">VIDEO</label>
+                <input name="video" class="form-control" type="text" autocomplete="off" required>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4 col-sm-4 col-lg-4">
-                <label for="btw">BTW</label>
-                <input name="btw" class="form-control" autocomplete="off" type="text" required>
+                <label for="img">IMG 2</label>
+                <input name="img" class="form-control" autocomplete="off" type="text" required>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4 col-sm-4 col-lg-4">
-                <label for="categorie">CATEGORIE</label>
-                <input name="categorie" class="form-control" type="text" autocomplete="off" required>
+                <label for="ingredienten">INGREDIENTEN</label>
+                <input name="ingredienten" class="form-control" type="text" autocomplete="off" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-lg-4">
+                <label for="benodigdheden">BENODIGDHEDEN</label>
+                <input name="benodigdheden" class="form-control" type="text" autocomplete="off" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-lg-4">
+                <label for="maken">MAKEN</label>
+                <input name="maken" class="form-control" type="text" autocomplete="off" required>
             </div>
         </div>
         <input type="submit" name="add" value="add">

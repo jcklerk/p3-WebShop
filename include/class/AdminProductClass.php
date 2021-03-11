@@ -2,10 +2,11 @@
 /**
  *
  */
-class AdminClass
+class AdminProductClass
 {
   private $dbClass;
   private $pdo;
+
   private $naam;
   private $img;
   private $prijs;
@@ -13,9 +14,11 @@ class AdminClass
   private $categorie;
 
 
+
   function __construct($naam, $img, $prijs, $btw, $categorie)
   {
     $this->dbClass = new DBClass();
+
     $this->naam = $naam;
     $this->img = $img;
     $this->prijs = $prijs;
@@ -36,17 +39,6 @@ class AdminClass
     return;
   }
 
-  public function WorkshopInsert()
-  {
-    $pdo = $this->dbClass->makeConnection();
-    $workshop = $pdo->prepare("insert into taal_workshop (naam, img, prijs, btw, categorie) value (:naam, :img, :prijs, :btw, :categorie)");
-    $workshop->bindParam(':naam', $this->naam);
-    $workshop->bindParam(':img', $this->img);
-    $workshop->bindParam(':prijs', $this->prijs);
-    $workshop->bindParam(':btw', $this->btw);
-    $workshop->bindParam(':categorie', $this->categorie);
-    $workshop->execute();
-    return;
-  }
+
 }
 ?>

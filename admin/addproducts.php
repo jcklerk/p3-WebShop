@@ -1,9 +1,9 @@
 <?php
 require "../include/nav.php";
-require '../include/class/AdminClass.php';
+require '../include/class/AdminProductClass.php';
 
 if (isset($_POST['naam']) && isset($_POST['img']) && isset($_POST['prijs']) && isset($_POST['btw']) && isset($_POST['categorie'])) {
-    echo (new AdminClass($_POST['naam'], $_POST['img'], $_POST['prijs'], $_POST['btw'], $_POST['categorie']))->ProductInsert();
+    echo (new AdminProductClass($_POST['naam'], $_POST['img'], $_POST['prijs'], $_POST['btw'], $_POST['categorie']))->ProductInsert();
 }
 ?>
 <br><br><br><br><br>

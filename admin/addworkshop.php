@@ -16,8 +16,8 @@ if (isset($_POST['workshop_title']) && isset($_POST['workshop_img']) && isset($_
 <body style="text-align: center">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <div class="container-fluid">
-    <form action="" method="post" class="register-form">
-
+    <form action="" method="post" style="margin-top: 200px; margin-left: 40%;="register-form">
+    <link rel="stylesheet" href="../css/admin.css">
         <div class="row">
             <div class="col-md-4 col-sm-4 col-lg-4">
                 <label for="workshop_title">NAAM</label>

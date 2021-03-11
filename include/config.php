@@ -31,8 +31,6 @@ if (!isset($_SESSION['lang_id']) || !isset($_SESSION['lang_array']) || empty($_S
     if (isset($_POST['lang']) && $_POST['lang'] == $forlang['taal_id']){
         $_SESSION['lang_array'] =  $forlang['taal_id'] - 1;
         $_SESSION['lang_id'] =  $forlang['taal_id'];
-        $reload_url = str_replace("?lang=".$forlang['taal_id'],"",$cur_url);
-        header('Location: '.$reload_url);
     }
   }
 }

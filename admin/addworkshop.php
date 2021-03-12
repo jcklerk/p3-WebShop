@@ -16,14 +16,13 @@ if (isset($_POST['workshop_title']) && isset($_POST['workshop_img']) && isset($_
 <body style="text-align: center">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="../css/admin.css">
-<<<<<<< HEAD
 <div class="container">
   <div class="row">
     <div class="col-3">
       <table>
         <tr><td>Menu</td></tr>
         <tr><td><hr></td></tr>
-        <tr><td>Orders</td></tr>
+        <tr><td>orders</td></tr>
         <tr><td>Users</td></tr>
         <tr><td><br></td></tr>
         <tr><td><br></td></tr>
@@ -45,24 +44,6 @@ if (isset($_POST['workshop_title']) && isset($_POST['workshop_img']) && isset($_
       <div class="container">
         <form action="" method="post">
         <div class="row row-cols-2">
-=======
-<div class="container-fluid">
-    <form action="" method="post">
-    <div class="container" style="background: #1A2226; color: #ECF0F5; border-radius: 10px">
-      <div class="row row-cols-2">
-        <div class="col">
-                <label for="workshop_title">Naam</label>
-                <input name="workshop_title" class="form-control" type="text" autocomplete="off" required>
-            </div>
-          <div class="col">
-                <label for="workshop_img">IMG</label>
-                <input name="workshop_img" class="form-control" type="text" autocomplete="off" required>
-            </div>
-          <div class="col">
-                <label for="video">Video</label>
-                <input name="video" class="form-control" type="text" autocomplete="off" required>
-            </div>
->>>>>>> 3f4ae4174867ef8f9a85092688617876394abf9e
           <div class="col">
                   <label for="workshop_title">NAAM</label>
                   <input name="workshop_title" class="form-control" type="text" autocomplete="off" required>

@@ -45,7 +45,7 @@ if (isset($_POST['naam']) && isset($_POST['img']) && isset($_POST['prijs']) && i
         </div>
         <div class="col-md-4 col-sm-4 col-lg-4">
             <label for="btw">Categorie</label>
-      <br>  <select id="categorie" name="categorie" style="background: goldenrod" required>
+      <br>  <select id="categorie" name="categorie" style="background: lightslategray; border-color: transparent" required>
             <option value="0">chinese</option>
             <option value="1">koreans</option>
             <option value="2">japans</option>
@@ -53,7 +53,7 @@ if (isset($_POST['naam']) && isset($_POST['img']) && isset($_POST['prijs']) && i
         </select>
         </div>
         <div class="col-md-4 col-sm-4 col-lg-4">
-       <br></brf> <input type="submit" name="add" value="add">
+       <br></brf> <input type="submit" name="add" value="add" style="background: lightslategray; border-color: transparent;">
         </div>
     <?php foreach ($arraylang as $forlang): ?>
         <div class="col">

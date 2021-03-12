@@ -17,7 +17,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['voor
         <div class="col-lg-6 login-box mt-3" >
             <div class="col-lg-12 login-key">
                 <i class="fa fa-key" aria-hidden="true"></i>
-                <a href='https://localhost/Webshop/p3-WebShop/' style="text-decoration: none;">Back</a>
+                <a href='<?php echo $url;?>' style="text-decoration: none;">Back</a>
             </div>
             <div class="col-lg-12 login-title">
 <!--                <div class="col-lg-3 col-md-2"><a href='https://localhost/Webshop/p3-WebShop/' style="text-decoration: none; color: #B53333; font-size: 20px">Back</a></div>-->

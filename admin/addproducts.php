@@ -3,7 +3,12 @@ require "../include/nav.php";
 require '../include/class/AdminProductClass.php';
 
 if (isset($_POST['naam']) && isset($_POST['img']) && isset($_POST['prijs']) && isset($_POST['btw']) && isset($_POST['categorie'])) {
-    echo (new AdminProductClass($_POST['naam'], $_POST['img'], $_POST['prijs'], $_POST['btw'], $_POST['categorie']))->ProductInsert();
+    $lang_post = array();
+    foreach ($arraylang as $forlang) {
+        $lang_post[$forlang['taal_id']] = array('taal_id' => $forlang['taal_id'] ,'beschrijving' => $_POST[$forlang['taal_id'].':beschrijving']);
+    }
+    (new AdminProductClass($_POST['naam'], $_POST['img'], $_POST['prijs'], $_POST['btw'], $_POST['categorie'], $lang_post))->ProductInsert();
+    var_dump($lang_post);
 }
 
 ?>
@@ -40,7 +45,7 @@ if (isset($_POST['naam']) && isset($_POST['img']) && isset($_POST['prijs']) && i
         </div>
         <div class="col-md-4 col-sm-4 col-lg-4">
             <label for="btw">Categorie</label>
-      <br>  <select id="categorie" name="categorie" style="background: goldenrod" required>
+      <br>  <select id="categorie" name="categorie" style="background: lightslategray; border-color: transparent" required>
             <option value="0">chinese</option>
             <option value="1">koreans</option>
             <option value="2">japans</option>
@@ -48,8 +53,18 @@ if (isset($_POST['naam']) && isset($_POST['img']) && isset($_POST['prijs']) && i
         </select>
         </div>
         <div class="col-md-4 col-sm-4 col-lg-4">
-       <br></brf> <input type="submit" name="add" value="add">
+       <br></brf> <input type="submit" name="add" value="add" style="background: lightslategray; border-color: transparent;">
         </div>
+    <?php foreach ($arraylang as $forlang): ?>
+        <div class="col">
+            <div class="">
+                <label for="img">TAAL: <?php echo $forlang["taal_naam"]?></label>
+                <br>
+                <label for="img">beschrijving</label>
+                <textarea required rows="4" cols="50" name="<?php echo $forlang['taal_id'];?>:beschrijving" class="form-control"></textarea>
+            </div>
+        </div>
+    <?php endforeach; ?>
     </form>
 </div><br><br>
 </body>

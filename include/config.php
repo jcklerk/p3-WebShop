@@ -39,6 +39,9 @@ $arraynav = (new LangClass())->LangGetNav();
 //
 
 echo '<html lang="'. $arraylang[$_SESSION['lang_array']]['taal'] .'">';
+echo '<link rel="icon"
+      type="image/png"
+      href="'.$url.'/img/logo.png">';
 
 ?>
 

@@ -18,10 +18,10 @@ if (isset($_POST['workshop_title']) && isset($_POST['workshop_img']) && isset($_
 <link rel="stylesheet" href="../css/admin.css">
 <div class="container-fluid">
     <form action="" method="post">
-    <div class="container">
+    <div class="container" style="background: #1A2226; color: #ECF0F5; border-radius: 10px">
       <div class="row row-cols-2">
         <div class="col">
-                <label for="workshop_title">NAAM</label>
+                <label for="workshop_title">Naam</label>
                 <input name="workshop_title" class="form-control" type="text" autocomplete="off" required>
             </div>
           <div class="col">
@@ -29,7 +29,7 @@ if (isset($_POST['workshop_title']) && isset($_POST['workshop_img']) && isset($_
                 <input name="workshop_img" class="form-control" type="text" autocomplete="off" required>
             </div>
           <div class="col">
-                <label for="video">VIDEO</label>
+                <label for="video">Video</label>
                 <input name="video" class="form-control" type="text" autocomplete="off" required>
             </div>
           <div class="col">

@@ -1,6 +1,9 @@
 body {
-    background: gray;
+    background-image: url("../img/asiandecor.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
     font-family: 'Roboto', sans-serif;
+    color: #ECF0F5;
 }
 
 .login-box {

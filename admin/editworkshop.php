@@ -22,25 +22,54 @@ if (empty($_SESSION["score"])){
     <link rel="stylesheet" href="../css/admin.css">
     <center>
 
-        <h1 style="margin-top: 100px">Editen van de workshop</h1>
-
-        <div>
-            <?php
-            for ($i=0; $i <= $link_count - 1; $i++) { ?>
-
-                <form method="post">
-                    <input type="hidden"    name="edit_id"              value="<?php echo $links[$i]["workshop_id"]?>">
-                    <input type="text"      name="edit_title"           value="<?php echo $links[$i]['workshop_title']; ?>">
-                    <input type="text"      name="edit_wimg"            value="<?php echo $links[$i]['workshop_img']; ?>">
-                    <input type="text"      name="edit_video"           value="<?php echo $links[$i]['video']; ?>">
-                    <input type="text"      name="edit_img"             value="<?php echo $links[$i]['img']; ?>">
-                    <input type="submit"    name="edit"                 value="edit" style="background: lightslategray; border-color: transparent">
-                </form>
-                <?php
-            }
-            ?>
-        </div>
-    </center>
+    <body style="text-align: center">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/admin.css">
+    <div class="container-fluid" style="margin-top: 100px">
+        <form action="" method="post">
+            <div class="container" style="background: #1A2226; color: #ECF0F5; border-radius: 10px">
+                <div class="row row-cols-2">
+                    <div class="col">
+                        <label for="workshop_title">NAAM</label>
+                        <input name="workshop_title" class="form-control" type="text" autocomplete="off" required>
+                    </div>
+                    <div class="col">
+                        <label for="workshop_img">IMG</label>
+                        <input name="workshop_img" class="form-control" type="text" autocomplete="off" required>
+                    </div>
+                    <div class="col">
+                        <label for="video">VIDEO</label>
+                        <input name="video" class="form-control" type="text" autocomplete="off" required>
+                    </div>
+                    <div class="col">
+                        <label for="img">IMG 2</label>
+                        <input name="img" class="form-control" autocomplete="off" type="text" required>
+                    </div>
+                    <?php foreach ($arraylang as $forlang): ?>
+                        <div class="col">
+                            <div class="">
+                                <label for="img">TAAL: <?php echo $forlang["taal_naam"]?></label>
+                                <br>
+                                <label for="img">ingredienten</label>
+                                <textarea required rows="4" cols="50" name="<?php echo $forlang['taal_id'];?>:ingredienten" class="form-control"></textarea>
+                            </div>
+                            <div class="">
+                                <label for="img">benodigdheden</label>
+                                <textarea required rows="4" cols="50" name="<?php echo $forlang['taal_id'];?>:benodigdheden" class="form-control"></textarea>
+                            </div>
+                            <div class="">
+                                <label for="img">maken</label>
+                                <textarea required rows="4" cols="50" name="<?php echo $forlang['taal_id'];?>:maken" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <br>
+                <input type="submit" class="btn btn-outline-primary" name="add" value="add">
+        </form>
+    </div><br><br>
+    </div>
+    </body>
 
 <?php
 require "../include/footer.php";

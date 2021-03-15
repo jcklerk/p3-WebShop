@@ -4,9 +4,13 @@ require __DIR__ . '/config.php';
  ?>
 <nav class="navbar navbar-expand-lg bc-gray-black fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand c-yellow" href="<?php echo $url; ?>">Navbar w/ text</a>
+        <a class="navbar-brand c-yellow" href="<?php echo $url; ?>"> <img style="height: 50px;" src="<?php echo $url; ?>/img/logo.png" alt=""> </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"><svg viewBox="0 0 100 80" width="40" height="40">
+  <rect width="100" height="20"></rect>
+  <rect y="30" width="100" height="20"></rect>
+  <rect y="60" width="100" height="20"></rect>
+</svg></span>
         </button>
         <!--dit is je kut probleem en idk what fix-->
         <div class="collapse navbar-collapse" id="navbarText">

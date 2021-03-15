@@ -11,9 +11,11 @@ class AdminWorkshopClass
   private $workshop_img;
   private $video;
   private $img;
+  private $lang_post;
+  private $workshop_id;
 
 
-  function __construct($workshop_title, $workshop_img, $video, $img)
+  function __construct($workshop_title, $workshop_img, $video, $img, $lang_post)
   {
     $this->dbClass = new DBClass();
 
@@ -21,6 +23,7 @@ class AdminWorkshopClass
     $this->workshop_img = $workshop_img;
     $this->video = $video;
     $this->img = $img;
+    $this->lang_post = $lang_post;
   }
 
 
@@ -33,6 +36,19 @@ class AdminWorkshopClass
     $workshop->bindParam(':video', $this->video);
     $workshop->bindParam(':img', $this->img);
     $workshop->execute();
+    $getworkshop_id = $pdo->prepare("SELECT LAST_INSERT_ID();");
+    $getworkshop_id->execute();
+    $workshop_id = $getworkshop_id->fetch();
+    $this->workshop_id = $workshop_id['0'];
+    foreach ($this->lang_post as $lang_post_array) {
+      $taal = $pdo->prepare("INSERT INTO `taal_workshop` (`workshop_id`, `taal_id`, `ingredienten`, `benodigdheden`, `maken`) VALUES (:workshop_id, :taal_id, :ingredienten, :benodigdheden, :maken);");
+      $taal->bindParam(':workshop_id', $this->workshop_id);
+      $taal->bindParam(':taal_id', $lang_post_array['taal_id']);
+      $taal->bindParam(':ingredienten', $lang_post_array['ingredienten']);
+      $taal->bindParam(':benodigdheden', $lang_post_array['benodigdheden']);
+      $taal->bindParam(':maken', $lang_post_array['maken']);
+      $taal->execute();
+    }
   }
 }
 ?>

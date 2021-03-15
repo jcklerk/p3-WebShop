@@ -92,49 +92,7 @@ require "../include/nav.php";
     <main>
 
 
-        <form action="" method="post" style="margin-top: 200px; margin-left: 250px" class="register-form">
 
-            <div class="row" style="--bs-gutter-x: 0 rem !important;">
-                <div class="col-md-4 col-sm-4 col-lg-4">
-                    <label for="naam">NAAM</label>
-                    <input name="naam" class="form-control" type="text" autocomplete="off" required>
-                </div>
-            </div>
-            <div class="row" style="--bs-gutter-x: 0 rem !important;">
-                <div class="col-md-4 col-sm-4 col-lg-4">
-                    <label for="img">IMG</label>
-                    <input name="img" class="form-control" type="text" autocomplete="off" required>
-                </div>
-            </div>
-            <div class="row" style="--bs-gutter-x: 0 rem !important;">
-                <div class="col-md-4 col-sm-4 col-lg-4">
-                    <label for="prijs">PRIJS</label>
-                    <input name="prijs" class="form-control" type="text" autocomplete="off" required>
-                </div>
-            </div>
-            <div class="row" style="--bs-gutter-x: 0 rem !important;">
-                <div class="col-md-4 col-sm-4 col-lg-4">
-                    <label for="btw">BTW</label>
-                    <input name="btw" class="form-control" autocomplete="off" type="text">
-                </div>
-                <div class="row" style="--bs-gutter-x: 0 rem !important;">
-                    <div class="col-md-4 col-sm-4 col-lg-4">
-                        <label for="categorie">CATEGORIE</label>
-                        <!DOCTYPE html>
-                        <html>
-                        <body>
-
-
-                        <form action="/action_page.php">
-
-                            <select id="categorie" name="categorie" required>
-                                <option value="0">chinese</option>
-                                <option value="1">koreans</option>
-                                <option value="2">japans</option>
-
-                            </select>
-                            <input type="submit">
-                        </form>
 
                         </body>
                         </html>

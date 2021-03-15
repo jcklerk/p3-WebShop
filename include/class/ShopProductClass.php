@@ -17,29 +17,47 @@ class ShopProductClass
         $getproducts->bindParam(':product_nr', $this->product);
         $getproducts->execute();
         $allproduct = $getproducts->fetchAll();
-        var_dump($allproduct);
         foreach ($allproduct as $x) { ?>
-            <div class="d-flex bd-highlight mb-3">
-                <div class="p-2 bd-highlight"><img src="<?php echo $x['img']?>"></div>
-                <div class="p-2 bd-highlight c-red">
-                    <h2><?php echo $x['naam']?></h2>
-                    <br>
-                    <p><?php echo $x['categorie']; ?></p>
-                </div>
-                <div class="ms-auto p-2 bd-highlight c-red" style="margin-right: 7%;">
-                    <p>€<?php echo $x['prijs'];?></p>
-                    <br>
-                    <p class="card-text c-red">
-                        <form method="post">
-                            <button type="button" class="btn btn-primary btn-lg" name="product_nr" value="<?php echo $x['product_nr'];?>">
-                                betalen
-                            </button>
-                        </form>
-                    </p>
+                      <div class="card mb-3" style="margin-top: 4em; z-index: 1;">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="<?php echo $x['img']?>" alt="..." width="100%">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h3 class="card-title c-red"><?php echo $x['naam']?></h3>
+                            <p class="card-text c-red">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text c-red">€<?php echo $x['prijs'];?></p>
+                            <p class="card-text c-red">
+                            <form method="post">
+                                <button type="submit" class="btn btn-primary btn-lg" name="product_nr" value="<?php echo $x['product_nr'];?>">
+                                    betalen
+                                </button>
+                            </form>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         <?php }
             if (isset($_POST['product_nr'])){
+                ?>
+                <div class="toast show top-0 end-0" role="alert" aria-live="assertive" aria-atomic="true" style="z-index: 2!important;">
+                    <div class="toast-header">
+                        <img src="..." class="rounded me-2" alt="...">
+                        <strong class="me-auto">Bootstrap</strong>
+                    </div>
+                    <div class="toast-body">
+                        Hello, world! This is a toast message.
+                    </div>
+                </div>
+                <script rel="script">
+                    var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+                    var toastList = toastElList.map(function (toastEl) {
+                        return new bootstrap.Toast(toastEl, option)
+                    })
+                </script>
+                <?php
                 if (isset($_SESSION['cart'][$_POST['product_nr']])){
                     $a = $_SESSION['cart'][$_POST['product_nr']]['Aantal'];
                     $b = $a +1;

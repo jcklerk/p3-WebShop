@@ -16,8 +16,9 @@ class ShopClass
   }
   public function GetProductCat(){
       $pdo = $this->dbClass->makeConnection();
-      $getproducts = $pdo->prepare("SELECT * FROM `product` WHERE `categorie` = :cat ");
+      $getproducts = $pdo->prepare("SELECT * FROM `product`INNER JOIN `taal_product` ON product.product_nr = taal_product.product_nr WHERE  `taal_id` = :taal_id AND product.categorie = :cat ");
       $getproducts->bindParam(':cat', $this->cat);
+      $getproducts->bindParam(':taal_id', $_SESSION['lang_id']);
       $getproducts->execute();
       $catproduct = $getproducts->fetchAll();
       $arraylang = (new LangClass())->LangGetCart();

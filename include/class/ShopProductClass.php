@@ -18,8 +18,6 @@ class ShopProductClass
         $getproducts->bindParam(':taal_id', $_SESSION['lang_id']);
         $getproducts->execute();
         $allproducts = $getproducts->fetchAll();
-        var_dump($allproducts);
-        echo $this->product;
 
         foreach ($allproducts as $x) { ?>
                       <div class="card mb-3" style="margin-top: 4em; z-index: 1;">

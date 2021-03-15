@@ -19,6 +19,7 @@ class ShopProductClass
         $getproducts->execute();
         $allproducts = $getproducts->fetchAll();
         var_dump($allproducts);
+        echo $this->product;
 
         foreach ($allproducts as $x) { ?>
                       <div class="card mb-3" style="margin-top: 4em; z-index: 1;">

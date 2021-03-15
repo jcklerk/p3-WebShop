@@ -13,11 +13,14 @@ class ShopProductClass
     }
     public function Product(){
         $pdo = $this->dbClass->makeConnection();
-        $getproducts = $pdo->prepare("SELECT * FROM `product` WHERE `product_nr` = :product_nr ");
+        $getproducts = $pdo->prepare("SELECT * FROM `product`INNER JOIN `taal_product` ON product.product_nr = taal_product.product_nr WHERE product.product_nr = :product_nr AND `taal_id` = :taal_id ");
         $getproducts->bindParam(':product_nr', $this->product);
+        $getproducts->bindParam(':taal_id', $_SESSION['lang_id']);
         $getproducts->execute();
-        $allproduct = $getproducts->fetchAll();
-        foreach ($allproduct as $x) { ?>
+        $allproducts = $getproducts->fetchAll();
+        var_dump($allproducts);
+
+        foreach ($allproducts as $x) { ?>
                       <div class="card mb-3" style="margin-top: 4em; z-index: 1;">
                 <div class="row g-0">
                     <div class="col-md-6">
@@ -26,7 +29,7 @@ class ShopProductClass
                     <div class="col-md-6">
                         <div class="card-body">
                             <h3 class="card-title c-red" style="text-decoration:none;"><?php echo $x['naam']?></h3>
-                            <p class="card-text c-red">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text c-red"><?php echo $x['beschrijving'] ?></p>
                             <p class="card-text c-red">€<?php echo $x['prijs'];?></p>
                             <p class="card-text c-red">
                             <form method="post">

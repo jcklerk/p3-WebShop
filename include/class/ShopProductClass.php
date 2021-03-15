@@ -25,7 +25,7 @@ class ShopProductClass
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
-                            <h3 class="card-title c-red"><?php echo $x['naam']?></h3>
+                            <h3 class="card-title c-red" style="text-decoration:none;"><?php echo $x['naam']?></h3>
                             <p class="card-text c-red">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <p class="card-text c-red">€<?php echo $x['prijs'];?></p>
                             <p class="card-text c-red">

@@ -1,51 +1,84 @@
 <?php
-session_start();
 require "../include/nav.php";
+require '../include/class/AdminProductClass.php';
+$empty = '';
 
-require ("../include/productconfig.php");
-if (!empty($_POST['edit_img']) && !empty($_POST['edit_nr']) && !empty($_POST['edit_naam']) && !empty($_POST['edit_prijs']) && !empty($_POST['edit_btw']) && !empty($_POST['edit_categorie'])) {
-    $woordenedit = $pdo->prepare('UPDATE `product` SET `img` = :img, `naam` = :naam, `prijs` = :prijs, `btw` = :btw, `categorie` = :categorie WHERE `product`.`product_nr` = :product_nr ');
-    $woordenedit->bindParam(':img',         $_POST['edit_img']);
-    $woordenedit->bindParam(':naam',        $_POST['edit_naam']);
-    $woordenedit->bindParam(':prijs',       $_POST['edit_prijs']);
-    $woordenedit->bindParam(':btw',         $_POST['edit_btw']);
-    $woordenedit->bindParam(':categorie',   $_POST['edit_categorie']);
-    $woordenedit->bindParam(':product_nr',  $_POST['edit_nr']);
-    $woordenedit->execute();
-     header('Location: ');
+$product_old_data = (new AdminProductClass($empty, $empty, $empty, $empty, $empty))->ProductData();
+ //var_dump($product_old_data);
+
+if (isset($_POST['Webshop_img']) && isset($_POST['Webshop_Cat']) && isset($_POST['Webshop_Prijs']) && isset($_POST['Webshop_BTW'])) {
+    $lang_post = array();
+    foreach ($arraylang as $forlang) {
+      $lang_post[$forlang['taal_id']] = array('taal_id' => $forlang['taal_id'] , 'naam' => $_POST[$forlang['taal_id'].':naam'], 'beschrijving' => $_POST[$forlang['taal_id'].':beschrijving']);
+    }
+    (new AdminProductClass($_POST['Webshop_img'], $_POST['Webshop_Prijs'], $_POST['Webshop_BTW'], $_POST['Webshop_Cat'], $lang_post))->ProductUpdate();
+    //var_dump($_POST);
+    //var_dump($lang_post);
 }
 
-//error_reporting(0);
-if (empty($_SESSION["score"])){
-    $_SESSION["score"] = 0;
-}
 ?>
+<br><br><br><br>
+<br>
+<h1>Edit Product</h1>
+<br>
+<body style="text-align: center">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../css/admin.css">
+<div class="container">
+  <div class="row">
+      <?php
+      require '../include/sidenav.php';
+      ?>
+    <div class="col-9">
+      <div class="container">
+        <form action="" method="post">
+        <div class="row row-cols-2">
+          <div class="col">
+                  <label for="Webshop_img">IMG</label>
+                  <input name="Webshop_img" class="form-control" type="text" autocomplete="off" required value="<?php echo $product_old_data['main']['img'] ?>">
+              </div>
+            <div class="col">
+                  <label for="Webshop_Cat">Categorie</label>
+                  <input name="Webshop_Cat" class="form-control" type="text" autocomplete="off" required value="<?php echo $product_old_data['main']['categorie'] ?>">
+              </div>
+            <div class="col">
+                  <label for="Webshop_Prijs">Prijs</label>
+                  <input name="Webshop_Prijs" class="form-control" type="number" autocomplete="off" required value="<?php echo $product_old_data['main']['prijs'] ?>">
+              </div>
+            <div class="col">
+                  <label for="Webshop_BTW">BTW</label>
+                  <input name="Webshop_BTW" class="form-control" autocomplete="off" type="number" required value="<?php echo $product_old_data['main']['btw'] ?>">
+            </div>
+          <?php
+          $count_array = array();
+          foreach ($arraylang as $forlang){
+            $count = count($count_array);
+            ?>
+                <div class="col">
+                <div class="">
+                    <label for="">TAAL: <?php echo $forlang["taal_naam"]?></label>
+                    <br>
+                    <label for="">Naam</label>
+                    <input required name="<?php echo $forlang['taal_id'];?>:naam" class="form-control" value="<?php echo $product_old_data['lang'][$count]['naam'] ?>"></textarea>
+                </div>
+                <div class="">
+                    <label for="">Beschrijving</label>
+                    <textarea required rows="4" cols="50" name="<?php echo $forlang['taal_id'];?>:beschrijving" class="form-control"><?php echo $product_old_data['lang'][$count]['beschrijving'] ?></textarea>
+                </div>
+              </div>
 
-
-    <div class="container" style="margin-top: 100px">
-        <?php
-        require '../include/sidenav.php';
-        ?>
-    <h1 style="margin-top: 100px">Stephan is de beste</h1>
-
-    <div>
-        <?php
-        for ($i=0; $i <= $link_count - 1; $i++) { ?>
-
-            <form method="post">
-                <input type="hidden"    name="edit_nr"              value="<?php echo $links[$i]["product_nr"]?>">
-                <input type="text"      name="edit_naam"            value="<?php echo $links[$i]['naam']; ?>">
-                <input type="text"      name="edit_img"             value="<?php echo $links[$i]['img']; ?>">
-                <input type="text"      name="edit_prijs"           value="<?php echo $links[$i]['prijs']; ?>">
-                <input type="text"      name="edit_btw"             value="<?php echo $links[$i]['btw']; ?>">
-                <input type="text"      name="edit_categorie"       value="<?php echo $links[$i]['categorie']; ?>">
-                <input type="submit"    name="edit"                 value="edit">
-            </form>
-            <?php
-        }
-        ?>
-    </div>
-    </div>
+          <?php
+          array_push($count_array, '#');
+          } ?>
+          </div>
+          <br>
+          <input type="submit" class="btn btn-outline-primary" name="Edit" value="Edit">
+      </form>
+  </div><br><br>
+  </div>
+  </div>
+</div>
+</body>
 
 <?php
 require "../include/footer.php";

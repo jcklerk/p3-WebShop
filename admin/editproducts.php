@@ -21,8 +21,11 @@ if (empty($_SESSION["score"])){
 }
 ?>
 
-<center>
 
+    <div class="container" style="margin-top: 100px">
+        <?php
+        require '../include/sidenav.php';
+        ?>
     <h1 style="margin-top: 100px">Stephan is de beste</h1>
 
     <div>
@@ -42,7 +45,7 @@ if (empty($_SESSION["score"])){
         }
         ?>
     </div>
-</center>
+    </div>
 
 <?php
 require "../include/footer.php";

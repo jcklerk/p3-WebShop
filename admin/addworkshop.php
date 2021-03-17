@@ -18,28 +18,9 @@ if (isset($_POST['workshop_title']) && isset($_POST['workshop_img']) && isset($_
 <link rel="stylesheet" href="../css/admin.css">
 <div class="container">
   <div class="row">
-    <div class="col-3">
-      <table>
-        <tr><td>Menu</td></tr>
-        <tr><td><hr></td></tr>
-        <tr><td>orders</td></tr>
-        <tr><td>Users</td></tr>
-        <tr><td><br></td></tr>
-        <tr><td><br></td></tr>
-        <tr><td>Product</td></tr>
-        <tr><td><hr></td></tr>
-        <tr><td>Products</td></tr>
-        <tr><td>AddProduct</td></tr>
-        <tr><td><br></td></tr>
-        <tr><td><br></td></tr>
-        <tr><td>WorkShop</td></tr>
-        <tr><td><hr></td></tr>
-        <tr><td>WorkShops</td></tr>
-        <tr><td>AddWorkShops</td></tr>
-        <tr><td><br></td></tr>
-
-      </table>
-    </div>
+      <?php
+      require '../include/sidenav.php';
+      ?>
     <div class="col-9">
       <div class="container">
         <form action="" method="post">

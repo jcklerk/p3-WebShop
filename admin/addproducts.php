@@ -13,10 +13,12 @@ if (isset($_POST['naam']) && isset($_POST['img']) && isset($_POST['prijs']) && i
 
 ?>
 <link rel="stylesheet" href="../css/admin.css">
-<br><br><br><br><br>
 <body style="text-align: center; background: gray">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-<div class="container-fluid">
+<div class="container">
+    <?php
+    require '../include/sidenav.php';
+    ?>
     <form action="" method="post" style="margin-top: 200px; margin-left: 40%;="register-form">
 
         <div class="row">

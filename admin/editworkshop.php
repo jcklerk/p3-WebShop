@@ -20,8 +20,10 @@ if (empty($_SESSION["score"])){
 }
 ?>
     <link rel="stylesheet" href="../css/admin.css">
-    <center>
-
+    <div class="container" style="margin-top: 100px">
+        <?php
+        require '../include/sidenav.php';
+        ?>
     <body style="text-align: center">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../css/admin.css">
@@ -69,6 +71,7 @@ if (empty($_SESSION["score"])){
         </form>
     </div><br><br>
     </div>
+</div>
     </body>
 
 <?php

@@ -91,7 +91,8 @@ class AdminProductClass
       $taal->bindParam(':beschrijving', $lang_post_array['beschrijving']);
       $taal->execute();
     }
-    // header reload werkt niet
+    unset($_POST);
+    echo '<script type="text/javascript">window.location.href = "'.$_SESSION['url'].'editproducts.php?product='.$product_nr.'";</script>';
   } else {
     echo "geen product geselecteerd!";
   }

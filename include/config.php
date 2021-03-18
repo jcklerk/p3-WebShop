@@ -2,6 +2,7 @@
 include __DIR__.'/class/LangClass.php';
 $url = (new DBClass())->ServerUrl();
 $_SESSION['url'] = (new DBClass())->ServerUrl();
+$srv_url = $url;
 //
 //$test = $pdo->prepare('')
 //$test->bindParam(':test', $test_);

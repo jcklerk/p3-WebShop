@@ -22,9 +22,9 @@ class WorkShopClass
     $getworkshop->execute();
     $arrayworkshop = $getworkshop->fetchAll();
     foreach ($arrayworkshop as $forworkshop){?>
-      <div class="parallax-halfheight d-flex align-items-center justify-content-center" style="background-image: url(<?php echo $forworkshop['workshop_img']; ?>);">
+      <div class="parallax-height35 d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(255, 255, 255, 0.45), rgba(0, 0, 0, 0.45)), url(<?php echo $forworkshop['workshop_img']; ?>);">
        <div onclick='window.location.href = "<?php echo $this->url."workshops.php/?workshops=".$forworkshop["workshop_id"];?>";' class="text-center">
-           <h1 class="fos-2"><?php echo $forworkshop['workshop_title']; ?></h1>
+           <h1 class="fos-2 op ts-1"><?php echo $forworkshop['workshop_title']; ?></h1>
          </div>
    </div>
    <div class=" bc-gray-black" style="height: 5px;"></div>

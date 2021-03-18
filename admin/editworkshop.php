@@ -1,6 +1,18 @@
 <?php
-session_start();
 require "../include/nav.php";
+if (!empty($_SESSION['user_type'])) {
+  if ($_SESSION['user_type'] == 'klant') {
+    echo '<script type="text/javascript">window.location.href = "'.$srv_url.'account.php";</script>';
+    exit;
+  } elseif ($_SESSION['user_type'] !== 'admin') {
+    session_destroy();
+    echo '<script type="text/javascript">window.location.href = "'.$srv_url.'login.php/";</script>';
+    exit;
+  }
+} else {
+  echo '<script type="text/javascript">window.location.href = "'.$srv_url.'login.php/";</script>';
+  exit;
+}
 
 require ("../include/workshopconfig.php");
 if (!empty($_POST['edit_title']) && !empty($_POST['edit_wimg']) && !empty($_POST['edit_video']) && !empty($_POST['edit_img']) && !empty($_POST['edit_id'])) {

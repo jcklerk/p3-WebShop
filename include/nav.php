@@ -47,7 +47,7 @@ require __DIR__ . '/config.php';
                             echo '
                                     <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle c-yellow" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown link
+                                    '.$_SESSION['username'].'
                                     </a>
                                     <ul class="dropdown-menu bc-gray-black" aria-labelledby="navbarDropdownMenuLink">
                                     <li><a class="dropdown-item c-yellow" href="'.$url.'account.php">Account</a></li>

@@ -12,7 +12,10 @@ if (isset($_POST['workshop_title']) && isset($_POST['workshop_img']) && isset($_
 }
 
 ?>
-<br><br><br><br><br>
+<br><br><br><br>
+<br>
+<h1>Add Workshop</h1>
+<br>
 <body style="text-align: center">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="../css/admin.css">

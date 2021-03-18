@@ -92,7 +92,7 @@ class AdminProductClass
       $taal->execute();
     }
     unset($_POST);
-    echo '<script type="text/javascript">window.location.href = "'.$_SESSION['url'].'editproducts.php?product='.$product_nr.'";</script>';
+    echo '<script type="text/javascript">window.location.href = "'.$_SESSION['url'].'editproducts.php/?product='.$product_nr.'";</script>';
   } else {
     echo "geen product geselecteerd!";
   }

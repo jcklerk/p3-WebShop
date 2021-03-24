@@ -14,7 +14,7 @@ if (!empty($_SESSION['user_type'])) {
   exit;
 }
  ?>
-
+<title>Products - Wok & Roll</title>
 <div class="card" style="width: 17rem; border: 1px solid black">
     <img src="../img/ja.jpg" class="card-img-top" alt="...">
     <div class="card-body">

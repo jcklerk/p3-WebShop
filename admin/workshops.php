@@ -13,6 +13,35 @@ if (!empty($_SESSION['user_type'])) {
   echo '<script type="text/javascript">window.location.href = "'.$srv_url.'login.php/";</script>';
   exit;
 }
- ?>
+
+?>
 <title>Workshops - Wok & Roll</title>
-lijk met workshops
+<br><br><br><br>
+<br>
+<h1>Workshops</h1>
+<br>
+<body style="text-align: center">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../css/admin.css">
+<div class="container">
+  <div class="row">
+      <?php
+      require '../include/sidenav.php';
+      ?>
+    <div class="col-9">
+      <div class="card" style="width: 17rem; border: 1px solid black">
+          <img src="../img/ja.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h3 class="center"> title </h3>
+            <button type="button" class="btn btn-warning">Edit</button>
+            <button type="button" class="btn btn-danger">Remove</button>
+          </div>
+      </div>
+  </div>
+  </div>
+</div>
+</body>
+
+<?php
+require "../include/footer.php";
+?>

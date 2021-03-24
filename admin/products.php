@@ -13,11 +13,33 @@ if (!empty($_SESSION['user_type'])) {
   echo '<script type="text/javascript">window.location.href = "'.$srv_url.'login.php/";</script>';
   exit;
 }
- ?>
+
+?>
 <title>Products - Wok & Roll</title>
-<div class="card" style="width: 17rem; border: 1px solid black">
-    <img src="../img/ja.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-        <p class="card-text"><a href="yeet" style="margin-right: 200px; margin-left: 10px">edit</a><a href="yeett">add</a> </p>
-    </div>
+<br><br><br><br>
+<br>
+<h1>Products</h1>
+<br>
+<body style="text-align: center">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../css/admin.css">
+<div class="container">
+  <div class="row">
+      <?php
+      require '../include/sidenav.php';
+      ?>
+    <div class="col-9">
+      <div class="card" style="width: 17rem; border: 1px solid black">
+          <img src="../img/ja.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+              <p class="card-text"><a href="yeet" style="margin-right: 200px; margin-left: 10px">edit</a><a href="yeett">add</a> </p>
+          </div>
+      </div>
+  </div>
+  </div>
 </div>
+</body>
+
+<?php
+require "../include/footer.php";
+?>

@@ -14,5 +14,5 @@ if (!empty($_SESSION['user_type'])) {
   exit;
 }
  ?>
-
+<title>Workshops - Wok & Roll</title>
 lijk met workshops

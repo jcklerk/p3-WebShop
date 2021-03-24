@@ -3,7 +3,7 @@ require "include/nav.php";
 require "include/class/ShopClass.php";
 
 ?>
-
+<title>WebShop - Wok & Roll</title>
 <body class="bc-gray-black">
 
     <div class="container container-web">

@@ -25,6 +25,7 @@ if (isset($_POST['workshop_title']) && isset($_POST['workshop_img']) && isset($_
 }
 
 ?>
+<title>Add Workshop - Wok & Roll</title>
 <br><br><br><br>
 <br>
 <h1>Add Workshop</h1>

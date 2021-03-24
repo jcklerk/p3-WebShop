@@ -16,6 +16,7 @@
     $arraycart = (new LangClass())->LangGetCart();
     require 'include/class/ShoppingCartClass.php';
 ?>
+<title>Winkelwagen - Wok & Roll</title>
 <style media="screen">
   body{
     width: 100%;

@@ -20,6 +20,7 @@ if (!empty($_SESSION['user_type'])) {
 require "../include/class/FactuurClass.php";
 
 ?>
+<title>Orders - Wok & Roll</title>
 <br><br><br><br>
 <br>
 <h1>Orders</h1>

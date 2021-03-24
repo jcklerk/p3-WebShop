@@ -8,7 +8,7 @@ if (empty($arrayworkshop)) {
 }
 $arrayworkshoptext = (new WorkShopsClass($url, $_GET['workshops'], $_SESSION['lang_id']))->WorkshopGet();
 ?>
-
+<title>WorkShop - Wok & Roll</title>
 <body class="bc-gray-black">
 <div class="parallax-halfheight d-flex align-items-center justify-content-center" style="background-image: url(<?php echo $arrayworkshop['workshop_img']; ?>);">
 

@@ -1,6 +1,7 @@
 <?php
 require __DIR__ . '/include/login.php';
 ?>
+<title>Login - Wok & Roll</title>
 <body>
     <div class="container">
         <div class="row">

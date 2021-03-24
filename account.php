@@ -23,6 +23,7 @@ require "include/nav.php";
 require "include/class/FactuurClass.php";
 
 ?>
+<title>Account - Wok & Roll</title>
 
 <body class="bc-gray-black">
 

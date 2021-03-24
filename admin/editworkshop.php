@@ -31,6 +31,7 @@ if (empty($_SESSION["score"])){
     $_SESSION["score"] = 0;
 }
 ?>
+    <title>Edit Workshop - Wok & Roll</title>
     <link rel="stylesheet" href="../css/admin.css">
     <div class="container" style="margin-top: 100px">
         <?php

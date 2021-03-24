@@ -30,6 +30,7 @@ if (isset($_POST['Webshop_img']) && isset($_POST['Webshop_Cat']) && isset($_POST
 }
 
 ?>
+<title>Edit Product - Wok & Roll</title>
 <br><br><br><br>
 <br>
 <h1>Edit Product</h1>

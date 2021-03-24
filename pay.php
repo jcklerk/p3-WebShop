@@ -20,3 +20,4 @@ if(isset($_SESSION['user_id'])){
 
 
  ?>
+ <title>Checkout - Wok & Roll</title>

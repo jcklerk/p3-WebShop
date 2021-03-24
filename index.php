@@ -2,6 +2,7 @@
 require "include/nav.php";
 $arrayhome = (new LangClass())->LangGetHome();
 ?>
+<title>Home - Wok & Roll</title>
 <body class="bc-gray-black">
 
     <div class="parallax img-home d-flex align-items-center justify-content-center">

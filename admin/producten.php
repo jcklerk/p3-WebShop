@@ -15,6 +15,7 @@ if (!empty($_SESSION['user_type'])) {
 }
 
 ?>
+<title>Products - Wok & Roll</title>
 <div>
     fuck jarik
 </div>

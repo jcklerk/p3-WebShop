@@ -1,3 +1,4 @@
+<title>Product - Wok & Roll</title>
 <?php
 require 'include/nav.php';
 require "include/class/ShopProductClass.php";

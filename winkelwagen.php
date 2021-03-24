@@ -1,18 +1,21 @@
 <?php
-    session_start();
+    require 'include/nav.php';
     if (empty($_SESSION['cart'])) {
       $_SESSION['cart'] = array();
     }
     if (!empty($_POST['product'])) {
       foreach ($_SESSION['cart'] as $cart) {
         if($_POST['product'] == $cart['Product']){
-          $aanpassen=array($_POST['product']=>array("Product"=>$_POST['product'],"Aantal"=>$_POST['aantal']));
-          $_SESSION['cart'] = array_replace($_SESSION['cart'], $aanpassen);
+          if (!empty($_POST['aantal'])) {
+            $aanpassen=array($_POST['product']=>array("Product"=>$_POST['product'],"Aantal"=>$_POST['aantal']));
+            $_SESSION['cart'] = array_replace($_SESSION['cart'], $aanpassen);
+          }elseif (!empty($_POST['delete'])) {
+            unset($_SESSION['cart'][$_POST['product']]);
+          }
         }
       }
     }
     print_r($_SESSION['cart']);
-    require 'include/nav.php';
     $arraycart = (new LangClass())->LangGetCart();
     require 'include/class/ShoppingCartClass.php';
 ?>
@@ -37,9 +40,13 @@
       <?php (new ShoppingCartClass($_SESSION['cart']))->Cart(); ?>
     </ul>
     <div class="card-footer">
+      <?php if (!empty($_SESSION['cart'])): ?>
       <a href="<?php echo $url;?>pay.php">
         <?php // echo $arraycart['checkout'];?>
         checkout
       </a>
+    <?php ;else: ?>
+      <br>
+    <?php endif; ?>
     </div>
 </div>

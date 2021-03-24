@@ -29,13 +29,21 @@ if (!empty($_SESSION['user_type'])) {
       require '../include/sidenav.php';
       ?>
     <div class="col-9">
-      <div class="card" style="width: 17rem; border: 1px solid black">
-          <img src="../img/ja.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-              <p class="card-text"><a href="yeet" style="margin-right: 200px; margin-left: 10px">edit</a><a href="yeett">add</a> </p>
+      <div class="row row-web-prod row-cols-1 row-cols-md-4 g-4 c-red">
+        <?php for ($i=1; $i <= 5 ; $i++): ?>
+        <div class="col">
+          <div class="card" style="width: 100%; border: 1px solid black">
+              <img src="../img/ja.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="center"> title </h3>
+                <button type="button" class="btn btn-warning">Edit</button>
+                <button type="button" class="btn btn-danger">Remove</button>
+              </div>
           </div>
+        </div>
+      <?php endfor; ?>
       </div>
-  </div>
+    </div>
   </div>
 </div>
 </body>

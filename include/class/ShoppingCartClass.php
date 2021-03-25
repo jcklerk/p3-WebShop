@@ -58,8 +58,6 @@ class ShoppingCartClass
             </li>
     <?php
           }
-      } else  {
-          echo 'winkelwagen is leeg';
       }
     return;
   }

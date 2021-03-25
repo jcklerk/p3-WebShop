@@ -15,7 +15,7 @@
         }
       }
     }
-    print_r($_SESSION['cart']);
+    //print_r($_SESSION['cart']);
     $arraycart = (new LangClass())->LangGetCart();
     require 'include/class/ShoppingCartClass.php';
 ?>
@@ -37,13 +37,16 @@
         ?>
     </div>
     <ul class="list-group list-group-flush">
-      <?php (new ShoppingCartClass($_SESSION['cart']))->Cart(); ?>
+      <?php (new ShoppingCartClass($_SESSION['cart']))->Cart();
+      if (empty($_SESSION['cart'])) {
+        echo $arraycart['leeg'];
+      }
+      ?>
     </ul>
     <div class="card-footer">
       <?php if (!empty($_SESSION['cart'])): ?>
-      <a href="<?php echo $url;?>pay.php">
-        <?php // echo $arraycart['checkout'];?>
-        checkout
+      <a class="btn btn-primary" href="<?php echo $url;?>pay.php">
+        <?php  echo $arraycart['checkout'];?>
       </a>
     <?php ;else: ?>
       <br>

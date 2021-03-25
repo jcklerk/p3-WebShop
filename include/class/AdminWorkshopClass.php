@@ -50,4 +50,24 @@ class AdminWorkshopClass
     echo '<script type="text/javascript">window.location.href = "'.$srv_url.'admin/addworkshop.php/";</script>';
   }
 }
+
+class AdminWorkshopsClass
+{
+  private $dbClass;
+  private $pdo;
+
+  function __construct()
+  {
+    $this->dbClass = new DBClass();
+  }
+  public function GetAllWorkshops()
+  {
+    $pdo = $this->dbClass->makeConnection();
+    $getproducts = $pdo->prepare("SELECT * FROM `workshop`INNER JOIN `taal_workshop` ON workshop.workshop_id = taal_workshop.workshop_id WHERE  `taal_id` = :taal_id");
+    $getproducts->bindParam(':taal_id', $_SESSION['lang_id']);
+    $getproducts->execute();
+    $allproduct = $getproducts->fetchAll();
+    return $allproduct;
+  }
+}
 ?>

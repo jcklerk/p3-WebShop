@@ -13,7 +13,7 @@ if (!empty($_SESSION['user_type'])) {
   echo '<script type="text/javascript">window.location.href = "'.$srv_url.'login.php/";</script>';
   exit;
 }
-
+require '../include/class/AdminWorkshopClass.php';
 ?>
 <title>Workshops - Wok & Roll</title>
 <br><br><br><br>
@@ -30,18 +30,21 @@ if (!empty($_SESSION['user_type'])) {
       ?>
     <div class="col-9">
       <div class="row row-web-prod row-cols-1 row-cols-md-4 g-4 c-red">
-        <?php for ($i=1; $i <= 5 ; $i++): ?>
+
+        <?php
+        $products = (new AdminWorkshopsClass())->GetAllWorkshops();
+        foreach ($products as $product): ?>
         <div class="col">
-          <div class="card" style="width: 100%; border: 1px solid black">
-              <img src="../img/ja.jpg" class="card-img-top" alt="...">
+          <div class="card" style="width: 100%; height: 100%; border: 1px solid black">
+              <img height="200" width="100%" style="object-fit: cover;" src="<?php echo $product['workshop_img']; ?>" class="card-img-top" alt="...">
               <div class="card-body">
-                <h3 class="center"> title </h3>
-                <button type="button" class="btn btn-warning">Edit</button>
-                <button type="button" class="btn btn-danger">Remove</button>
+                <h4 class="center"> <?php echo $product['workshop_title']?> </h4>
+                <a href="<?php echo $url.'admin/editworkshop.php?product='.$product['workshop_id'] ?>" class="btn btn-warning align-bottom">Edit</a>
+                <a class="btn btn-danger align-self-end">Remove</a>
               </div>
           </div>
         </div>
-      <?php endfor; ?>
+      <?php endforeach; ?>
       </div>
     </div>
   </div>

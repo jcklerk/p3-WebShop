@@ -39,7 +39,7 @@ require '../include/class/AdminWorkshopClass.php';
               <img height="200" width="100%" style="object-fit: cover;" src="<?php echo $product['workshop_img']; ?>" class="card-img-top" alt="...">
               <div class="card-body">
                 <h4 class="center"> <?php echo $product['workshop_title']?> </h4>
-                <a href="<?php echo $url.'admin/editworkshop.php?product='.$product['workshop_id'] ?>" class="btn btn-warning align-bottom">Edit</a>
+                <a href="<?php echo $url.'admin/editworkshop.php?workshop='.$product['workshop_id'] ?>" class="btn btn-warning align-bottom">Edit</a>
                 <a class="btn btn-danger align-self-end">Remove</a>
               </div>
           </div>

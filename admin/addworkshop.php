@@ -47,7 +47,7 @@ if (isset($_POST['workshop_img']) && isset($_POST['video']) && isset($_POST['img
                   <input name="workshop_img" class="form-control" type="text" autocomplete="off" required>
               </div>
             <div class="col">
-                  <label for="video">VIDEO</label>
+                  <label for="video">VIDEO (youtube)</label>
                   <input name="video" class="form-control" type="text" autocomplete="off" required>
               </div>
             <div class="col">

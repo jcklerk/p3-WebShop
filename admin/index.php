@@ -40,7 +40,7 @@ $empty = '';
     <tbody>
     <tr class="c-border">
         <th scope="col" >Oder nummer</th>
-        <th scope="col" >User</th>
+        <th scope="col" >User ID</th>
         <th scope="col">product</th>
         <th scope="col">datum</th>
         <th scope="col">aantal</th>

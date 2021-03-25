@@ -13,7 +13,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['voor
     <title>Register - Wok & Roll</title>
 </head>
 <body>
-<div class="container" style="height: 100%">
+<div class="container " style="height: 100%">
     <div class="row mx-auto justify-content-center" >
         <div class="col-lg-6 login-box mt-3" >
             <div class="col-lg-12 login-key">
@@ -24,7 +24,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['voor
 <!--                <div class="col-lg-3 col-md-2"><a href='https://localhost/Webshop/p3-WebShop/' style="text-decoration: none; color: #B53333; font-size: 20px">Back</a></div>-->
                 New user
             </div>
-            <div class="col-lg-12 login-form">
+            <div class="col-lg-12 login-form ">
                 <div class="col-lg-12 login-form">
                     <form method="post">
                         <div class="form-group">

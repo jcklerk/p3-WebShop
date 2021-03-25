@@ -59,7 +59,7 @@ class ShoppingCartClass
     <?php
           }
       } else  {
-          echo 'array is leeg';
+          echo 'winkelwagen is leeg';
       }
     return;
   }

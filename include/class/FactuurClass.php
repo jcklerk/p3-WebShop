@@ -13,8 +13,9 @@ class FactuurClass {
     }
     public function GetFacatuur(){
         $pdo = $this->dbClass->makeConnection();
-        $getproductfacatuur = $pdo->prepare("SELECT * FROM factuur JOIN product_factuur ON product_factuur.factuur_nr=factuur.factuur_nr LEFT JOIN product ON product.product_nr = product_factuur.product_nr WHERE `user_id` = :user");
+        $getproductfacatuur = $pdo->prepare("SELECT * FROM factuur JOIN product_factuur ON product_factuur.factuur_nr=factuur.factuur_nr LEFT JOIN product ON product.product_nr = product_factuur.product_nr LEFT JOIN taal_product ON product.product_nr = taal_product.product_nr WHERE `user_id` = :user AND `taal_id` = :taal_id");
         $getproductfacatuur->bindParam(':user', $this->user);
+        $getproductfacatuur->bindParam(':taal_id', $_SESSION['lang_id']);
         $getproductfacatuur->execute();
         $productfactuur = $getproductfacatuur->fetchAll();
 

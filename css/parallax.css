@@ -56,9 +56,21 @@
     background-image: url("../img/japanesefood.jpg");
 }
 
-.img-koreanfood{
+.img-indian{
     /* The image used */
-    background-image: url("../img/koreanfood.jpg");
+    background-image: url("../img/the-best-top-10-indian-dishes.jpg");
+}
+.img-tai{
+    /* The image used */
+    background-image: url("../img/gezond-thais-eten.png");
+}
+.img-vait{
+    /* The image used */
+    background-image: url("../img/Vietnamese-gerechten-916x458.png");
+}
+.img-wok{
+    /* The image used */
+    background-image: url("../img/index.jpg");
 }
 .card {
     border: 0px;

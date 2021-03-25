@@ -8,7 +8,7 @@ require "include/class/ShopClass.php";
 
     <div class="container container-web">
 
-        <div class="row row-web">
+        <div class="row row-web webshop">
             <div class="image-1-3 img-chinesefood d-flex align-items-center justify-content-center" onclick="window.location.href='<?php echo $url;?>webshop.php/?cat=0'">
                 <div class="text-center ts-1">
                     <h1 class="fos-2 op">Chinese food</h1>
@@ -19,9 +19,26 @@ require "include/class/ShopClass.php";
                     <h1 class="fos-2">Japanese food</h1>
                 </div>
             </div>
-            <div class="image-1-3 img-koreanfood d-flex align-items-center justify-content-center" onclick="window.location.href='<?php echo $url;?>webshop.php/?cat=2'">
+            <div class="image-1-3 img-indian d-flex align-items-center justify-content-center" onclick="window.location.href='<?php echo $url;?>webshop.php/?cat=2'">
                 <div class="text-center ts-1">
-                    <h1 class="fos-2">Korean food</h1>
+                    <h1 class="fos-2">Indian food</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row row-web">
+            <div class="image-1-3 img-tai d-flex align-items-center justify-content-center" onclick="window.location.href='<?php echo $url;?>webshop.php/?cat=3'">
+                <div class="text-center ts-1">
+                    <h1 class="fos-2">Tai food</h1>
+                </div>
+            </div>
+            <div class="image-1-3 img-vait d-flex align-items-center justify-content-center" onclick="window.location.href='<?php echo $url;?>webshop.php/?cat=4'">
+                <div class="text-center ts-1">
+                    <h1 class="fos-2">Viatnamese food</h1>
+                </div>
+            </div>
+            <div class="image-1-3 img-wok d-flex align-items-center justify-content-center" onclick="window.location.href='<?php echo $url;?>webshop.php/?cat=5'">
+                <div class="text-center ts-1">
+                    <h1 class="fos-2">Wok Supplies</h1>
                 </div>
             </div>
         </div>

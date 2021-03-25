@@ -3,10 +3,11 @@
     max-width: 100%!important;
 }
 .row-web {
-
+    height: 300px; !important;
     flex-wrap: nowrap!important;
+}
+.webshop{
     padding-top: 3%!important;
-    height: 50%!important;
 }
 
 .row-web-prod {

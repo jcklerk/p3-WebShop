@@ -98,4 +98,24 @@ class AdminProductClass
   }
   }
 }
+
+class AdminProductsClass
+{
+  private $dbClass;
+  private $pdo;
+
+  function __construct()
+  {
+    $this->dbClass = new DBClass();
+  }
+  public function GetAllProducts()
+  {
+    $pdo = $this->dbClass->makeConnection();
+    $getproducts = $pdo->prepare("SELECT * FROM `product`INNER JOIN `taal_product` ON product.product_nr = taal_product.product_nr WHERE  `taal_id` = :taal_id");
+    $getproducts->bindParam(':taal_id', $_SESSION['lang_id']);
+    $getproducts->execute();
+    $allproduct = $getproducts->fetchAll();
+    return $allproduct;
+  }
+}
 ?>

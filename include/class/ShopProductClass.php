@@ -54,13 +54,13 @@ class ShopProductClass
                 $_SESSION['cart'][$_POST['product_nr']]['Aantal'] = 1;
             }
                 $pdo = $this->dbClass->makeConnection();
-                $gettaalproducts = $pdo->prepare("SELECT * FROM `taal_aantalproduct` WHERE `taal_id` = :taal_id ");
+                $gettaalproducts = $pdo->prepare("SELECT `add_to_card_melding` FROM `taal_shop` WHERE `taal_id` = :taal_id ");
                 $gettaalproducts->bindParam(':taal_id', $_SESSION['lang_id']);
                 $gettaalproducts->execute();
                 $taalaantalproduct = $gettaalproducts->fetchAll();
                 foreach ($taalaantalproduct as $a) {
                     ?> <div class="alert alert-success" role="alert">
-                        <p><?php echo $a['taal'].' '.$_SESSION['cart'][$_POST['product_nr']]['Aantal']?></p>
+                        <p><?php echo $a['add_to_card_melding'].' '.$_SESSION['cart'][$_POST['product_nr']]['Aantal']?></p>
                     </div>
                 <?php }
             }

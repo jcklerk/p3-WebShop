@@ -19,7 +19,7 @@ class FooterClass
             <footer class="text-center bc-red c-yellow">
                 <div class="container p-4">
                     <div class="row">
-                        <div class="col-lg-6 col-md-12 mb-4 mb-md-0 fw-bold">
+                        <div class="mb-4 mb-md-0 fw-bold"> <!-- removed from class: col-lg-6 col-md-12 -->
                             <p class="c-yellow">
                                 Contact: <br> Mail: <br> <?php echo $x['phone'] ?> nr: <br> <?php echo $x['adres'] ?>:
                             </p>

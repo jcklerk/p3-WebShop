@@ -18,7 +18,7 @@ if (!empty($_SESSION['user_type'])) {
   exit;
 }
 require "../include/class/FactuurClass.php";
-
+$empty = '';
 ?>
 <title>Orders - Wok & Roll</title>
 <br><br><br><br>
@@ -40,13 +40,14 @@ require "../include/class/FactuurClass.php";
     <tbody>
     <tr class="c-border">
         <th scope="col" >Oder nummer</th>
+        <th scope="col" >User</th>
         <th scope="col">product</th>
         <th scope="col">datum</th>
         <th scope="col">aantal</th>
         <th scope="col">totaal</th>
     </tr>
 
-    <?php (new FactuurClass($_SESSION['user_id']))->GetFacatuur(); ?>
+    <?php (new FactuurClass($empty))->GetAllFacatuur(); ?>
 
     </tbody>
 </table>

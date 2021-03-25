@@ -35,12 +35,12 @@ require '../include/class/AdminProductClass.php';
         $products = (new AdminProductsClass())->GetAllProducts();
         foreach ($products as $product): ?>
         <div class="col">
-          <div class="card" style="width: 100%; border: 1px solid black">
-              <img src="<?php echo $product['img']; ?>" class="card-img-top" alt="...">
+          <div class="card" style="width: 100%; height: 100%; border: 1px solid black">
+              <img height="200" width="100%" style="object-fit: cover;" src="<?php echo $product['img']; ?>" class="card-img-top" alt="...">
               <div class="card-body">
                 <h4 class="center"> <?php echo $product['naam']?> </h4>
-                <a href="<?php echo $url.'admin/editproducts.php?product='.$product['product_nr'] ?>" class="btn btn-warning">Edit</a>
-                <a class="btn btn-danger">Remove</a>
+                <a href="<?php echo $url.'admin/editproducts.php?product='.$product['product_nr'] ?>" class="btn btn-warning align-bottom">Edit</a>
+                <a class="btn btn-danger align-self-end">Remove</a>
               </div>
           </div>
         </div>

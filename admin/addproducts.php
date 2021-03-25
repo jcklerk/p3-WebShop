@@ -21,8 +21,8 @@ if (isset($_POST['Webshop_img']) && isset($_POST['Webshop_Cat']) && isset($_POST
       $lang_post[$forlang['taal_id']] = array('taal_id' => $forlang['taal_id'] , 'naam' => $_POST[$forlang['taal_id'].':naam'], 'beschrijving' => $_POST[$forlang['taal_id'].':beschrijving']);
     }
     (new AdminProductClass($_POST['Webshop_img'], $_POST['Webshop_Prijs'], $_POST['Webshop_BTW'], $_POST['Webshop_Cat'], $lang_post))->ProductInsert();
-    var_dump($_POST);
-    var_dump($lang_post);
+    //var_dump($_POST);
+    //var_dump($lang_post);
 }
 
 ?>

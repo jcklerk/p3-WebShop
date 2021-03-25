@@ -117,5 +117,21 @@ class AdminProductsClass
     $allproduct = $getproducts->fetchAll();
     return $allproduct;
   }
+  public function RemoveProducts()
+  {
+    if (isset($_GET['product'])) {
+      $pdo = $this->dbClass->makeConnection();
+      $rmproducts = $pdo->prepare("DELETE FROM `product` WHERE `product`.`product_nr` = :product_id");
+      $rmproducts->bindParam(':product_id', $_GET['product']);
+      $rmproducts->execute();
+      $rmproducts_lang = $pdo->prepare("DELETE FROM `taal_product` WHERE `taal_product`.`product_nr` = :product_id");
+      $rmproducts_lang->bindParam(':product_id', $_GET['product']);
+      $rmproducts_lang->execute();
+      echo '<script type="text/javascript">window.location.href = "'.$_SESSION['url'].'products.php'.'";</script>';
+    } else{
+      echo "geen product geselecteerd!";
+      echo '<script type="text/javascript">window.location.href = "'.$_SESSION['url'].'products.php'.'";</script>';
+    }
+  }
 }
 ?>

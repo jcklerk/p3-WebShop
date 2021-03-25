@@ -63,15 +63,15 @@ class AdminWorkshopClass
     }
     echo '<script type="text/javascript">window.location.href = "'.$srv_url.'admin/addworkshop.php/";</script>';
   }
-  public function ProductUpdate()
+  public function WorkshopUpdate()
   {
-    if (!empty($_GET['product'])) {
+    if (!empty($_GET['workshop'])) {
     $pdo = $this->dbClass->makeConnection();
     $workshop_id = $_GET['workshop'];
-    $workshop = $pdo->prepare("UPDATE `workshop` SET `workshop_img` = :img, `video` = :video, `img` = :img2 WHERE `workshop`.`workshop_id` = :workshop_id;");
+    $workshop = $pdo->prepare("UPDATE `workshop` SET `workshop_img` = :workshop_img, `video` = :video, `img` = :img WHERE `workshop`.`workshop_id` = :workshop_id;");
+    $workshop->bindParam(':workshop_img', $this->workshop_img);
+    $workshop->bindParam(':video', $this->video);
     $workshop->bindParam(':img', $this->img);
-    $workshop->bindParam(':video', $this->prijs);
-    $workshop->bindParam(':img2', $this->btw);
     $workshop->bindParam(':workshop_id', $workshop_id);
     $workshop->execute();
     $this->workshop_id = $workshop_id['0'];
@@ -86,7 +86,7 @@ class AdminWorkshopClass
       $taal->execute();
     }
     unset($_POST);
-    echo '<script type="text/javascript">window.location.href = "'.$_SESSION['url'].'editproducts.php?product='.$product_nr.'";</script>';
+    echo '<script type="text/javascript">window.location.href = "'.$_SESSION['url'].'editworkshop.php?workshop='.$workshop_id.'";</script>';
   } else {
     echo "geen product geselecteerd!";
   }

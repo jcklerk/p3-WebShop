@@ -23,7 +23,7 @@ if (isset($_POST['workshop_img']) && isset($_POST['video']) && isset($_POST['img
     foreach ($arraylang as $forlang) {
       $lang_post[$forlang['taal_id']] = array('taal_id' => $forlang['taal_id'] , 'title' => $_POST[$forlang['taal_id'].':title'], 'ingredienten' => $_POST[$forlang['taal_id'].':ingredienten'], 'benodigdheden' => $_POST[$forlang['taal_id'].':benodigdheden'], 'maken' => $_POST[$forlang['taal_id'].':maken']);
     }
-    (new AdminProductClass($_POST['Webshop_img'], $_POST['Webshop_Prijs'], $_POST['Webshop_BTW'], $_POST['Webshop_Cat'], $lang_post))->ProductUpdate();
+    (new AdminWorkshopClass($_POST['workshop_img'], $_POST['video'], $_POST['img'], $lang_post))->WorkshopUpdate();
     //var_dump($_POST);
     //var_dump($lang_post);
 }

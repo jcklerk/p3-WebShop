@@ -111,5 +111,21 @@ class AdminWorkshopsClass
     $allproduct = $getproducts->fetchAll();
     return $allproduct;
   }
+  public function Removeworkshop()
+  {
+    if (isset($_GET['workshop'])) {
+      $pdo = $this->dbClass->makeConnection();
+      $rmproducts = $pdo->prepare("DELETE FROM `workshop` WHERE `workshop`.`workshop_id` = :workshop_id");
+      $rmproducts->bindParam(':workshop_id', $_GET['workshop']);
+      $rmproducts->execute();
+      $rmproducts_lang = $pdo->prepare("DELETE FROM `taal_workshop` WHERE `taal_workshop`.`workshop_id` = :workshop_id");
+      $rmproducts_lang->bindParam(':workshop_id', $_GET['workshop']);
+      $rmproducts_lang->execute();
+      echo '<script type="text/javascript">window.location.href = "'.$_SESSION['url'].'workshops.php'.'";</script>';
+    } else{
+      echo "geen product geselecteerd!";
+      echo '<script type="text/javascript">window.location.href = "'.$_SESSION['url'].'workshops.php'.'";</script>';
+    }
+  }
 }
 ?>

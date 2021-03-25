@@ -40,7 +40,7 @@ require '../include/class/AdminWorkshopClass.php';
               <div class="card-body">
                 <h4 class="center"> <?php echo $product['workshop_title']?> </h4>
                 <a href="<?php echo $url.'admin/editworkshop.php?workshop='.$product['workshop_id'] ?>" class="btn btn-warning align-bottom">Edit</a>
-                <a class="btn btn-danger align-self-end">Remove</a>
+                <button type="button" onclick="rmproducts(<?php echo $product['workshop_id']; ?>, '<?php echo $product['workshop_title']; ?>');" class="btn btn-danger align-self-end">Remove</button>
               </div>
           </div>
         </div>
@@ -50,7 +50,14 @@ require '../include/class/AdminWorkshopClass.php';
   </div>
 </div>
 </body>
-
+<script>
+function rmproducts(id, naam) {
+  var r = confirm("Confirm Product Remove " + naam);
+  if (r == true) {
+    window.location.href = "<?php echo $url; ?>admin/rmworkshop.php?workshop="+id;
+  }
+}
+</script>
 <?php
 require "../include/footer.php";
 ?>

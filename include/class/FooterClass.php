@@ -21,7 +21,7 @@ class FooterClass
                     <div class="row">
                         <div class="mb-4 mb-md-0 fw-bold"> <!-- removed from class: col-lg-6 col-md-12 -->
                             <p class="c-yellow">
-                                Contact: <br> Mail: <br> <?php echo $x['phone'] ?> nr: <br> <?php echo $x['adres'] ?>:
+                                <h4> Contact:</h4> Mail: example@example.com <br> <?php echo $x['phone'] ?> nr: +31 123456789 <br> <?php echo $x['adres'] ?>: Nederland, Harderwijk, Westeinde 33
                             </p>
                         </div>
                     </div>

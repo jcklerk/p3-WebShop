@@ -18,7 +18,8 @@ class WorkShopClass
   }
   public function WorkShopGetAll(){
     $pdo = $this->dbClass->makeConnection();
-    $getworkshop = $pdo->prepare("SELECT * FROM `workshop` ");
+    $getworkshop = $pdo->prepare("SELECT * FROM `workshop` INNER JOIN `taal_workshop` ON workshop.workshop_id = taal_workshop.workshop_id WHERE `taal_id` = :taal_id");
+    $getworkshop->bindParam(':taal_id', $_SESSION['lang_id']);
     $getworkshop->execute();
     $arrayworkshop = $getworkshop->fetchAll();
     foreach ($arrayworkshop as $forworkshop){?>

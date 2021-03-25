@@ -13,7 +13,7 @@ $arrayworkshoptext = (new WorkShopsClass($url, $_GET['workshops'], $_SESSION['la
 <div class="parallax-halfheight d-flex align-items-center justify-content-center" style="background-image: url(<?php echo $arrayworkshop['workshop_img']; ?>);">
 
     <div class="text-center">
-        <h1 class="fos-2"><?php echo $arrayworkshop['workshop_title']; ?></h1>
+        <h1 class="fos-2"><?php echo $arrayworkshoptext['workshop_title']; ?></h1>
 
     </div>
 </div>

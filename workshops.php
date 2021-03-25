@@ -34,7 +34,7 @@ $arrayworkshoptext = (new WorkShopsClass($url, $_GET['workshops'], $_SESSION['la
    <div class="row" style="--bs-gutter-x: 0 rem !important;">
     <div class="col-sm">
 
-   <h2> How to make <?php echo $arrayworkshop['workshop_title']; ?>:</h2>
+   <h2> How to make <?php echo $arrayworkshoptext['workshop_title']; ?>:</h2>
    <h4> <?php echo $arrayworkshoptext['maken']?></h4>
  </div><div class="col-sm mt-1">
     <img src="<?php echo $arrayworkshop['img'];?>"  style="float: right" width="auto" height="315">

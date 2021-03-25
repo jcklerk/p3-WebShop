@@ -8,7 +8,6 @@
 class WorkShopClass
 {
   private $dbClass;
-  private $pdo;
   public $url;
   // maak niuewe database connection op dbClass
    function __construct($url)
@@ -36,7 +35,6 @@ class WorkShopClass
 class WorkShopsClass
 {
   private $dbClass;
-  private $pdo;
   public $url;
   public $workshop_id;
   public $taal_id;

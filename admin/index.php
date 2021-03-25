@@ -41,10 +41,10 @@ $empty = '';
     <tr class="c-border">
         <th scope="col" >Oder nummer</th>
         <th scope="col" >User ID</th>
-        <th scope="col">product</th>
-        <th scope="col">datum</th>
-        <th scope="col">aantal</th>
-        <th scope="col">totaal</th>
+        <th scope="col">Product</th>
+        <th scope="col">Datum</th>
+        <th scope="col">Aantal</th>
+        <th scope="col">Totaal</th>
     </tr>
 
     <?php (new FactuurClass($empty))->GetAllFacatuur(); ?>

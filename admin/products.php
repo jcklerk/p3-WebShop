@@ -39,7 +39,7 @@ require '../include/class/AdminProductClass.php';
               <img src="<?php echo $product['img']; ?>" class="card-img-top" alt="...">
               <div class="card-body">
                 <h4 class="center"> <?php echo $product['naam']?> </h4>
-                <a href="<?php echo $url.'admin/editproducts.php/?product='.$product['product_nr'] ?>" class="btn btn-warning">Edit</a>
+                <a href="<?php echo $url.'admin/editproducts.php?product='.$product['product_nr'] ?>" class="btn btn-warning">Edit</a>
                 <a class="btn btn-danger">Remove</a>
               </div>
           </div>

@@ -8,19 +8,22 @@ class CreateFactuurClass
   public $cart;
   private $dbClass;
   public $factuur_id;
+  public $verzendkosten;
 
 
-  function __construct($user,$cart)
+  function __construct($user,$cart,$verzendkosten)
   {
       $this->user = $user;
       $this->cart = $cart;
+      $this->verzendkosten = $verzendkosten;
       $this->dbClass = new DBClass();
 
   }
   public function Factuur(){
     $pdo = $this->dbClass->makeConnection();
-    $createfacatuur = $pdo->prepare("INSERT INTO `factuur` (`factuur_nr`, `user_id`, `factuur_datum`) VALUES (NULL, :user, current_timestamp());");
+    $createfacatuur = $pdo->prepare("INSERT INTO `factuur` (`factuur_nr`, `user_id`, `verzend_kosten` `factuur_datum`) VALUES (NULL, :user, :verzendkosten, current_timestamp());");
     $createfacatuur->bindParam(':user', $this->user);
+    $createfacatuur->bindParam(':verzendkosten', $this->verzendkosten);
     $createfacatuur->execute();
     $getfactuur_id = $pdo->prepare("SELECT LAST_INSERT_ID();");
     $getfactuur_id->execute();

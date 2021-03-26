@@ -67,7 +67,7 @@ class AdminProductClass
       $taal->bindParam(':beschrijving', $lang_post_array['beschrijving']);
       $taal->execute();
     }
-    header('loccation: ' . $_SESSION['url'].'admin/products.php');
+    echo '<script type="text/javascript">window.location.href = "'.$_SESSION['url'].'admin/products.php'.'";</script>';
   }
 
   public function ProductUpdate()

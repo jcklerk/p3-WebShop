@@ -17,13 +17,13 @@ if (!empty($_SESSION['user_type'])) {
   echo '<script type="text/javascript">window.location.href = "'.$srv_url.'login.php/";</script>';
   exit;
 }
-require "../include/class/FactuurClass.php";
+//require "../include/class/UsersClass.php";
 $empty = '';
 ?>
-<title>Orders - Wok & Roll</title>
+<title>Users - Wok & Roll</title>
 <br><br><br><br>
 <br>
-<h1>Orders</h1>
+<h1>Users</h1>
 <br>
 
 <body style="text-align: center">
@@ -39,15 +39,15 @@ $empty = '';
 <table class="table table-edit c-red" style="width: 100%;">
     <tbody>
     <tr class="c-border">
-        <th scope="col" >Oder nummer</th>
         <th scope="col" >User ID</th>
-        <th scope="col">Product</th>
-        <th scope="col">Date</th>
-        <th scope="col">Amount</th>
-        <th scope="col">total</th>
+        <th scope="col" >Full name</th>
+        <th scope="col">woonplaats</th>
+        <th scope="col">straatnaam</th>
+        <th scope="col">huisnummer</th>
+        <th scope="col">postcode</th>
     </tr>
 
-    <?php (new FactuurClass($empty))->GetAllFacatuur(); ?>
+    <?php// (new FactuurClass($empty))->GetAllFacatuur(); ?>
 
     </tbody>
 </table>

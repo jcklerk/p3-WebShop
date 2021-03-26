@@ -1,5 +1,6 @@
 <?php
     require 'include/nav.php';
+    $_SESSION['verzendkosten'] = '';
     $total = array();
     if (empty($_SESSION['cart'])) {
       $_SESSION['cart'] = array();
@@ -52,6 +53,7 @@
     <?php ;else: ?>
       <br>
     <?php endif; ?>
-        <?php var_dump($totaal); ?>
+        <?php if (array_sum($totaal) >= 50) {
+            echo '<br> prijs: €', array_sum($totaal), '<br> verzendkosten: gratis', '<br> totaal: €', array_sum($totaal); $_SESSION['verzendkosten'] = '0,00';} else {echo '<br> prijs: €', array_sum($totaal), '<br> verzendkosten: 13.5', '<br> totaal: €', array_sum($totaal) + 13.5; $_SESSION['verzendkosten'] = '13,5';}?>
     </div>
 </div>

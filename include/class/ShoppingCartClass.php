@@ -54,7 +54,6 @@ class ShoppingCartClass
                         </form>
                         <p class="text-end fs-4">€<?php echo $products['prijs'] * $array['Aantal'] ?> </p>
                         <?php $prijs = $products['prijs'] * $array['Aantal'];
-
                         array_push($this->total, $prijs);?>
                       </p>
                     </div>
@@ -65,6 +64,6 @@ class ShoppingCartClass
     <?php
           }
       }
-    return;
+    return $this->total;
   }
 }

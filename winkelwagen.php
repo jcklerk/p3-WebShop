@@ -38,7 +38,7 @@
         ?>
     </div>
     <ul class="list-group list-group-flush">
-      <?php (new ShoppingCartClass($_SESSION['cart'],$total))->Cart();
+      <?php $totaal = (new ShoppingCartClass($_SESSION['cart'],$total))->Cart();
       if (empty($_SESSION['cart'])) {
         echo $arraycart['leeg'];
       }
@@ -52,6 +52,6 @@
     <?php ;else: ?>
       <br>
     <?php endif; ?>
-        <?php var_dump(get_class_vars('cart')); ?>
+        <?php var_dump($totaal); ?>
     </div>
 </div>

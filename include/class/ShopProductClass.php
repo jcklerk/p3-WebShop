@@ -13,7 +13,7 @@ class ShopProductClass
     }
     public function Product(){
         $pdo = $this->dbClass->makeConnection();
-        $getproducts = $pdo->prepare("SELECT * FROM `product`INNER JOIN `taal_product` ON product.product_nr = taal_product.product_nr WHERE product.product_nr = :product_nr AND `taal_id` = :taal_id ");
+        $getproducts = $pdo->prepare("SELECT * FROM `product`INNER JOIN `taal_product` ON product.product_nr = taal_product.product_nr LEFT JOIN `taal_shop` ON taal_shop.taal_id = taal_product.taal_id   WHERE product.product_nr = :product_nr AND taal_product.taal_id = :taal_id");
         $getproducts->bindParam(':product_nr', $this->product);
         $getproducts->bindParam(':taal_id', $_SESSION['lang_id']);
         $getproducts->execute();
@@ -33,7 +33,7 @@ class ShopProductClass
                             <p class="card-text c-red">
                             <form method="post">
                                 <button type="submit" class="btn btn-primary btn-lg" name="product_nr" value="<?php echo $x['product_nr'];?>">
-                                    betalen
+                                    <?php echo $x['pay']?>
                                 </button>
                             </form>
                             </p>

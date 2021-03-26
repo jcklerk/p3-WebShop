@@ -21,10 +21,13 @@ class ShopClass
       $getproducts->bindParam(':taal_id', $_SESSION['lang_id']);
       $getproducts->execute();
       $catproduct = $getproducts->fetchAll();
-      $arraylang = (new LangClass())->LangGetCart();
 
+      $getemtycat = $pdo->prepare('SELECT * FROM `taal_shop` WHERE taal_id = :taal_id');
+      $getemtycat->bindParam(':taal_id', $_SESSION['lang_id']);
+      $getemtycat->execute();
+      $getemtycat = $getemtycat->fetch();
       if (empty($catproduct)) {
-        echo "<h1>Deze categorie is leeg</h1>";
+        echo  '<h1>'.$getemtycat["cat_leeg"].'</h1>';
       }
       foreach ($catproduct as $x) { ?>
               <a style="text-decoration: none;" href="<?php echo $this->url;?>webshopproduct.php/?product_nr=<?php echo $x['product_nr']?>">
@@ -33,7 +36,7 @@ class ShopClass
                          <img src="<?php echo $x['img']?>" class="card-img-top" alt="...">
                          <div class="card-body">
                              <h5 class="card-title c-red"><?php echo $x['naam'];?> </h5>
-                             <p class="card-text c-red"><?php echo $x['categorie'];?></p>
+                             <p class="card-text c-red"><?php echo $x['beschrijving'];?></p>
                              <p class="card-text c-red">€<?php echo $x['prijs'];?></p>
                          </div>
                      </div>

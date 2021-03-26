@@ -50,4 +50,5 @@ if (!empty($_SESSION['user_type'])) {
 
 <?php
 require "../include/footer.php";
+
 ?>

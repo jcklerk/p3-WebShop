@@ -96,4 +96,5 @@ if (isset($_POST['Webshop_img']) && isset($_POST['Webshop_Cat']) && isset($_POST
 
 <?php
 require "../include/footer.php";
+
 ?>

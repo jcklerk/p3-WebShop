@@ -4,7 +4,7 @@ require "include/class/CreateFactuurClass.php";
 
 if(isset($_SESSION['user_id'])){
   if (!empty($_SESSION['cart'])) {
-    if (!empty($_SESSION['verzendkosten']) {
+    if (!empty($_SESSION['verzendkosten'])) {
       echo "vol";
       print_r($_SESSION['cart']);
       (new CreateFactuurClass($_SESSION['user_id'],$_SESSION['cart'],$_SESSION['verzendkosten']))->Factuur();

@@ -21,7 +21,7 @@ class CreateFactuurClass
   }
   public function Factuur(){
     $pdo = $this->dbClass->makeConnection();
-    $createfacatuur = $pdo->prepare("INSERT INTO `factuur` (`factuur_nr`, `user_id`, `verzend_kosten` `factuur_datum`) VALUES (NULL, :user, :verzendkosten, current_timestamp());");
+    $createfacatuur = $pdo->prepare("INSERT INTO `factuur` (`factuur_nr`, `user_id`, `verzend_kosten`, `factuur_datum`) VALUES (NULL, :user, :verzendkosten, current_timestamp());");
     $createfacatuur->bindParam(':user', $this->user);
     $createfacatuur->bindParam(':verzendkosten', $this->verzendkosten);
     $createfacatuur->execute();

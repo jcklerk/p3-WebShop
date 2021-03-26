@@ -54,6 +54,6 @@
       <br>
     <?php endif; ?>
         <?php if (array_sum($totaal) >= 50) {
-            echo '<br> prijs: €', array_sum($totaal), '<br> verzendkosten: gratis', '<br> totaal: €', array_sum($totaal); $_SESSION['verzendkosten'] = '0,00';} else {echo '<br> prijs: €', array_sum($totaal), '<br> verzendkosten: 13.5', '<br> totaal: €', array_sum($totaal) + 13.5; $_SESSION['verzendkosten'] = '13,5';}?>
+            echo '<br> prijs: €', array_sum($totaal), '<br> verzendkosten: gratis', '<br> totaal: €', array_sum($totaal); $_SESSION['verzendkosten'] = '0.00';} else {echo '<br> prijs: €', array_sum($totaal), '<br> verzendkosten: 13.50', '<br> totaal: €', array_sum($totaal) + 13.5; $_SESSION['verzendkosten'] = '13.50';}?>
     </div>
 </div>

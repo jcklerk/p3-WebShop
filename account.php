@@ -34,7 +34,8 @@ require "include/class/FactuurClass.php";
         <th scope="col">product</th>
         <th scope="col">datum</th>
         <th scope="col">aantal</th>
-        <th scope="col">totaal</th>
+        <th scope="col">totaal prodcut</th>
+        <th scope="col">shipping costs</th>
     </tr>
 
     <?php (new FactuurClass($_SESSION['user_id']))->GetFacatuur(); ?>

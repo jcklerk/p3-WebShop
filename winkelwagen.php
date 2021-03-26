@@ -47,13 +47,17 @@
     </ul>
     <div class="card-footer">
       <?php if (!empty($_SESSION['cart'])): ?>
+        <?php if (array_sum($totaal) >= 50) {
+            echo 'prijs: €', array_sum($totaal), '<br> verzendkosten: gratis', '<br> totaal: €', array_sum($totaal); $_SESSION['verzendkosten'] = '0.00';} else {echo '<br> prijs: €', array_sum($totaal), '<br> verzendkosten: 13.50', '<br> totaal: €', array_sum($totaal) + 13.5; $_SESSION['verzendkosten'] = '13.50';
+            }
+            ?>
+            <br> 
       <a class="btn btn-primary" href="<?php echo $url;?>pay.php">
         <?php  echo $arraycart['checkout'];?>
       </a>
     <?php ;else: ?>
       <br>
     <?php endif; ?>
-        <?php if (array_sum($totaal) >= 50) {
-            echo '<br> prijs: €', array_sum($totaal), '<br> verzendkosten: gratis', '<br> totaal: €', array_sum($totaal); $_SESSION['verzendkosten'] = '0.00';} else {echo '<br> prijs: €', array_sum($totaal), '<br> verzendkosten: 13.50', '<br> totaal: €', array_sum($totaal) + 13.5; $_SESSION['verzendkosten'] = '13.50';}?>
+
     </div>
 </div>

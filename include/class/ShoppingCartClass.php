@@ -48,13 +48,14 @@ class ShoppingCartClass
                              ?>
                           </select>
                         </form>
+                        <p class="fs-4">€<?php echo $products['prijs'] * $array['Aantal'] ?> </p>
+                        <?php $prijs = $products['prijs'] * $array['Aantal'];
+                        array_push($this->total, $prijs);?>
+                        <br>
                         <form method="post">
                           <input type="number" name="product" value="<?php echo $array['Product'];?>" hidden>
                           <button type="submit" name="delete" class="btn btn-danger" value="999">Delete</button>
                         </form>
-                        <p class="text-end fs-4">€<?php echo $products['prijs'] * $array['Aantal'] ?> </p>
-                        <?php $prijs = $products['prijs'] * $array['Aantal'];
-                        array_push($this->total, $prijs);?>
                       </p>
                     </div>
                   </div>

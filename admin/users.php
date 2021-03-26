@@ -17,10 +17,10 @@ if (!empty($_SESSION['user_type'])) {
   echo '<script type="text/javascript">window.location.href = "'.$srv_url.'login.php/";</script>';
   exit;
 }
-//require "../include/class/UsersClass.php";
+require "../include/class/showusers.php";
 $empty = '';
 ?>
-<title>Users - Wok & Roll</title>
+<title>Orders - Wok & Roll</title>
 <br><br><br><br>
 <br>
 <h1>Users</h1>
@@ -40,14 +40,16 @@ $empty = '';
     <tbody>
     <tr class="c-border">
         <th scope="col" >User ID</th>
-        <th scope="col" >Full name</th>
-        <th scope="col">woonplaats</th>
-        <th scope="col">straatnaam</th>
-        <th scope="col">huisnummer</th>
-        <th scope="col">postcode</th>
+        <th scope="col" >username</th>
+        <th scope="col">name</th>
+        <th scope="col">prefix</th>
+        <th scope="col">surname</th>
+        <th scope="col">street name</th>
+        <th scope="col">house number</th>
+        <th scope="col">Postal Code</th>
     </tr>
 
-    <?php// (new FactuurClass($empty))->GetAllFacatuur(); ?>
+    <?php (new showusers($empty))->ShowAllUsers(); ?>
 
     </tbody>
 </table>

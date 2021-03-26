@@ -25,7 +25,7 @@ require "include/class/FactuurClass.php";
 ?>
 <title>Account - Wok & Roll</title>
 
-<body class="bc-gray-black">
+<body class="bc-gray-lblack">
 
 <table class="table table-edit c-red" style="">
     <tbody>

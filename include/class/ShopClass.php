@@ -51,14 +51,14 @@ class ShopClass
       $getproducts->execute();
       $allproduct = $getproducts->fetchAll();
       foreach ($allproduct as $x) { ?>
-              <a href="<?php echo $this->url;?>webshopproduct.php/?product_nr=<?php echo $x['product_nr']?>">
+              <a style="text-decoration: none;" href="<?php echo $this->url;?>webshopproduct.php/?product_nr=<?php echo $x['product_nr']?>">
                  <div class="col">
                      <div class="card h-100 bc-gray-black ">
                          <img src="<?php echo $x['img']?>" class="card-img-top" alt="...">
                          <div class="card-body">
-                         <h5 class="card-title"><?php echo $x['naam'];?> </h5>
-                         <p class="card-text"><?php echo $x['categorie'];?></p>
-                         <p class="card-text">€<?php echo $x['prijs'];?></p>
+                         <h5 class="card-title c-red"><?php echo $x['naam'];?> </h5>
+                         <p class="card-text c-red"><?php echo $x['categorie'];?></p>
+                         <p class="card-text c-red">€<?php echo $x['prijs'];?></p>
                     </div>
                  </div>
                  </div>

@@ -13,12 +13,12 @@ if (!empty($_SESSION['user_type'])) {
   echo '<script type="text/javascript">window.location.href = "'.$srv_url.'login.php/";</script>';
   exit;
 }
-require '../include/class/AdminProductClass.php';
+require '../include/class/AdminWorkshopClass.php';
 ?>
-<title>Products - Wok & Roll</title>
+<title>Workshops - Wok & Roll</title>
 <br><br><br><br>
 <br>
-<h1>Products</h1>
+<h1>Workshops</h1>
 <br>
 <body style="text-align: center">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
@@ -32,15 +32,15 @@ require '../include/class/AdminProductClass.php';
       <div class="row row-web-prod row-cols-1 row-cols-md-4 g-4 c-red">
 
         <?php
-        $products = (new AdminProductsClass())->GetAllProducts();
+        $products = (new AdminWorkshopsClass())->GetAllWorkshops();
         foreach ($products as $product): ?>
         <div class="col">
           <div class="card" style="width: 100%; height: 100%; border: 1px solid black">
-              <img height="200" width="100%" style="object-fit: cover;" src="<?php echo $product['img']; ?>" class="card-img-top" alt="...">
+              <img height="200" width="100%" style="object-fit: cover;" src="<?php echo $product['workshop_img']; ?>" class="card-img-top" alt="...">
               <div class="card-body">
-                <h4 class="center"> <?php echo $product['naam']?> </h4>
-                <a href="<?php echo $url.'admin/editproducts.php?product='.$product['product_nr'] ?>" class="btn btn-warning align-bottom">Edit</a>
-                <button type="button" onclick="rmproducts(<?php echo $product['product_nr']; ?>, '<?php echo $product['naam']; ?>');" class="btn btn-danger align-self-end">Remove</button>
+                <h4 class="center"> <?php echo $product['workshop_title']?> </h4>
+                <a href="<?php echo $url.'admin/editworkshop.php?workshop='.$product['workshop_id'] ?>" class="btn btn-warning align-bottom">Edit</a>
+                <button type="button" onclick="rmproducts(<?php echo $product['workshop_id']; ?>, '<?php echo $product['workshop_title']; ?>');" class="btn btn-danger align-self-end">Remove</button>
               </div>
           </div>
         </div>
@@ -54,11 +54,10 @@ require '../include/class/AdminProductClass.php';
 function rmproducts(id, naam) {
   var r = confirm("Confirm Product Remove " + naam);
   if (r == true) {
-    window.location.href = "<?php echo $url; ?>admin/rmproducts.php?product="+id;
+    window.location.href = "<?php echo $url; ?>admin/rmworkshop.php?workshop="+id;
   }
 }
 </script>
-
 <?php
 require "../include/footer.php";
 ?>

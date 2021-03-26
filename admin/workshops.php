@@ -60,5 +60,4 @@ function rmproducts(id, naam) {
 </script>
 <?php
 require "../include/footer.php";
-
 ?>

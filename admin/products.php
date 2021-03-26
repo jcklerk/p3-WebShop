@@ -13,7 +13,7 @@ if (!empty($_SESSION['user_type'])) {
   echo '<script type="text/javascript">window.location.href = "'.$srv_url.'login.php/";</script>';
   exit;
 }
-
+require '../include/class/AdminProductClass.php';
 ?>
 <title>Products - Wok & Roll</title>
 <br><br><br><br>
@@ -30,25 +30,35 @@ if (!empty($_SESSION['user_type'])) {
       ?>
     <div class="col-9">
       <div class="row row-web-prod row-cols-1 row-cols-md-4 g-4 c-red">
-        <?php for ($i=1; $i <= 5 ; $i++): ?>
+
+        <?php
+        $products = (new AdminProductsClass())->GetAllProducts();
+        foreach ($products as $product): ?>
         <div class="col">
-          <div class="card" style="width: 100%; border: 1px solid black">
-              <img src="../img/ja.jpg" class="card-img-top" alt="...">
+          <div class="card" style="width: 100%; height: 100%; border: 1px solid black">
+              <img height="200" width="100%" style="object-fit: cover;" src="<?php echo $product['img']; ?>" class="card-img-top" alt="...">
               <div class="card-body">
-                <h3 class="center"> title </h3>
-                <button type="button" class="btn btn-warning">Edit</button>
-                <button type="button" class="btn btn-danger">Remove</button>
+                <h4 class="center"> <?php echo $product['naam']?> </h4>
+                <a href="<?php echo $url.'admin/editproducts.php?product='.$product['product_nr'] ?>" class="btn btn-warning align-bottom">Edit</a>
+                <button type="button" onclick="rmproducts(<?php echo $product['product_nr']; ?>, '<?php echo $product['naam']; ?>');" class="btn btn-danger align-self-end">Remove</button>
               </div>
           </div>
         </div>
-      <?php endfor; ?>
+      <?php endforeach; ?>
       </div>
     </div>
   </div>
 </div>
 </body>
+<script>
+function rmproducts(id, naam) {
+  var r = confirm("Confirm Product Remove " + naam);
+  if (r == true) {
+    window.location.href = "<?php echo $url; ?>admin/rmproducts.php?product="+id;
+  }
+}
+</script>
 
 <?php
 require "../include/footer.php";
-
 ?>

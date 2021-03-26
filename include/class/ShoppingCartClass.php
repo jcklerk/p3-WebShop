@@ -18,7 +18,7 @@ class ShoppingCartClass
 
 
           foreach ($this->cart as $array) {
-              $getProducts = $pdo->prepare("SELECT * FROM `product`INNER JOIN `taal_product` ON product.product_nr = taal_product.product_nr WHERE product.product_nr= :product AND `taal_id` = :taal_id");
+              $getProducts = $pdo->prepare("SELECT * FROM `product` INNER JOIN `taal_product` ON product.product_nr = taal_product.product_nr WHERE product.product_nr= :product AND `taal_id` = :taal_id");
               $getProducts->bindParam(':product', $array['Product']);
               $getProducts->bindParam(':taal_id', $_SESSION['lang_id']);
               $getProducts->execute();
@@ -50,6 +50,7 @@ class ShoppingCartClass
                           <input type="number" name="product" value="<?php echo $array['Product'];?>" hidden>
                           <button type="submit" name="delete" class="btn btn-danger" value="999">Delete</button>
                         </form>
+                        <p class="text-end fs-4">€<?php echo $products['prijs'] * $array['Aantal'] ?> </p>
                       </p>
                     </div>
                   </div>

@@ -5,10 +5,12 @@ class ShoppingCartClass
 {
   private $dbClass;
   public $cart;
+  public $total;
 
-  function __construct($cart){// haal de array binnen van het andere document.
+  function __construct($cart, $total){// haal de array binnen van het andere document.
     $this->dbClass = new DBClass();
     $this->cart = $cart;
+    $this->total = $total;
   }
   public function Cart(){// loop door de array en laat de producten zien.
       if (!empty($this->cart)){
@@ -51,6 +53,9 @@ class ShoppingCartClass
                           <button type="submit" name="delete" class="btn btn-danger" value="999">Delete</button>
                         </form>
                         <p class="text-end fs-4">€<?php echo $products['prijs'] * $array['Aantal'] ?> </p>
+                        <?php $prijs = $products['prijs'] * $array['Aantal'];
+
+                        array_push($this->total, $prijs);?>
                       </p>
                     </div>
                   </div>

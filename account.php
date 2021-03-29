@@ -3,7 +3,8 @@
 //require __DIR__ . '/User.php';
 //$user = new User();
 //$user->login();
-session_start();
+//session_start();
+require "include/nav.php";
 if (!empty($_SESSION['user_type'])) {
   if ($_SESSION['user_type'] == 'admin') {
     echo '<script type="text/javascript">window.location.href = "'.$_SESSION['url'].'admin/";</script>';
@@ -18,13 +19,13 @@ if (!empty($_SESSION['user_type'])) {
   exit;
 }
 
-
-require "include/nav.php";
 require "include/class/FactuurClass.php";
 
 ?>
 <title>Account - Wok & Roll</title>
-
+<br>
+<br>
+<br>
 <body class="bc-gray-lblack">
 
 <table class="table table-edit c-red" style="">

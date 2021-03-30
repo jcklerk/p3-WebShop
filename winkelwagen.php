@@ -61,3 +61,6 @@
 
     </div>
 </div>
+</body>
+<?php
+require 'include/footer.php';

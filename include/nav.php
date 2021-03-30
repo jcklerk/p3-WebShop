@@ -35,7 +35,7 @@ require __DIR__ . '/config.php';
                                         <form method="post" id="<?php echo $forlang["taal_id"];?>">
                                           <input type="text" name="lang" value="<?php echo $forlang["taal_id"];?>" hidden>
                                         </form>
-                                        <li><img style="height: 20px;" src="<?php echo $forlang['flag']; ?>"><a class="dropdown-item c-yellow" onclick="document.getElementById(<?php echo $forlang['taal_id'];?>).submit();"><?php echo $forlang["taal_naam"];?></a></li>
+                                        <li><a class="dropdown-item c-yellow" onclick="document.getElementById(<?php echo $forlang['taal_id'];?>).submit();"><img style="height: 20px;" src="<?php echo $forlang['flag']; ?>"> <?php echo $forlang["taal_naam"];?></a></li>
                                       <?php endforeach; ?>
                     </ul>
                 </li>

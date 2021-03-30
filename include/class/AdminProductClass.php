@@ -21,7 +21,7 @@ class AdminProductClass
   {
     $this->dbClass = new DBClass();
     $this->img = $img;
-    $this->prijs = $prijs;
+    $this->prijs = str_replace(',', '.', $prijs);
     $this->btw = $btw;
     $this->categorie = $categorie;
     $this->lang_post = $lang_post;
@@ -80,7 +80,7 @@ class AdminProductClass
     $product->bindParam(':prijs', $this->prijs);
     $product->bindParam(':btw', $this->btw);
     $product->bindParam(':categorie', $this->categorie);
-    $product->bindParam(':product_nr', $this->product_nr);
+    $product->bindParam(':product_nr', $product_nr);
     $product->execute();
     $this->product_nr = $product_nr['0'];
     foreach ($this->lang_post as $lang_post_array) {

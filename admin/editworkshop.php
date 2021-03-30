@@ -91,7 +91,7 @@ if (isset($_POST['workshop_img']) && isset($_POST['video']) && isset($_POST['img
           } ?>
           </div>
           <br>
-          <input type="submit" class="btn btn-outline-primary" name="add" value="add">
+          <input type="submit" class="btn btn-outline-primary" name="Edit" value="Edit">
       </form>
   </div><br><br>
   </div>

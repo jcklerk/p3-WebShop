@@ -18,7 +18,7 @@ $arrayworkshoptext = (new WorkShopsClass($url, $_GET['workshops'], $_SESSION['la
     </div>
 </div>
 
-<div class="c-white" style="margin: 8px;">
+<div class="c-white" style="margin: 20px;">
   <div class="row" style="--bs-gutter-x: 0 rem !important;">
     <div class="col-sm">
       <h2>Ingredients:</h2>

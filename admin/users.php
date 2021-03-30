@@ -21,9 +21,7 @@ require "../include/class/showusers.php";
 $empty = '';
 ?>
 <title>Orders - Wok & Roll</title>
-<br><br><br><br>
-<br>
-<h1>Users</h1>
+<h1 class="mt">Users</h1>
 <br>
 
 <body class="d-flex flex-column h-100" style="text-align: center">

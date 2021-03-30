@@ -29,9 +29,7 @@ if (isset($_POST['workshop_img']) && isset($_POST['video']) && isset($_POST['img
 }
 ?>
 <title>Edit Workshop - Wok & Roll</title>
-<br><br><br><br>
-<br>
-<h1>Edit Workshop</h1>
+<h1 class="mt">Edit Workshop</h1>
 <br>
 <body class="d-flex flex-column h-100" style="text-align: center">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>

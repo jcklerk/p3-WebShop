@@ -16,9 +16,7 @@ if (!empty($_SESSION['user_type'])) {
 require '../include/class/AdminWorkshopClass.php';
 ?>
 <title>Workshops - Wok & Roll</title>
-<br><br><br><br>
-<br>
-<h1>Workshops</h1>
+<h1 class="mt">Workshops</h1>
 <br>
 <body class="d-flex flex-column h-100" style="text-align: center">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>

@@ -28,6 +28,7 @@ class FactuurClass {
                 <td><?php echo $x['factuur_datum']; ?></td>
                 <td><?php echo $x['product_aantal']; ?></td>
                 <td>€<?php echo $totaal; ?></td>
+                <td>€<?php echo str_replace('.',',', $x['verzend_kosten']); ?></td>
             </tr>
         <?php }
     }
@@ -48,6 +49,7 @@ class FactuurClass {
                 <td><?php echo $x['factuur_datum']; ?></td>
                 <td><?php echo $x['product_aantal']; ?></td>
                 <td>€<?php echo $totaal; ?></td>
+                <td>€<?php echo str_replace('.',',', $x['verzend_kosten']); ?></td>
             </tr>
         <?php }
     }

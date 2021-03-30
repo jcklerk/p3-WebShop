@@ -5,10 +5,12 @@ class ShoppingCartClass
 {
   private $dbClass;
   public $cart;
+  public $total;
 
-  function __construct($cart){// haal de array binnen van het andere document.
+  function __construct($cart, $total){// haal de array binnen van het andere document.
     $this->dbClass = new DBClass();
     $this->cart = $cart;
+    $this->total = $total;
   }
   public function Cart(){// loop door de array en laat de producten zien.
       if (!empty($this->cart)){
@@ -18,7 +20,7 @@ class ShoppingCartClass
 
 
           foreach ($this->cart as $array) {
-              $getProducts = $pdo->prepare("SELECT * FROM `product`INNER JOIN `taal_product` ON product.product_nr = taal_product.product_nr WHERE product.product_nr= :product AND `taal_id` = :taal_id");
+              $getProducts = $pdo->prepare("SELECT * FROM `product` INNER JOIN `taal_product` ON product.product_nr = taal_product.product_nr WHERE product.product_nr= :product AND `taal_id` = :taal_id");
               $getProducts->bindParam(':product', $array['Product']);
               $getProducts->bindParam(':taal_id', $_SESSION['lang_id']);
               $getProducts->execute();
@@ -46,6 +48,10 @@ class ShoppingCartClass
                              ?>
                           </select>
                         </form>
+                        <p class="fs-4">€<?php echo $products['prijs'] * $array['Aantal'] ?> </p>
+                        <?php $prijs = $products['prijs'] * $array['Aantal'];
+                        array_push($this->total, $prijs);?>
+                        <br>
                         <form method="post">
                           <input type="number" name="product" value="<?php echo $array['Product'];?>" hidden>
                           <button type="submit" name="delete" class="btn btn-danger" value="999">Delete</button>
@@ -59,6 +65,6 @@ class ShoppingCartClass
     <?php
           }
       }
-    return;
+    return $this->total;
   }
 }

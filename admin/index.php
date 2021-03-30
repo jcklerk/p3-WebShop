@@ -44,7 +44,8 @@ $empty = '';
         <th scope="col">Product</th>
         <th scope="col">Date</th>
         <th scope="col">Amount</th>
-        <th scope="col">total</th>
+        <th scope="col">total product</th>
+        <th scope="col">shipping costs</th>
     </tr>
 
     <?php (new FactuurClass($empty))->GetAllFacatuur(); ?>

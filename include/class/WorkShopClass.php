@@ -55,7 +55,7 @@ class WorkShopsClass
     if (strpos($arrayworkshop['video'], 'youtube')) {
       $arrayworkshop['video'] = str_replace("/watch?v=","/embed/",$arrayworkshop['video']);
     }else {
-      $arrayworkshop['video'] = 'https://www.youtube.com/error?src=404&ifr=1&error';
+      $arrayworkshop['video'] = $this->url.'404.php';
     }
     return $arrayworkshop;
   }

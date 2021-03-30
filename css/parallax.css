@@ -11,7 +11,8 @@
 
 .parallax-halfheight {
     /* Half height */
-    height: 50%;
+    height: 100%;
+    width: 100%;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;

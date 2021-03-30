@@ -2,7 +2,7 @@
 require __DIR__ . '/config.php';
 
  ?>
-<nav class="navbar navbar-expand-lg bc-gray-black fixed-top">
+<nav class="navbar navbar-expand-lg bc-gray-black">
     <div class="container-fluid">
         <a class="navbar-brand c-yellow" href="<?php echo $url; ?>"> <img style="height: 50px;" src="<?php echo $url; ?>/img/logo.png" alt=""> </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">

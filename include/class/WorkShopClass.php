@@ -53,6 +53,9 @@ class WorkShopsClass
     $getworkshop->execute();
     $arrayworkshop = $getworkshop->fetch();
     if (strpos($arrayworkshop['video'], 'youtube')) {
+      if (strpos($arrayworkshop['video'], 'error?src=404')) {
+        $arrayworkshop['video'] = $this->url.'404.php';
+      }
       $arrayworkshop['video'] = str_replace("/watch?v=","/embed/",$arrayworkshop['video']);
     }else {
       $arrayworkshop['video'] = $this->url.'404.php';

@@ -11,7 +11,8 @@
 
 .parallax-halfheight {
     /* Half height */
-    height: 100%;
+    height: 30%;
+    min-height: 25%;
     width: 100%;
 
     /* Create the parallax scrolling effect */

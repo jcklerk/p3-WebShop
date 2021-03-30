@@ -48,7 +48,7 @@ if (isset($_POST['Webshop_img']) && isset($_POST['Webshop_Cat']) && isset($_POST
                   <input name="Webshop_img" class="form-control" type="text" autocomplete="off" required>
               </div>
             <div class="col">
-                <label for="cars">Catagorie:</label>
+                <label for="cars">CATEGORY:</label>
 
                 <select name="cata" id="cata" class="form-control">
                     <option value="1">Chinese</option>
@@ -60,7 +60,7 @@ if (isset($_POST['Webshop_img']) && isset($_POST['Webshop_Cat']) && isset($_POST
                 </select>
             </div>
             <div class="col">
-                  <label for="Webshop_Prijs">Prijs</label>
+                  <label for="Webshop_Prijs">PRICE</label>
                   <input name="Webshop_Prijs" class="form-control" type="number" autocomplete="off" required>
               </div>
             <div class="col">
@@ -70,13 +70,13 @@ if (isset($_POST['Webshop_img']) && isset($_POST['Webshop_Cat']) && isset($_POST
           <?php foreach ($arraylang as $forlang): ?>
                 <div class="col">
                 <div class="">
-                    <label for="">TAAL: <?php echo $forlang["taal_naam"]?></label>
+                    <label for="">LANGUAGE: <?php echo $forlang["taal_naam"]?></label>
                     <br>
-                    <label for="">Naam</label>
+                    <label for="">NAME</label>
                     <input required name="<?php echo $forlang['taal_id'];?>:naam" class="form-control"></textarea>
                 </div>
                 <div class="">
-                    <label for="">Beschrijving</label>
+                    <label for="">DESCRIPTION</label>
                     <textarea required rows="4" cols="50" name="<?php echo $forlang['taal_id'];?>:beschrijving" class="form-control"></textarea>
                 </div>
               </div>

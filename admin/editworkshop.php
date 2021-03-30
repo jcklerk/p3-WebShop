@@ -67,22 +67,22 @@ if (isset($_POST['workshop_img']) && isset($_POST['video']) && isset($_POST['img
                   ?>
                 <div class="col">
                   <div class="">
-                          <label for="naam">TAAL: <?php echo $forlang["taal_naam"]?></label>
+                          <label for="naam">LANGUAGE: <?php echo $forlang["taal_naam"]?></label>
                           <br>
-                          <label for="naam">NAAM</label>
+                          <label for="naam">NAME</label>
                           <input name="<?php echo $forlang['taal_id'];?>:title" class="form-control" type="text" autocomplete="off" required  value="<?php echo $workshop_old_data[$count]['workshop_title']; ?>">
                       </div>
                 <div class="">
 
-                    <label for="img">ingredienten</label>
+                    <label for="img">INGREDIENTS</label>
                     <textarea required rows="4" cols="50" name="<?php echo $forlang['taal_id'];?>:ingredienten" class="form-control"><?php echo $workshop_old_data[$count]['ingredienten']; ?></textarea>
                 </div>
                 <div class="">
-                    <label for="img">benodigdheden</label>
+                    <label for="img">SUPPLIES</label>
                     <textarea required rows="4" cols="50" name="<?php echo $forlang['taal_id'];?>:benodigdheden" class="form-control"><?php echo $workshop_old_data[$count]['benodigdheden']; ?></textarea>
                 </div>
                 <div class="">
-                    <label for="img">maken</label>
+                    <label for="img">INSTRUCTIONS</label>
                     <textarea required rows="4" cols="50" name="<?php echo $forlang['taal_id'];?>:maken" class="form-control"><?php echo $workshop_old_data[$count]['maken']; ?></textarea>
                 </div>
               </div>

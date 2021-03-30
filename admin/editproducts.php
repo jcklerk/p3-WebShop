@@ -52,11 +52,11 @@ if (isset($_POST['Webshop_img']) && isset($_POST['Webshop_Cat']) && isset($_POST
                   <input name="Webshop_img" class="form-control" type="text" autocomplete="off" required value="<?php echo $product_old_data['main']['img'] ?>">
               </div>
             <div class="col">
-                  <label for="Webshop_Cat">Categorie</label>
+                  <label for="Webshop_Cat">CATEGORY</label>
                   <input name="Webshop_Cat" class="form-control" type="text" autocomplete="off" required value="<?php echo $product_old_data['main']['categorie'] ?>">
               </div>
             <div class="col">
-                  <label for="Webshop_Prijs">Prijs</label>
+                  <label for="Webshop_Prijs">PRICE</label>
                   <input name="Webshop_Prijs" class="form-control" type="number" step=".01" autocomplete="off" required value="<?php echo $product_old_data['main']['prijs'] ?>">
               </div>
             <div class="col">
@@ -70,13 +70,13 @@ if (isset($_POST['Webshop_img']) && isset($_POST['Webshop_Cat']) && isset($_POST
             ?>
                 <div class="col">
                 <div class="">
-                    <label for="">TAAL: <?php echo $forlang["taal_naam"]?></label>
+                    <label for="">LANGUAGE: <?php echo $forlang["taal_naam"]?></label>
                     <br>
-                    <label for="">Naam</label>
+                    <label for="">NAME</label>
                     <input required name="<?php echo $forlang['taal_id'];?>:naam" class="form-control" value="<?php echo $product_old_data['lang'][$count]['naam'] ?>"></textarea>
                 </div>
                 <div class="">
-                    <label for="">Beschrijving</label>
+                    <label for="">DESCRIPTION</label>
                     <textarea required rows="4" cols="50" name="<?php echo $forlang['taal_id'];?>:beschrijving" class="form-control"><?php echo $product_old_data['lang'][$count]['beschrijving'] ?></textarea>
                 </div>
               </div>

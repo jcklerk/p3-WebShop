@@ -26,10 +26,10 @@ $empty = '';
 <h1>Users</h1>
 <br>
 
-<body style="text-align: center">
+<body class="d-flex flex-column h-100" style="text-align: center">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="../css/admin.css">
-<div class="container" style="min-height: 70%;">
+<div class="container">
   <div class="row">
       <?php
       require '../include/sidenav.php';

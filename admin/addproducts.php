@@ -31,7 +31,7 @@ if (isset($_POST['Webshop_img']) && isset($_POST['Webshop_Cat']) && isset($_POST
 <br>
 <h1>Add Product</h1>
 <br>
-<body style="text-align: center">
+<body class="d-flex flex-column h-100" style="text-align: center">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="../css/admin.css">
 <div class="container">

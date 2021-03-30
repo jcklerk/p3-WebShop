@@ -17,6 +17,7 @@ require "include/class/CategorieClass.php";
     }
     ?>
     </div>
+    </div>
     </body>
 
 <?php

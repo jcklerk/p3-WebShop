@@ -26,7 +26,7 @@ require "include/class/FactuurClass.php";
 <br>
 <br>
 <br>
-<body class="bc-gray-lblack">
+<body class="bc-gray-lblack d-flex flex-column h-100">
 
 <table class="table table-edit c-red" style="">
     <tbody>

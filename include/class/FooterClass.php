@@ -16,7 +16,7 @@ class FooterClass
         $getfooter->execute();
         $footer = $getfooter->fetchAll();
         foreach ($footer as $x) { ?>
-            <footer class="text-center bc-red c-yellow">
+            <footer class="text-center bc-red c-yellow footer mt-auto py-3">
                 <div class="container p-4">
                     <div class="row">
                         <div class="mb-4 mb-md-0 fw-bold"> <!-- removed from class: col-lg-6 col-md-12 -->

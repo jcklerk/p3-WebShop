@@ -32,9 +32,9 @@ class ShopClass
       foreach ($catproduct as $x) { ?>
               <a style="text-decoration: none;" href="<?php echo $this->url;?>webshopproduct.php/?product_nr=<?php echo $x['product_nr']?>">
                  <div class="col">
-                     <div class="card h-100 bc-gray-black ">
+                     <div class="card bc-gray-black ">
                          <img src="<?php echo $x['img']?>" class="card-img-top" alt="...">
-                         <div class="card-body" style="height: 50px!important">
+                         <div class="card-body" style="height: 150px!important">
                              <h5 class="card-title c-red"><?php echo $x['naam'];?> </h5>
                              <p class="card-text c-red"><?php echo $x['beschrijving'];?></p>
                              <p class="card-text c-red">€<?php echo $x['prijs'];?></p>

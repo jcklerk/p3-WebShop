@@ -52,7 +52,11 @@ class WorkShopsClass
     $getworkshop->bindParam(':workshop_id', $this->workshop_id);
     $getworkshop->execute();
     $arrayworkshop = $getworkshop->fetch();
-    $arrayworkshop['video'] = str_replace("/watch?v=","/embed/",$arrayworkshop['video']);
+    if (strpos($arrayworkshop['video'], 'youtube')) {
+      $arrayworkshop['video'] = str_replace("/watch?v=","/embed/",$arrayworkshop['video']);
+    }else {
+      $arrayworkshop['video'] = 'https://www.youtube.com/error?src=404&ifr=1&error';
+    }
     return $arrayworkshop;
   }
 

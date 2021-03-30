@@ -20,7 +20,7 @@ class ShopProductClass
         $allproducts = $getproducts->fetchAll();
 
         foreach ($allproducts as $x) { ?>
-                      <div class="card mb-3" style="margin-top: 4em; z-index: 1;">
+                      <div class="card mb-3" style="margin-top: 1em ; z-index: 1;">
                 <div class="row g-0">
                     <div class="col-md-6">
                         <img class="img-fluid" src="<?php echo $x['img']?>" alt="..." width="100%">

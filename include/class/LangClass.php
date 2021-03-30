@@ -48,4 +48,13 @@ class LangClass
         $arraycart = $getcart->fetch();
         return $arraycart;
     }
+    public function LangGetAccount()
+    {
+        $pdo = $this->dbClass->makeConnection();
+        $getAccount = $pdo->prepare("SELECT * FROM `taal_account` WHERE `taal_id` = :taal_id");
+        $getAccount->bindParam(':taal_id', $_SESSION['lang_id']);
+        $getAccount->execute();
+        $arrayaccount = $getAccount->fetch();
+        return $arrayaccount;
+    }
 }

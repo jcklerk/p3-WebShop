@@ -57,7 +57,7 @@ class ShopClass
                          <img src="<?php echo $x['img']?>" class="card-img-top" alt="...">
                         <div class="card-body" style="height: 150px!important">
                          <h5 class="card-title c-red"><?php echo $x['naam'];?> </h5>
-                         <p class="card-text c-red"><?php echo $x['categorie'];?></p>
+                         <p class="card-text c-red"><?php echo $x['beschrijving'];?></p>
                          <p class="card-text c-red">€<?php echo $x['prijs'];?></p>
                     </div>
                  </div>

@@ -8,9 +8,12 @@ $arrayhome = (new LangClass())->LangGetHome();
     <div class="parallax img-home d-flex align-items-center justify-content-center">
 
         <div class="text-center">
+          <br>
             <h1 class="c-red fos-1"><?php echo $arrayhome['title_1']; ?></h1>
             <h1 class="c-white fos-2"><?php echo $arrayhome['title_2']; ?></h1>
             <h1 class="c-yellow fos-2"><?php echo $arrayhome['title_3']; ?></h1>
+            <br>
+            <br>
         </div>
     </div>
 

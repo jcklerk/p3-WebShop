@@ -36,7 +36,7 @@ $empty = '';
 <table class="table table-edit c-red" style="width: 100%;">
     <tbody>
     <tr class="c-border">
-        <th scope="col" >Oder nummer</th>
+        <th scope="col" >Order nummer</th>
         <th scope="col" >User ID</th>
         <th scope="col">Product</th>
         <th scope="col">Date</th>

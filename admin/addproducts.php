@@ -46,20 +46,20 @@ if (isset($_POST['Webshop_img']) && isset($_POST['Webshop_Cat']) && isset($_POST
                   <input name="Webshop_img" class="form-control" type="text" autocomplete="off" required>
               </div>
             <div class="col">
-                <label for="cars">CATEGORY:</label>
+                <label for="Webshop_Cat">CATEGORY:</label>
 
-                <select name="cata" id="cata" class="form-control">
-                    <option value="1">Chinese</option>
-                    <option value="2">Japanese</option>
-                    <option value="3">indian</option>
-                    <option value="4">Thai</option>
-                    <option value="5">Vienamese</option>
-                    <option value="6">Wok</option>
+                <select name="Webshop_Cat" id="Webshop_Cat" class="form-control">
+                    <option value="0">Chinese</option>
+                    <option value="1">Japanese</option>
+                    <option value="2">indian</option>
+                    <option value="3">Thai</option>
+                    <option value="4">Vienamese</option>
+                    <option value="5">Wok</option>
                 </select>
             </div>
             <div class="col">
                   <label for="Webshop_Prijs">PRICE</label>
-                  <input name="Webshop_Prijs" class="form-control" type="number" autocomplete="off" required>
+                  <input name="Webshop_Prijs" class="form-control" type="number" step=".01" autocomplete="off" required>
               </div>
             <div class="col">
                   <label for="Webshop_BTW">BTW</label>

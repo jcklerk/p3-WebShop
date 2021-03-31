@@ -63,7 +63,7 @@ class LangClass
         $getFAQ = $pdo->prepare("SELECT * FROM `taal_FAQ` WHERE `taal_id` = :taal_id");
         $getFAQ->bindParam(':taal_id', $_SESSION['lang_id']);
         $getFAQ->execute();
-        $arrayFAQ = $getFAQ->fetch();
+        $arrayFAQ = $getFAQ->fetchAll();
         return $arrayFAQ;
     }
 }

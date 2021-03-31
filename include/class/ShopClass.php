@@ -33,7 +33,7 @@ class ShopClass
               <a style="text-decoration: none;" href="<?php echo $this->url;?>webshopproduct.php/?product_nr=<?php echo $x['product_nr']?>">
                  <div class="col">
                      <div class="card bc-gray-black ">
-                         <img src="<?php echo $x['img']?>" class="card-img-top" alt="...">
+                         <img height="250" width="100%" style="object-fit: cover;" src="<?php echo $x['img']?>" class="card-img-top" alt="...">
                          <div class="card-body" style="height: 150px!important">
                              <h5 class="card-title c-red"><?php echo $x['naam'];?> </h5>
                              <p class="card-text c-red"><?php echo $x['beschrijving'];?></p>
@@ -54,7 +54,7 @@ class ShopClass
               <a style="text-decoration: none;" href="<?php echo $this->url;?>webshopproduct.php/?product_nr=<?php echo $x['product_nr']?>">
                  <div class="col">
                      <div class="card bc-gray-black ">
-                         <img src="<?php echo $x['img']?>" class="card-img-top" alt="...">
+                         <img height="250" width="100%" style="object-fit: cover;" src="<?php echo $x['img']?>" class="card-img-top" alt="...">
                         <div class="card-body" style="height: 150px!important">
                          <h5 class="card-title c-red"><?php echo $x['naam'];?> </h5>
                          <p class="card-text c-red"><?php echo $x['beschrijving'];?></p>

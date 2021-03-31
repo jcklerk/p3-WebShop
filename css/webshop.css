@@ -19,3 +19,6 @@ transbox {
 .op {
     opacity: 1!important;
 }
+.grid-gap{
+  gap: 5px; margin-bottom: 5px;
+}

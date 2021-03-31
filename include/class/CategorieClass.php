@@ -20,7 +20,7 @@ class CategorieClass
         $taalcat = $cattaal->fetchAll();
         foreach ($taalcat as $x) { ?>
             <div class="container container-web">
-                <div class="row row-web">
+                <div class="row row-web grid-gap">
                     <div class="image-1-3 img-chinesefood d-flex align-items-center justify-content-center" onclick="window.location.href='<?php echo $this->url;?>webshop.php/?cat=0'">
                         <div class="text-center ts-1">
                             <h1 class="fos-2 op"><?php echo $x['cat_chinese']?></h1>
@@ -37,7 +37,7 @@ class CategorieClass
                         </div>
                     </div>
                 </div>
-                <div class="row row-web">
+                <div class="row row-web grid-gap">
                     <div class="image-1-3 img-tai d-flex align-items-center justify-content-center" onclick="window.location.href='<?php echo $this->url;?>webshop.php/?cat=3'">
                         <div class="text-center ts-1">
                             <h1 class="fos-2"><?php echo $x['cat_tai']?></h1>

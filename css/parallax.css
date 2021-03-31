@@ -50,29 +50,29 @@
 }
 .img-chinesefood{
     /* The image used */
-    background-image: url("../img/chinesefood.jpg");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.45), rgba(0, 0, 0, 0.45)), url("../img/chinesefood.jpg");
 }
 
 .img-japanesefood{
     /* The image used */
-    background-image: url("../img/japanesefood.jpg");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.45), rgba(0, 0, 0, 0.45)), url("../img/japanesefood.jpg");
 }
 
 .img-indian{
     /* The image used */
-    background-image: url("../img/the-best-top-10-indian-dishes.jpg");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.45), rgba(0, 0, 0, 0.45)), url("../img/the-best-top-10-indian-dishes.jpg");
 }
 .img-tai{
     /* The image used */
-    background-image: url("../img/gezond-thais-eten.png");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.45), rgba(0, 0, 0, 0.45)), url("../img/gezond-thais-eten.png");
 }
 .img-vait{
     /* The image used */
-    background-image: url("../img/Vietnamese-gerechten-916x458.png");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.45), rgba(0, 0, 0, 0.45)), url("../img/Vietnamese-gerechten-916x458.png");
 }
 .img-wok{
     /* The image used */
-    background-image: url("../img/index.jpg");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.45), rgba(0, 0, 0, 0.45)), url("../img/index.jpg");
 }
 .card {
     border: 0px;

@@ -3,27 +3,23 @@ require "include/nav.php";
 $arrayFAQ  = (new LangClass())->LangGetFAQ();
 ?>
 <title>Home - Wok & Roll</title>
-<body class="bc-gray-black d-flex flex-column h-100">
-  <h1 class="mt">Add Product</h1>
+<body class=" d-flex flex-column h-100" style="text-align: center">
+  <h1 class="mt">FAQ</h1>
   <br>
+  <div class="container">
 
-  <?php foreach ($arrayFAQ as $FAQ){
-    print_r($FAQ);
-    ?>
 
-    <div class="card">
-  <div class="card-header">
-    <?php echo $FAQ['question']; ?>
-  </div>
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-      <p><?php echo str_replace('&euro', '€', $FAQ['answer']); ?></p>
-      <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-    </blockquote>
-  </div>
-</div>
+  <?php foreach ($arrayFAQ as $FAQ){?>
+
+    <div class="card text-white bg-secondary mb-3">
+      <div class="card-header"><?php echo $FAQ['question']; ?></div>
+      <div class="card-body">
+        <h6 class="card-title"><?php echo str_replace('&euro', '€', $FAQ['answer']); ?></h5>
+      </div>
+    </div>
 <?php } ?>
 
+  </div>
 </body>
 
 <?php

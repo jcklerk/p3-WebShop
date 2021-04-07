@@ -40,7 +40,7 @@
     <ul class="list-group list-group-flush">
       <?php $totaal = (new ShoppingCartClass($_SESSION['cart'],$total))->Cart();
       if (empty($_SESSION['cart'])) {
-        echo $arraytekst['leeg'];
+        echo $arraytekst['leeg_msg'];
       }
       ?>
     </ul>

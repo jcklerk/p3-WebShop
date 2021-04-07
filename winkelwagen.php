@@ -18,7 +18,6 @@
       }
     }
     //print_r($_SESSION['cart']);
-    $arraycart = (new LangClass())->LangGetCart();
     require 'include/class/ShoppingCartClass.php';
 ?>
 <title>Winkelwagen - Wok & Roll</title>
@@ -35,13 +34,13 @@
 <div class="card list-width">
     <div class="card-header">
         <?php
-            echo $arraycart['shoppingcart'];
+            echo $arraytekst['shoppingcart'];
         ?>
     </div>
     <ul class="list-group list-group-flush">
       <?php $totaal = (new ShoppingCartClass($_SESSION['cart'],$total))->Cart();
       if (empty($_SESSION['cart'])) {
-        echo $arraycart['leeg'];
+        echo $arraytekst['leeg'];
       }
       ?>
     </ul>
@@ -53,7 +52,7 @@
             ?>
             <br>
       <a class="btn btn-primary" href="<?php echo $url;?>pay.php">
-        <?php  echo $arraycart['checkout'];?>
+        <?php  echo $arraytekst['checkout'];?>
       </a>
     <?php ;else: ?>
       <br>

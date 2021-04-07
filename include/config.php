@@ -37,8 +37,7 @@ if (!isset($_SESSION['lang_id']) || !isset($_SESSION['lang_array']) || empty($_S
 }
 // get database data of the correct lang text
 $arraytekst = (new LangClass())->LangTekst();
-//
-print_r($arraytekst);
+//print_r($arraytekst);
 
 echo '<html lang="'. $arraylang[$_SESSION['lang_array']]['taal'] .'">';
 echo '<link rel="icon"

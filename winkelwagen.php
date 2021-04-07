@@ -31,6 +31,8 @@
 
 
 <link rel="stylesheet" href="css/winkelwagen.css">
+<div class="row">
+<div class="col">
 <div class="card list-width">
     <div class="card-header">
         <?php
@@ -44,21 +46,23 @@
       }
       ?>
     </ul>
-    <div class="card-footer">
-      <?php if (!empty($_SESSION['cart'])): ?>
-        <?php if (array_sum($totaal) >= 50) {
-            echo 'prijs: € ', array_sum($totaal), '<br> verzendkosten: gratis', '<br> totaal: € ', array_sum($totaal); $_SESSION['verzendkosten'] = '0.00';} else {echo '<br> prijs: € ', array_sum($totaal), '<br> verzendkosten: € 13,50', '<br> totaal: € ', array_sum($totaal) + 13.5; $_SESSION['verzendkosten'] = '13.50';
-            }
-            ?>
-            <br>
-      <a class="btn btn-primary" href="<?php echo $url;?>pay.php">
-        <?php  echo $arraytekst['checkout'];?>
-      </a>
-    <?php ;else: ?>
-      <br>
-    <?php endif; ?>
-
-    </div>
+    <div class="card-footer"><br></div>
+</div>
+</div>
+<div class="col-3 center">
+  <?php if (!empty($_SESSION['cart'])): ?>
+    <?php if (array_sum($totaal) >= 50) {
+        echo 'prijs: € ', array_sum($totaal), '<br> verzendkosten: gratis', '<br> totaal: € ', array_sum($totaal); $_SESSION['verzendkosten'] = '0.00';} else {echo '<br> prijs: € ', array_sum($totaal), '<br> verzendkosten: € 13,50', '<br> totaal: € ', array_sum($totaal) + 13.5; $_SESSION['verzendkosten'] = '13.50';
+        }
+        ?>
+        <br>
+  <a class="btn btn-primary" href="<?php echo $url;?>pay.php">
+    <?php  echo $arraytekst['checkout'];?>
+  </a>
+  <?php ;else: ?>
+  <br>
+  <?php endif; ?>
+</div>
 </div>
 </body>
 <?php

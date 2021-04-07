@@ -1,5 +1,10 @@
 .list-width{
-    width: 85%;
+    width: auto;
     margin-top: 6em;
     margin-left: 1em;
+    margin-right: 1em;
+}
+.center {
+  margin: auto;
+  padding: 10px;
 }

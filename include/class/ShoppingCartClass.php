@@ -28,7 +28,7 @@ class ShoppingCartClass
 
               ?>
               <li class="list-group-item">
-              <div class="card mb-3" style="max-width: 70%;">
+              <div class="card mb-3">
                 <div class="row g-0">
                   <div class="col-md-4">
                     <img  height="250" width="100%" style="object-fit: cover;" src="<?php echo $products['img'];?>" alt="...">

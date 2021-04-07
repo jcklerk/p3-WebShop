@@ -23,40 +23,18 @@ class LangClass
     $arraylang = $getlang->fetchAll();
     return $arraylang;
   }
-  public function LangGetNav(){
+  public function LangTekst(){
     $pdo = $this->dbClass->makeConnection();
-    $getnav = $pdo->prepare("SELECT * FROM `taal_nav` WHERE `taal_id` = :taal_id");
-    $getnav->bindParam(':taal_id', $_SESSION['lang_id']);
-    $getnav->execute();
-    $arraynav = $getnav->fetch();
-    return $arraynav;
-  }
-  public function LangGetHome(){
-    $pdo = $this->dbClass->makeConnection();
-    $gethome = $pdo->prepare("SELECT * FROM `taal_home` WHERE `taal_id` = :taal_id");
-    $gethome->bindParam(':taal_id', $_SESSION['lang_id']);
-    $gethome->execute();
-    $arrayhome = $gethome->fetch();
-    return $arrayhome;
-  }
-    public function LangGetCart()
-    {
-        $pdo = $this->dbClass->makeConnection();
-        $getcart = $pdo->prepare("SELECT * FROM `taal_shoppingcart` WHERE `taal_id` = :taal_id");
-        $getcart->bindParam(':taal_id', $_SESSION['lang_id']);
-        $getcart->execute();
-        $arraycart = $getcart->fetch();
-        return $arraycart;
+    $gettekst = $pdo->prepare("SELECT tekst_id, tekst FROM `taal_tekst` WHERE `taal_id` = :taal_id");
+    $gettekst->bindParam(':taal_id', $_SESSION['lang_id']);
+    $gettekst->execute();
+    $databasetekst = $gettekst->fetchAll();
+    $arraytekst = array();
+    foreach ($databasetekst as $tekst) {
+      $arraytekst[$tekst['tekst_id']] = $tekst['tekst'];
     }
-    public function LangGetAccount()
-    {
-        $pdo = $this->dbClass->makeConnection();
-        $getAccount = $pdo->prepare("SELECT * FROM `taal_account` WHERE `taal_id` = :taal_id");
-        $getAccount->bindParam(':taal_id', $_SESSION['lang_id']);
-        $getAccount->execute();
-        $arrayaccount = $getAccount->fetch();
-        return $arrayaccount;
-    }
+    return $arraytekst;
+  }
     public function LangGetFAQ()
     {
         $pdo = $this->dbClass->makeConnection();

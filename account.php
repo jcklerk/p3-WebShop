@@ -20,7 +20,6 @@ if (!empty($_SESSION['user_type'])) {
 }
 
 require "include/class/FactuurClass.php";
-$arrayaccount = (new LangClass())->LangGetAccount();
 ?>
 <title>Account - Wok & Roll</title>
 <br>
@@ -31,12 +30,12 @@ $arrayaccount = (new LangClass())->LangGetAccount();
 <table class="table table-edit c-red" style="">
     <tbody>
     <tr class="c-border">
-        <th scope="col" ><?php echo $arrayaccount['order_nr']; ?> </th>
-        <th scope="col"><?php echo $arrayaccount['product']; ?></th>
-        <th scope="col"><?php echo $arrayaccount['datum']; ?></th>
-        <th scope="col"><?php echo $arrayaccount['aantal']; ?></th>
-        <th scope="col"><?php echo $arrayaccount['totaal']; ?></th>
-        <th scope="col"><?php echo $arrayaccount['verzend']; ?></th>
+        <th scope="col" ><?php echo $arraytekst['order_nr']; ?> </th>
+        <th scope="col"><?php echo $arraytekst['product']; ?></th>
+        <th scope="col"><?php echo $arraytekst['datum']; ?></th>
+        <th scope="col"><?php echo $arraytekst['aantal']; ?></th>
+        <th scope="col"><?php echo $arraytekst['totaal']; ?></th>
+        <th scope="col"><?php echo $arraytekst['verzend']; ?></th>
     </tr>
 
     <?php (new FactuurClass($_SESSION['user_id']))->GetFacatuur(); ?>

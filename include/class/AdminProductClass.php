@@ -17,14 +17,9 @@ class AdminProductClass
 
 
 
-  function __construct($img, $prijs, $btw, $categorie, $lang_post)
+  function __construct()
   {
     $this->dbClass = new DBClass();
-    $this->img = $img;
-    $this->prijs = str_replace(',', '.', $prijs);
-    $this->btw = $btw;
-    $this->categorie = $categorie;
-    $this->lang_post = $lang_post;
   }
   public function ProductData()
   {
@@ -46,7 +41,7 @@ class AdminProductClass
     }
   }
 
-  public function ProductInsert()
+  public function ProductInsert($img, $prijs, $btw, $categorie, $lang_post)
   {
     $pdo = $this->dbClass->makeConnection();
     $product = $pdo->prepare("INSERT INTO product (img, prijs, btw, categorie) VALUE (:img, :prijs, :btw, :categorie)");
@@ -70,7 +65,7 @@ class AdminProductClass
     echo '<script type="text/javascript">window.location.href = "'.$_SESSION['url'].'products.php'.'";</script>';
   }
 
-  public function ProductUpdate()
+  public function ProductUpdate($img, $prijs, $btw, $categorie, $lang_post)
   {
     if (!empty($_GET['product'])) {
     $pdo = $this->dbClass->makeConnection();
@@ -97,17 +92,7 @@ class AdminProductClass
     echo "geen product geselecteerd!";
   }
   }
-}
 
-class AdminProductsClass
-{
-  private $dbClass;
-  private $pdo;
-
-  function __construct()
-  {
-    $this->dbClass = new DBClass();
-  }
   public function GetAllProducts()
   {
     $pdo = $this->dbClass->makeConnection();

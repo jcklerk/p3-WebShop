@@ -26,13 +26,18 @@ class LangClass
   // get vertaling functie
   public function LangTekst(){
     $pdo = $this->dbClass->makeConnection();
-    $gettekst = $pdo->prepare("SELECT tekst_id, tekst FROM `taal_tekst` WHERE `taal_id` = :taal_id");
+    $gettekst = $pdo->prepare("SELECT tekst_id, tekst_nr, tekst FROM `taal_tekst` WHERE `taal_id` = :taal_id AND `section` LIKE 'tekst'");
     $gettekst->bindParam(':taal_id', $_SESSION['lang_id']);
     $gettekst->execute();
     $databasetekst = $gettekst->fetchAll();
     $arraytekst = array();
     foreach ($databasetekst as $tekst) {
-      $arraytekst[$tekst['tekst_id']] = $tekst['tekst'];
+      if (empty($tekst['tekst_nr'])) {
+        $arraytekst[$tekst['tekst_id']] = $tekst['tekst'];
+      }else {
+        $arraytekst[$tekst['tekst_id'].'_'.$tekst['tekst_nr']] = $tekst['tekst'];
+      }
+
     }
     return $arraytekst;
   }

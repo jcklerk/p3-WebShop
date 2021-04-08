@@ -14,14 +14,9 @@ class AdminWorkshopClass
   private $workshop_id;
 
 
-  function __construct($workshop_img, $video, $img, $lang_post)
+  function __construct()
   {
     $this->dbClass = new DBClass();
-
-    $this->workshop_img = $workshop_img;
-    $this->video = $video;
-    $this->img = $img;
-    $this->lang_post = $lang_post;
   }
   public function WorkShopData()
   {
@@ -39,7 +34,7 @@ class AdminWorkshopClass
   }
 
 
-  public function WorkshopInsert()
+  public function WorkshopInsert($workshop_img, $video, $img, $lang_post)
   {
     $pdo = $this->dbClass->makeConnection();
     $workshop = $pdo->prepare("INSERT INTO workshop (workshop_img, video, img) VALUE (:workshop_img, :video, :img)");
@@ -63,7 +58,7 @@ class AdminWorkshopClass
     }
     echo '<script type="text/javascript">window.location.href = "'.$srv_url.'admin/addworkshop.php/";</script>';
   }
-  public function WorkshopUpdate()
+  public function WorkshopUpdate($workshop_img, $video, $img, $lang_post)
   {
     if (!empty($_GET['workshop'])) {
     $pdo = $this->dbClass->makeConnection();

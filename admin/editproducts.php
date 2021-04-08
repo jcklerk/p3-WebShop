@@ -77,11 +77,11 @@ if (isset($_POST['Webshop_img']) && isset($_POST['Webshop_Cat']) && isset($_POST
                   </select>
               </div>
             <div class="col">
-                  <label for="Webshop_Prijs">PRICE</label>
+                  <label for="Webshop_Prijs">PRICE €</label>
                   <input name="Webshop_Prijs" class="form-control" type="number" step=".01" autocomplete="off" required value="<?php echo $product_old_data['main']['prijs'] ?>">
               </div>
             <div class="col">
-                  <label for="Webshop_BTW">BTW</label>
+                  <label for="Webshop_BTW">BTW %</label>
                   <input name="Webshop_BTW" class="form-control" autocomplete="off" type="number" required value="<?php echo $product_old_data['main']['btw'] ?>">
             </div>
           <?php

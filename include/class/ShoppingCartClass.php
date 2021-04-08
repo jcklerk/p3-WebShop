@@ -20,7 +20,7 @@ class ShoppingCartClass
 
 
           foreach ($this->cart as $array) {
-              $getProducts = $pdo->prepare("SELECT * FROM `product` INNER JOIN `taal_product` ON product.product_nr = taal_product.product_nr WHERE product.product_nr= :product AND `taal_id` = :taal_id");
+              $getProducts = $pdo->prepare("SELECT product.product_nr, naam.tekst AS naam, beschrijving.tekst AS beschrijving, product.img, product.prijs, product.btw, product.categorie FROM product JOIN taal_tekst AS naam on product.product_nr = naam.tekst_nr JOIN taal_tekst AS beschrijving on product.product_nr = beschrijving.tekst_nr WHERE naam.tekst_id LIKE 'naam' AND beschrijving.tekst_id LIKE 'beschrijving' AND naam.taal_id = :taal_id AND beschrijving.taal_id = :taal_id AND product.product_nr= :product");
               $getProducts->bindParam(':product', $array['Product']);
               $getProducts->bindParam(':taal_id', $_SESSION['lang_id']);
               $getProducts->execute();

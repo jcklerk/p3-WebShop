@@ -15,7 +15,7 @@ class LangClass
   {
     $this->dbClass = new DBClass();
   }
-  // get vertaling functie
+  // get talen functie
   public function LangGetAll(){
     $pdo = $this->dbClass->makeConnection();
     $getlang = $pdo->prepare("SELECT * FROM `talen`");
@@ -23,6 +23,7 @@ class LangClass
     $arraylang = $getlang->fetchAll();
     return $arraylang;
   }
+  // get vertaling functie
   public function LangTekst(){
     $pdo = $this->dbClass->makeConnection();
     $gettekst = $pdo->prepare("SELECT tekst_id, tekst FROM `taal_tekst` WHERE `taal_id` = :taal_id");
@@ -35,6 +36,7 @@ class LangClass
     }
     return $arraytekst;
   }
+    // get FAQ functie
     public function LangGetFAQ()
     {
         $pdo = $this->dbClass->makeConnection();

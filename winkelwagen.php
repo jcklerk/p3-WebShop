@@ -27,11 +27,11 @@
     height: 100%
   }
 </style>
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column h-100" style='overflow-x: hidden;'>
 
 
 <link rel="stylesheet" href="css/winkelwagen.css">
-<div class="row">
+<div class="row" >
 <div class="col">
 <div class="card list-width">
     <div class="card-header">

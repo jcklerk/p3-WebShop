@@ -13,13 +13,12 @@ class ShopProductClass
     }
     public function Product(){
         $pdo = $this->dbClass->makeConnection();
-        $getproducts = $pdo->prepare("SELECT * FROM `product`INNER JOIN `taal_product` ON product.product_nr = taal_product.product_nr   WHERE product.product_nr = :product_nr AND taal_product.taal_id = :taal_id");
+        $getproducts = $pdo->prepare("SELECT product.product_nr, naam.tekst AS naam, beschrijving.tekst AS beschrijving, product.img, product.prijs, product.btw, product.categorie FROM product JOIN taal_tekst AS naam on product.product_nr = naam.tekst_nr JOIN taal_tekst AS beschrijving on product.product_nr = beschrijving.tekst_nr WHERE product.product_nr = :product_nr AND naam.tekst_id LIKE 'naam' AND beschrijving.tekst_id LIKE 'beschrijving' AND naam.taal_id = :taal_id AND beschrijving.taal_id = :taal_id");
         $getproducts->bindParam(':product_nr', $this->product);
         $getproducts->bindParam(':taal_id', $_SESSION['lang_id']);
         $getproducts->execute();
-        $allproducts = $getproducts->fetchAll();
-
-        foreach ($allproducts as $x) { ?>
+        $x = $getproducts->fetch();
+ ?>
                       <div class="card mb-3" style="margin-top: 1em ; z-index: 1;">
                 <div class="row g-0">
                     <div class="col-md-6">
@@ -41,7 +40,7 @@ class ShopProductClass
                     </div>
                 </div>
             </div>
-        <?php }
+        <?php
             if (isset($_POST['product_nr'])){
                 if (isset($_SESSION['cart'][$_POST['product_nr']])){
                     $a = $_SESSION['cart'][$_POST['product_nr']]['Aantal'];

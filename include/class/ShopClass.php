@@ -16,7 +16,7 @@ class ShopClass
   }
   public function GetProductCat(){
       $pdo = $this->dbClass->makeConnection();
-      $getproducts = $pdo->prepare("SELECT * FROM `product`INNER JOIN `taal_product` ON product.product_nr = taal_product.product_nr WHERE  `taal_id` = :taal_id AND product.categorie = :cat ");
+      $getproducts = $pdo->prepare("SELECT product.product_nr, naam.tekst AS naam, beschrijving.tekst AS beschrijving, product.img, product.prijs, product.btw, product.categorie FROM product JOIN taal_tekst AS naam on product.product_nr = naam.tekst_nr JOIN taal_tekst AS beschrijving on product.product_nr = beschrijving.tekst_nr WHERE naam.tekst_id LIKE 'naam' AND beschrijving.tekst_id LIKE 'beschrijving' AND naam.taal_id = :taal_id AND beschrijving.taal_id = :taal_id AND product.categorie = :cat ");
       $getproducts->bindParam(':cat', $this->cat);
       $getproducts->bindParam(':taal_id', $_SESSION['lang_id']);
       $getproducts->execute();
@@ -42,7 +42,7 @@ class ShopClass
   }
   public function GetProductall(){
       $pdo = $this->dbClass->makeConnection();
-      $getproducts = $pdo->prepare("SELECT * FROM `product`INNER JOIN `taal_product` ON product.product_nr = taal_product.product_nr WHERE  `taal_id` = :taal_id");
+      $getproducts = $pdo->prepare("SELECT product.product_nr, naam.tekst AS naam, beschrijving.tekst AS beschrijving, product.img, product.prijs, product.btw, product.categorie FROM product JOIN taal_tekst AS naam on product.product_nr = naam.tekst_nr JOIN taal_tekst AS beschrijving on product.product_nr = beschrijving.tekst_nr WHERE naam.tekst_id LIKE 'naam' AND beschrijving.tekst_id LIKE 'beschrijving' AND naam.taal_id = :taal_id AND beschrijving.taal_id = :taal_id");
       $getproducts->bindParam(':taal_id', $_SESSION['lang_id']);
       $getproducts->execute();
       $allproduct = $getproducts->fetchAll();

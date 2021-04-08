@@ -15,6 +15,6 @@ if (!empty($_SESSION['user_type'])) {
 }
 require '../include/class/AdminProductClass.php';
 
-(new AdminProductsClass())->RemoveProducts();
+(new AdminProductClass())->RemoveProducts();
 
  ?>

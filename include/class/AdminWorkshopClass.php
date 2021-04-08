@@ -38,17 +38,17 @@ class AdminWorkshopClass
   {
     $pdo = $this->dbClass->makeConnection();
     $workshop = $pdo->prepare("INSERT INTO workshop (workshop_img, video, img) VALUE (:workshop_img, :video, :img)");
-    $workshop->bindParam(':workshop_img', $this->workshop_img);
-    $workshop->bindParam(':video', $this->video);
-    $workshop->bindParam(':img', $this->img);
+    $workshop->bindParam(':workshop_img', $workshop_img);
+    $workshop->bindParam(':video', $video);
+    $workshop->bindParam(':img', $img);
     $workshop->execute();
     $getworkshop_id = $pdo->prepare("SELECT LAST_INSERT_ID();");
     $getworkshop_id->execute();
     $workshop_id = $getworkshop_id->fetch();
-    $this->workshop_id = $workshop_id['0'];
-    foreach ($this->lang_post as $lang_post_array) {
+    $workshop_id = $workshop_id['0'];
+    foreach ($lang_post as $lang_post_array) {
       $taal = $pdo->prepare("INSERT INTO `taal_workshop` (`workshop_id`, `taal_id`, `workshop_title`, `ingredienten`, `benodigdheden`, `maken`) VALUES (:workshop_id, :taal_id, :workshop_title, :ingredienten, :benodigdheden, :maken);");
-      $taal->bindParam(':workshop_id', $this->workshop_id);
+      $taal->bindParam(':workshop_id', $workshop_id);
       $taal->bindParam(':taal_id', $lang_post_array['taal_id']);
       $taal->bindParam(':workshop_title', $lang_post_array['title']);
       $taal->bindParam(':ingredienten', $lang_post_array['ingredienten']);
@@ -64,13 +64,13 @@ class AdminWorkshopClass
     $pdo = $this->dbClass->makeConnection();
     $workshop_id = $_GET['workshop'];
     $workshop = $pdo->prepare("UPDATE `workshop` SET `workshop_img` = :workshop_img, `video` = :video, `img` = :img WHERE `workshop`.`workshop_id` = :workshop_id;");
-    $workshop->bindParam(':workshop_img', $this->workshop_img);
-    $workshop->bindParam(':video', $this->video);
-    $workshop->bindParam(':img', $this->img);
+    $workshop->bindParam(':workshop_img', $workshop_img);
+    $workshop->bindParam(':video', $video);
+    $workshop->bindParam(':img', $img);
     $workshop->bindParam(':workshop_id', $workshop_id);
     $workshop->execute();
-    $this->workshop_id = $workshop_id['0'];
-    foreach ($this->lang_post as $lang_post_array) {
+    $workshop_id = $workshop_id['0'];
+    foreach ($lang_post as $lang_post_array) {
       $taal = $pdo->prepare("UPDATE `taal_workshop` SET `workshop_title` = :workshop_title, `ingredienten` = :ingredienten, `benodigdheden` = :benodigdheden, `maken` = :maken WHERE `taal_workshop`.`workshop_id` = :workshop_id AND `taal_workshop`.`taal_id` = :taal_id;");
       $taal->bindParam(':workshop_id', $workshop_id);
       $taal->bindParam(':taal_id', $lang_post_array['taal_id']);
@@ -85,17 +85,6 @@ class AdminWorkshopClass
   } else {
     echo "geen product geselecteerd!";
   }
-  }
-}
-
-class AdminWorkshopsClass
-{
-  private $dbClass;
-  private $pdo;
-
-  function __construct()
-  {
-    $this->dbClass = new DBClass();
   }
   public function GetAllWorkshops()
   {

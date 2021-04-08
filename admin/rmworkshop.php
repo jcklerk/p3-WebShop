@@ -15,6 +15,6 @@ if (!empty($_SESSION['user_type'])) {
 }
 require '../include/class/AdminWorkshopClass.php';
 
-(new AdminWorkshopsClass())->Removeworkshop();
+(new AdminWorkshopClass())->Removeworkshop();
 
  ?>

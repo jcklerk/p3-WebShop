@@ -30,7 +30,7 @@ require '../include/class/AdminWorkshopClass.php';
       <div class="row row-web-prod row-cols-1 row-cols-md-4 g-4 c-red">
 
         <?php
-        $products = (new AdminWorkshopsClass())->GetAllWorkshops();
+        $products = (new AdminWorkshopClass())->GetAllWorkshops();
         foreach ($products as $product): ?>
         <div class="col">
           <div class="card" style="width: 100%; height: 100%; border: 1px solid black">

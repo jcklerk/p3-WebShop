@@ -20,7 +20,7 @@ if (isset($_POST['workshop_img']) && isset($_POST['video']) && isset($_POST['img
     foreach ($arraylang as $forlang) {
       $lang_post[$forlang['taal_id']] = array('taal_id' => $forlang['taal_id'] , 'title' => $_POST[$forlang['taal_id'].':title'], 'ingredienten' => $_POST[$forlang['taal_id'].':ingredienten'], 'benodigdheden' => $_POST[$forlang['taal_id'].':benodigdheden'], 'maken' => $_POST[$forlang['taal_id'].':maken']);
     }
-    (new AdminWorkshopClass($_POST['workshop_img'], $_POST['video'], $_POST['img'], $lang_post))->WorkshopInsert();
+    (new AdminWorkshopClass())->WorkshopInsert($_POST['workshop_img'], $_POST['video'], $_POST['img'], $lang_post);
     //var_dump($lang_post);
 }
 

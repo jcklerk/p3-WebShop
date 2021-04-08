@@ -1,20 +1,22 @@
 <?php
 
 class FactuurClass {
-    public $user;
-    private $dbClass;
+  public $user;
+  public $cart;
+  private $dbClass;
+  public $factuur_id;
+  public $verzendkosten;
 
 
-    function __construct($user)
+    function __construct()
     {
-        $this->user = $user;
         $this->dbClass = new DBClass();
 
     }
-    public function GetFacatuur(){
+    public function GetFacatuur($user){
         $pdo = $this->dbClass->makeConnection();
         $getproductfacatuur = $pdo->prepare("SELECT * FROM factuur JOIN product_factuur ON product_factuur.factuur_nr=factuur.factuur_nr LEFT JOIN product ON product.product_nr = product_factuur.product_nr LEFT JOIN taal_product ON product.product_nr = taal_product.product_nr WHERE `user_id` = :user AND `taal_id` = :taal_id");
-        $getproductfacatuur->bindParam(':user', $this->user);
+        $getproductfacatuur->bindParam(':user', $user);
         $getproductfacatuur->bindParam(':taal_id', $_SESSION['lang_id']);
         $getproductfacatuur->execute();
         $productfactuur = $getproductfacatuur->fetchAll();
@@ -52,5 +54,25 @@ class FactuurClass {
                 <td>€<?php echo str_replace('.',',', $x['verzend_kosten']); ?></td>
             </tr>
         <?php }
+    }
+    public function Factuur($user,$cart,$verzendkosten){
+      $pdo = $this->dbClass->makeConnection();
+      $createfacatuur = $pdo->prepare("INSERT INTO `factuur` (`factuur_nr`, `user_id`, `verzend_kosten`, `factuur_datum`) VALUES (NULL, :user, :verzendkosten, current_timestamp());");
+      $createfacatuur->bindParam(':user', $user);
+      $createfacatuur->bindParam(':verzendkosten', $verzendkosten);
+      $createfacatuur->execute();
+      $getfactuur_id = $pdo->prepare("SELECT LAST_INSERT_ID();");
+      $getfactuur_id->execute();
+      $factuur_id = $getfactuur_id->fetch();
+      $factuur_id = $factuur_id['0'];
+      foreach ($cart as $product) {
+        $createfacatuur_product = $pdo->prepare("INSERT INTO `product_factuur` (`factuur_nr`, `product_nr`, `product_aantal`) VALUES (:facuurt, :product, :aantal);");
+        $createfacatuur_product->bindParam(':facuurt', $factuur_id);
+        $createfacatuur_product->bindParam(':product', $product['Product']);
+        $createfacatuur_product->bindParam(':aantal', $product['Aantal']);
+        $createfacatuur_product->execute();
+      }
+      unset($_SESSION['cart']);
+      return;
     }
 }

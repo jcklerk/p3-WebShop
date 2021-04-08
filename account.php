@@ -38,7 +38,7 @@ require "include/class/FactuurClass.php";
         <th scope="col"><?php echo $arraytekst['verzend']; ?></th>
     </tr>
 
-    <?php (new FactuurClass($_SESSION['user_id']))->GetFacatuur(); ?>
+    <?php (new FactuurClass())->GetFacatuur($_SESSION['user_id']); ?>
 
     </tbody>
 </table>

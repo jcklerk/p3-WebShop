@@ -1,13 +1,13 @@
 <?php
 require "include/config.php";
-require "include/class/CreateFactuurClass.php";
+require "include/class/FactuurClass.php";
 
 if(isset($_SESSION['user_id'])){
   if (!empty($_SESSION['cart'])) {
     if (!empty($_SESSION['verzendkosten'])) {
       echo "vol";
       print_r($_SESSION['cart']);
-      (new CreateFactuurClass($_SESSION['user_id'],$_SESSION['cart'],$_SESSION['verzendkosten']))->Factuur();
+      (new FactuurClass())->Factuur($_SESSION['user_id'],$_SESSION['cart'],$_SESSION['verzendkosten']);
     } else {
       //header('Location:'. $url .'winkelwagen.php');
       echo "leeg";

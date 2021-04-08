@@ -52,7 +52,29 @@ if (isset($_POST['Webshop_img']) && isset($_POST['Webshop_Cat']) && isset($_POST
               </div>
             <div class="col">
                   <label for="Webshop_Cat">CATEGORY</label>
-                  <input name="Webshop_Cat" class="form-control" type="text" autocomplete="off" required value="<?php echo $product_old_data['main']['categorie'] ?>">
+                  <select name="Webshop_Cat" id="Webshop_Cat" class="form-control">
+                      <option value="<?php echo $product_old_data['main']['categorie'] ?>">* <?php
+                      if ($product_old_data['main']['categorie'] == '0') {
+                        echo "Chinese";
+                      }elseif ($product_old_data['main']['categorie'] == '1') {
+                        echo "Japanese";
+                      }elseif ($product_old_data['main']['categorie'] == '2') {
+                        echo "indian";
+                      }elseif ($product_old_data['main']['categorie'] == '3') {
+                        echo "Thai";
+                      }elseif ($product_old_data['main']['categorie'] == '4') {
+                        echo "Vienamese";
+                      }elseif ($product_old_data['main']['categorie'] == '5') {
+                        echo "Wok";
+                      }
+                       ?> *</option>
+                      <option value="0">Chinese</option>
+                      <option value="1">Japanese</option>
+                      <option value="2">indian</option>
+                      <option value="3">Thai</option>
+                      <option value="4">Vienamese</option>
+                      <option value="5">Wok</option>
+                  </select>
               </div>
             <div class="col">
                   <label for="Webshop_Prijs">PRICE</label>

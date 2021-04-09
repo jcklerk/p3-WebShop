@@ -5,13 +5,7 @@
 class AdminWorkshopClass
 {
   private $dbClass;
-  private $pdo;
 
-  private $workshop_img;
-  private $video;
-  private $img;
-  private $lang_post;
-  private $workshop_id;
 
 
   function __construct()

@@ -9,7 +9,6 @@ require __DIR__ . '/../webshop_config.php';
 class LangClass
 {
   private $dbClass;
-  private $pdo;
   // maak niuewe database connection op dbClass
    function __construct()
   {

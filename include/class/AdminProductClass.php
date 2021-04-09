@@ -5,15 +5,7 @@
 class AdminProductClass
 {
   private $dbClass;
-  private $pdo;
 
-  private $naam;
-  private $img;
-  private $prijs;
-  private $btw;
-  private $categorie;
-  private $lang_post;
-  private $product_nrl;
 
 
 

@@ -1,11 +1,9 @@
 <?php
 
 class FactuurClass {
-  public $user;
-  public $cart;
+  
   private $dbClass;
-  public $factuur_id;
-  public $verzendkosten;
+
 
 
     function __construct()

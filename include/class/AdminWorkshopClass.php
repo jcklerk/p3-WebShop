@@ -47,7 +47,7 @@ class AdminWorkshopClass
     $workshop_id = $getworkshop_id->fetch();
     $workshop_id = $workshop_id['0'];
     foreach ($lang_post as $lang_post_array) {
-      $taal = $pdo->prepare("INSERT INTO `taal_workshop` (`workshop_id`, `taal_id`, `workshop_title`, `ingredienten`, `benodigdheden`, `maken`) VALUES (:workshop_id, :taal_id, :workshop_title, :ingredienten, :benodigdheden, :maken);");
+      $taal = $pdo->prepare("INSERT INTO `taal_tekst` (`tekst_id`, `tekst_nr`, `section`, `taal_id`, `tekst`) VALUES ('title', :workshop_id, 'workshop', :taal_id, :workshop_title), ('ingredienten', :workshop_id, 'workshop', :taal_id, :ingredienten), ('benodigdheden', :workshop_id, 'workshop', :taal_id, :benodigdheden), ('maken', :workshop_id, 'workshop', :taal_id, :maken);");
       $taal->bindParam(':workshop_id', $workshop_id);
       $taal->bindParam(':taal_id', $lang_post_array['taal_id']);
       $taal->bindParam(':workshop_title', $lang_post_array['title']);
@@ -56,7 +56,7 @@ class AdminWorkshopClass
       $taal->bindParam(':maken', $lang_post_array['maken']);
       $taal->execute();
     }
-    echo '<script type="text/javascript">window.location.href = "'.$srv_url.'admin/addworkshop.php/";</script>';
+    echo '<script type="text/javascript">window.location.href = "'.$_SESSION['url'].'admin/addworkshop.php";</script>';
   }
   public function WorkshopUpdate($workshop_img, $video, $img, $lang_post)
   {
@@ -71,7 +71,11 @@ class AdminWorkshopClass
     $workshop->execute();
     $workshop_id = $workshop_id['0'];
     foreach ($lang_post as $lang_post_array) {
-      $taal = $pdo->prepare("UPDATE `taal_workshop` SET `workshop_title` = :workshop_title, `ingredienten` = :ingredienten, `benodigdheden` = :benodigdheden, `maken` = :maken WHERE `taal_workshop`.`workshop_id` = :workshop_id AND `taal_workshop`.`taal_id` = :taal_id;");
+      $taal = $pdo->prepare("UPDATE `taal_tekst` SET `tekst` = :workshop_title WHERE `taal_tekst`.`tekst_id` = 'title' AND `taal_tekst`.`tekst_nr` = :workshop_id AND `taal_tekst`.`section` = 'workshop' AND `taal_tekst`.`taal_id` = :taal_id;
+        UPDATE `taal_tekst` SET `tekst` = :ingredienten WHERE `taal_tekst`.`tekst_id` = 'ingredienten' AND `taal_tekst`.`tekst_nr` = :workshop_id AND `taal_tekst`.`section` = 'workshop' AND `taal_tekst`.`taal_id` = :taal_id;
+        UPDATE `taal_tekst` SET `tekst` = :benodigdheden WHERE `taal_tekst`.`tekst_id` = 'benodigdheden' AND `taal_tekst`.`tekst_nr` = :workshop_id AND `taal_tekst`.`section` = 'workshop' AND `taal_tekst`.`taal_id` = :taal_id;
+        UPDATE `taal_tekst` SET `tekst` = :maken WHERE `taal_tekst`.`tekst_id` = 'maken' AND `taal_tekst`.`tekst_nr` = :workshop_id AND `taal_tekst`.`section` = 'workshop' AND `taal_tekst`.`taal_id` = :taal_id;
+      ");
       $taal->bindParam(':workshop_id', $workshop_id);
       $taal->bindParam(':taal_id', $lang_post_array['taal_id']);
       $taal->bindParam(':workshop_title', $lang_post_array['title']);
@@ -102,7 +106,7 @@ class AdminWorkshopClass
       $rmproducts = $pdo->prepare("DELETE FROM `workshop` WHERE `workshop`.`workshop_id` = :workshop_id");
       $rmproducts->bindParam(':workshop_id', $_GET['workshop']);
       $rmproducts->execute();
-      $rmproducts_lang = $pdo->prepare("DELETE FROM `taal_workshop` WHERE `taal_workshop`.`workshop_id` = :workshop_id");
+      $rmproducts_lang = $pdo->prepare("DELETE FROM `taal_tekst` WHERE `taal_tekst`.`tekst_id` = 'title' AND `taal_tekst`.`tekst_nr` = :workshop_id AND `taal_tekst`.`section` = 'WorkShop'; DELETE FROM `taal_tekst` WHERE `taal_tekst`.`tekst_id` = 'ingredienten' AND `taal_tekst`.`tekst_nr` = :workshop_id AND `taal_tekst`.`section` = 'WorkShop'; DELETE FROM `taal_tekst` WHERE `taal_tekst`.`tekst_id` = 'benodigdheden' AND `taal_tekst`.`tekst_nr` = :workshop_id AND `taal_tekst`.`section` = 'WorkShop'; DELETE FROM `taal_tekst` WHERE `taal_tekst`.`tekst_id` = 'maken' AND `taal_tekst`.`tekst_nr` = :workshop_id AND `taal_tekst`.`section` = 'WorkShop';");
       $rmproducts_lang->bindParam(':workshop_id', $_GET['workshop']);
       $rmproducts_lang->execute();
       echo '<script type="text/javascript">window.location.href = "'.$_SESSION['url'].'workshops.php'.'";</script>';

@@ -17,7 +17,7 @@ class WorkShopClass
   }
   public function WorkShopGetAll(){
     $pdo = $this->dbClass->makeConnection();
-    $getworkshop = $pdo->prepare("SELECT * FROM `workshop` INNER JOIN `taal_workshop` ON workshop.workshop_id = taal_workshop.workshop_id WHERE `taal_id` = :taal_id");
+    $getworkshop = $pdo->prepare("SELECT `workshop`.`workshop_id`, `workshop`.`workshop_img`, `workshop`.`video`, `workshop`.`img`, `title`.`tekst` AS workshop_title, `ingredienten`.`tekst` AS ingredienten, `benodigdheden`.`tekst` AS benodigdheden, `maken`.`tekst` AS maken FROM `workshop` JOIN `taal_tekst` AS `title` ON `workshop`.`workshop_id` = `title`.`tekst_nr` JOIN `taal_tekst` AS `ingredienten` ON `workshop`.`workshop_id` = `ingredienten`.`tekst_nr` JOIN taal_tekst AS benodigdheden ON workshop.workshop_id = benodigdheden.tekst_nr JOIN taal_tekst AS maken ON workshop.workshop_id = maken.tekst_nr WHERE title.taal_id = :taal_id AND title.tekst_id = 'title' AND `ingredienten`.`tekst_id` = 'ingredienten' AND benodigdheden.tekst_id = 'benodigdheden' AND maken.tekst_id = 'maken' AND ingredienten.taal_id = title.taal_id AND benodigdheden.taal_id = ingredienten.taal_id AND maken.taal_id = benodigdheden.taal_id  AND title.section = 'workshop' AND ingredienten.section = title.section AND benodigdheden.section = ingredienten.section AND benodigdheden.section = maken.section");
     $getworkshop->bindParam(':taal_id', $_SESSION['lang_id']);
     $getworkshop->execute();
     $arrayworkshop = $getworkshop->fetchAll();
@@ -30,26 +30,11 @@ class WorkShopClass
    <div class=" bc-gray-black" style="height: 5px;"></div>
     <?php }
   }
-}
-
-class WorkShopsClass
-{
-  private $dbClass;
-  public $url;
-  public $workshop_id;
-  public $taal_id;
-  // maak niuewe database connection op dbClass
-   function __construct($url, $workshop_id, $taal_id)
-  {
-    $this->dbClass = new DBClass();
-    $this->url = $url;
-    $this->workshop_id = $workshop_id;
-    $this->taal_id = $taal_id;
-  }
-  public function GetWorkShop(){
+  public function GetWorkShop($workshop_id, $taal_id){
     $pdo = $this->dbClass->makeConnection();
-    $getworkshop = $pdo->prepare("SELECT * FROM `workshop` WHERE `workshop_id` = :workshop_id");
-    $getworkshop->bindParam(':workshop_id', $this->workshop_id);
+    $getworkshop = $pdo->prepare("SELECT `workshop`.`workshop_id`, `workshop`.`workshop_img`, `workshop`.`video`, `workshop`.`img`, `title`.`tekst` AS workshop_title, `ingredienten`.`tekst` AS ingredienten, `benodigdheden`.`tekst` AS benodigdheden, `maken`.`tekst` AS maken FROM `workshop` JOIN `taal_tekst` AS `title` ON `workshop`.`workshop_id` = `title`.`tekst_nr` JOIN `taal_tekst` AS `ingredienten` ON `workshop`.`workshop_id` = `ingredienten`.`tekst_nr` JOIN taal_tekst AS benodigdheden ON workshop.workshop_id = benodigdheden.tekst_nr JOIN taal_tekst AS maken ON workshop.workshop_id = maken.tekst_nr WHERE title.taal_id = :taal_id AND `workshop`.`workshop_id` = :workshop_id AND title.tekst_id = 'title' AND `ingredienten`.`tekst_id` = 'ingredienten' AND benodigdheden.tekst_id = 'benodigdheden' AND maken.tekst_id = 'maken' AND ingredienten.taal_id = title.taal_id AND benodigdheden.taal_id = ingredienten.taal_id AND maken.taal_id = benodigdheden.taal_id  AND title.section = 'workshop' AND ingredienten.section = title.section AND benodigdheden.section = ingredienten.section AND benodigdheden.section = maken.section");
+    $getworkshop->bindParam(':workshop_id', $workshop_id);
+    $getworkshop->bindParam(':taal_id', $taal_id);
     $getworkshop->execute();
     $arrayworkshop = $getworkshop->fetch();
     if (strpos($arrayworkshop['video'], 'youtube')) {
@@ -62,14 +47,4 @@ class WorkShopsClass
     }
     return $arrayworkshop;
   }
-
-    public function WorkshopGet(){
-        $pdo = $this->dbClass->makeConnection();
-        $workshopget = $pdo->prepare("SELECT * FROM `taal_workshop` WHERE `workshop_id` = :workshop_id AND `taal_id` = :taal_id");
-        $workshopget->bindParam(':workshop_id', $this->workshop_id);
-        $workshopget->bindParam(':taal_id', $this->taal_id);
-        $workshopget->execute();
-        $arrayworkshoptext = $workshopget->fetch();
-        return $arrayworkshoptext;
-    }
 }

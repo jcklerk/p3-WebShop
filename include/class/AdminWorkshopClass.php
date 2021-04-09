@@ -23,7 +23,7 @@ class AdminWorkshopClass
     if (!empty($_GET['workshop'])) {
     $pdo = $this->dbClass->makeConnection();
     $workshop_nr = $_GET['workshop'];
-    $workshop = $pdo->prepare("SELECT * FROM `workshop` INNER JOIN `taal_workshop` ON workshop.workshop_id = taal_workshop.workshop_id WHERE workshop.workshop_id = :workshop_id");
+    $workshop = $pdo->prepare("SELECT `workshop`.`workshop_id`, `workshop`.`workshop_img`, `workshop`.`video`, `workshop`.`img`, `title`.`tekst` AS workshop_title, `ingredienten`.`tekst` AS ingredienten, `benodigdheden`.`tekst` AS benodigdheden, `maken`.`tekst` AS maken FROM `workshop` JOIN `taal_tekst` AS `title` ON `workshop`.`workshop_id` = `title`.`tekst_nr` JOIN `taal_tekst` AS `ingredienten` ON `workshop`.`workshop_id` = `ingredienten`.`tekst_nr` JOIN taal_tekst AS benodigdheden ON workshop.workshop_id = benodigdheden.tekst_nr JOIN taal_tekst AS maken ON workshop.workshop_id = maken.tekst_nr WHERE `workshop`.`workshop_id` = :workshop_id AND title.tekst_id = 'title' AND `ingredienten`.`tekst_id` = 'ingredienten' AND benodigdheden.tekst_id = 'benodigdheden' AND maken.tekst_id = 'maken' AND ingredienten.taal_id = title.taal_id AND benodigdheden.taal_id = ingredienten.taal_id AND maken.taal_id = benodigdheden.taal_id  AND title.section = 'workshop' AND ingredienten.section = title.section AND benodigdheden.section = ingredienten.section AND benodigdheden.section = maken.section");
     $workshop->bindParam(':workshop_id', $workshop_nr);
     $workshop->execute();
     $array_workshop = $workshop->fetchall();
@@ -89,7 +89,7 @@ class AdminWorkshopClass
   public function GetAllWorkshops()
   {
     $pdo = $this->dbClass->makeConnection();
-    $getproducts = $pdo->prepare("SELECT * FROM `workshop`INNER JOIN `taal_workshop` ON workshop.workshop_id = taal_workshop.workshop_id WHERE  `taal_id` = :taal_id");
+    $getproducts = $pdo->prepare("SELECT `workshop`.`workshop_id`, `workshop`.`workshop_img`, `workshop`.`video`, `workshop`.`img`, `title`.`tekst` AS workshop_title, `ingredienten`.`tekst` AS ingredienten, `benodigdheden`.`tekst` AS benodigdheden, `maken`.`tekst` AS maken FROM `workshop` JOIN `taal_tekst` AS `title` ON `workshop`.`workshop_id` = `title`.`tekst_nr` JOIN `taal_tekst` AS `ingredienten` ON `workshop`.`workshop_id` = `ingredienten`.`tekst_nr` JOIN taal_tekst AS benodigdheden ON workshop.workshop_id = benodigdheden.tekst_nr JOIN taal_tekst AS maken ON workshop.workshop_id = maken.tekst_nr WHERE title.taal_id = :taal_id AND title.tekst_id = 'title' AND `ingredienten`.`tekst_id` = 'ingredienten' AND benodigdheden.tekst_id = 'benodigdheden' AND maken.tekst_id = 'maken' AND ingredienten.taal_id = title.taal_id AND benodigdheden.taal_id = ingredienten.taal_id AND maken.taal_id = benodigdheden.taal_id  AND title.section = 'workshop' AND ingredienten.section = title.section AND benodigdheden.section = ingredienten.section AND benodigdheden.section = maken.section");
     $getproducts->bindParam(':taal_id', $_SESSION['lang_id']);
     $getproducts->execute();
     $allproduct = $getproducts->fetchAll();

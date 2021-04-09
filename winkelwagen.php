@@ -17,6 +17,9 @@
         }
       }
     }
+    if (!empty($_POST['leeg']) && $_POST['leeg'] == 999) {
+      $_SESSION['cart'] = array();
+    }
     //print_r($_SESSION['cart']);
     require 'include/class/ShoppingCartClass.php';
 ?>
@@ -46,7 +49,16 @@
       }
       ?>
     </ul>
-    <div class="card-footer"><br></div>
+    <div class="card-footer">
+      <?php if (!empty($_SESSION['cart'])): ?>
+      <form method="post">
+      <input type="number" name="leeg" value="999" hidden>
+      <button type="submit" name="delete" class="btn btn-danger" value="999"><?php echo $arraytekst['leegdewinkelwagen'] ?></button>
+    </form>
+    <?php ;else: ?>
+    <br>
+    <?php endif; ?>
+  </div>
 </div>
 </div>
 <div class="col-3 center">

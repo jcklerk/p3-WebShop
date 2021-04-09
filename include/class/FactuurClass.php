@@ -15,7 +15,7 @@ class FactuurClass {
     }
     public function GetFacatuur($user){
         $pdo = $this->dbClass->makeConnection();
-        $getproductfacatuur = $pdo->prepare("SELECT * FROM factuur JOIN product_factuur ON product_factuur.factuur_nr=factuur.factuur_nr LEFT JOIN product ON product.product_nr = product_factuur.product_nr LEFT JOIN taal_product ON product.product_nr = taal_product.product_nr WHERE `user_id` = :user AND `taal_id` = :taal_id");
+        $getproductfacatuur = $pdo->prepare("SELECT *, naam.tekst AS naam FROM factuur JOIN product_factuur ON product_factuur.factuur_nr=factuur.factuur_nr LEFT JOIN product ON product.product_nr = product_factuur.product_nr JOIN taal_tekst AS naam on product.product_nr = naam.tekst_nr WHERE `user_id` = :user AND naam.tekst_id LIKE 'naam' AND `naam`.`taal_id` = :taal_id;");
         $getproductfacatuur->bindParam(':user', $user);
         $getproductfacatuur->bindParam(':taal_id', $_SESSION['lang_id']);
         $getproductfacatuur->execute();
@@ -36,7 +36,7 @@ class FactuurClass {
     }
     public function GetAllFacatuur(){
         $pdo = $this->dbClass->makeConnection();
-        $getproductfacatuur = $pdo->prepare("SELECT * FROM factuur JOIN product_factuur ON product_factuur.factuur_nr=factuur.factuur_nr LEFT JOIN product ON product.product_nr = product_factuur.product_nr LEFT JOIN taal_product ON product.product_nr = taal_product.product_nr WHERE `taal_id` = :taal_id ORDER BY `product_factuur`.`factuur_nr` DESC");
+        $getproductfacatuur = $pdo->prepare("SELECT *, naam.tekst AS naam FROM factuur JOIN product_factuur ON product_factuur.factuur_nr=factuur.factuur_nr LEFT JOIN product ON product.product_nr = product_factuur.product_nr JOIN taal_tekst AS naam on product.product_nr = naam.tekst_nr WHERE naam.tekst_id LIKE 'naam' AND `naam`.`taal_id` = :taal_id; ORDER BY `product_factuur`.`factuur_nr` DESC");
         $getproductfacatuur->bindParam(':taal_id', $_SESSION['lang_id']);
         $getproductfacatuur->execute();
         $productfactuur = $getproductfacatuur->fetchAll();

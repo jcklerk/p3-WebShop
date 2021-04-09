@@ -56,7 +56,7 @@ class AdminWorkshopClass
       $taal->bindParam(':maken', $lang_post_array['maken']);
       $taal->execute();
     }
-    echo '<script type="text/javascript">window.location.href = "'.$_SESSION['url'].'admin/addworkshop.php";</script>';
+    echo '<script type="text/javascript">window.location.href = "'.$_SESSION['url'].'addworkshop.php";</script>';
   }
   public function WorkshopUpdate($workshop_img, $video, $img, $lang_post)
   {

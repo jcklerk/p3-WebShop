@@ -30,7 +30,7 @@ class AdminProductClass
     $product->bindParam(':product_nr', $product_nr);
     $product->execute();
     $array_product = $product->fetch();
-    $product_lang = $pdo->prepare("SELECT * FROM `taal_product` WHERE `product_nr` = :product_nr");
+    $product_lang = $pdo->prepare("SELECT product.product_nr, naam.tekst AS naam, beschrijving.tekst AS beschrijving, naam.taal_id FROM product JOIN taal_tekst AS naam on product.product_nr = naam.tekst_nr JOIN taal_tekst AS beschrijving on product.product_nr = beschrijving.tekst_nr WHERE naam.tekst_id LIKE 'naam' AND beschrijving.tekst_id LIKE 'beschrijving' AND naam.taal_id = beschrijving.taal_id AND product.product_nr= :product_nr");
     $product_lang->bindParam(':product_nr', $product_nr);
     $product_lang->execute();
     $array_product_lang = $product_lang->fetchAll();
@@ -55,7 +55,7 @@ class AdminProductClass
     $product_nr = $getproduct_nr->fetch();
     $product_nr = $product_nr['0'];
     foreach ($lang_post as $lang_post_array) {
-      $taal = $pdo->prepare("INSERT INTO `taal_product` (`product_nr`, `taal_id`, `naam` , `beschrijving`) VALUES (:product_nr, :taal_id, :naam, :beschrijving);");
+      $taal = $pdo->prepare("INSERT INTO `taal_tekst` (`tekst_id`, `tekst_nr`, `section`, `taal_id`, `tekst`) VALUES ('naam', :product_nr, 'product', :taal_id, :naam), ('beschrijving', :product_nr, 'product', :taal_id, :beschrijving);");
       $taal->bindParam(':product_nr', $product_nr);
       $taal->bindParam(':taal_id', $lang_post_array['taal_id']);
       $taal->bindParam(':naam', $lang_post_array['naam']);
@@ -79,12 +79,16 @@ class AdminProductClass
     $product->execute();
     $product_nr = $product_nr['0'];
     foreach ($lang_post as $lang_post_array) {
-      $taal = $pdo->prepare("UPDATE `taal_product` SET  `naam` =:naam, `beschrijving` = :beschrijving WHERE `taal_product`.`product_nr` = :product_nr AND `taal_product`.`taal_id` = :taal_id ;");
-      $taal->bindParam(':product_nr', $product_nr);
-      $taal->bindParam(':taal_id', $lang_post_array['taal_id']);
-      $taal->bindParam(':naam', $lang_post_array['naam']);
-      $taal->bindParam(':beschrijving', $lang_post_array['beschrijving']);
-      $taal->execute();
+      $taal_naam = $pdo->prepare("UPDATE `taal_tekst` SET `tekst` = :naam WHERE `taal_tekst`.`tekst_id` = 'naam' AND `taal_tekst`.`tekst_nr` = :product_nr AND `taal_tekst`.`section` = 'product' AND `taal_tekst`.`taal_id` = :taal_id;");
+      $taal_naam->bindParam(':product_nr', $product_nr);
+      $taal_naam->bindParam(':taal_id', $lang_post_array['taal_id']);
+      $taal_naam->bindParam(':naam', $lang_post_array['naam']);
+      $taal_naam->execute();
+      $taal_beschrijving = $pdo->prepare("UPDATE `taal_tekst` SET `tekst` = :beschrijving WHERE `taal_tekst`.`tekst_id` = 'beschrijving' AND `taal_tekst`.`tekst_nr` = :product_nr AND `taal_tekst`.`section` = 'product' AND `taal_tekst`.`taal_id` = :taal_id;");
+      $taal_beschrijving->bindParam(':product_nr', $product_nr);
+      $taal_beschrijving->bindParam(':taal_id', $lang_post_array['taal_id']);
+      $taal_beschrijving->bindParam(':beschrijving', $lang_post_array['beschrijving']);
+      $taal_beschrijving->execute();
     }
     unset($_POST);
     echo '<script type="text/javascript">window.location.href = "'.$_SESSION['url'].'editproducts.php?product='.$product_nr.'";</script>';
@@ -96,7 +100,7 @@ class AdminProductClass
   public function GetAllProducts()
   {
     $pdo = $this->dbClass->makeConnection();
-    $getproducts = $pdo->prepare("SELECT * FROM `product`INNER JOIN `taal_product` ON product.product_nr = taal_product.product_nr WHERE  `taal_id` = :taal_id");
+    $getproducts = $pdo->prepare("SELECT product.product_nr, naam.tekst AS naam, beschrijving.tekst AS beschrijving, product.img, product.prijs, product.btw, product.categorie FROM product JOIN taal_tekst AS naam on product.product_nr = naam.tekst_nr JOIN taal_tekst AS beschrijving on product.product_nr = beschrijving.tekst_nr WHERE naam.tekst_id LIKE 'naam' AND beschrijving.tekst_id LIKE 'beschrijving' AND naam.taal_id = beschrijving.taal_id AND naam.taal_id = :taal_id AND beschrijving.taal_id = :taal_id");
     $getproducts->bindParam(':taal_id', $_SESSION['lang_id']);
     $getproducts->execute();
     $allproduct = $getproducts->fetchAll();
@@ -109,9 +113,12 @@ class AdminProductClass
       $rmproducts = $pdo->prepare("DELETE FROM `product` WHERE `product`.`product_nr` = :product_id");
       $rmproducts->bindParam(':product_id', $_GET['product']);
       $rmproducts->execute();
-      $rmproducts_lang = $pdo->prepare("DELETE FROM `taal_product` WHERE `taal_product`.`product_nr` = :product_id");
-      $rmproducts_lang->bindParam(':product_id', $_GET['product']);
-      $rmproducts_lang->execute();
+      $rmproducts_lang_naam = $pdo->prepare("DELETE FROM `taal_tekst` WHERE `taal_tekst`.`tekst_id` = 'naam' AND `taal_tekst`.`tekst_nr` = :product_id AND `taal_tekst`.`section` = 'product'");
+      $rmproducts_lang_naam->bindParam(':product_id', $_GET['product']);
+      $rmproducts_lang_naam->execute();
+      $rmproducts_lang_beschrijving = $pdo->prepare("DELETE FROM `taal_tekst` WHERE `taal_tekst`.`tekst_id` = 'beschrijving' AND `taal_tekst`.`tekst_nr` = :product_id AND `taal_tekst`.`section` = 'product'");
+      $rmproducts_lang_beschrijving->bindParam(':product_id', $_GET['product']);
+      $rmproducts_lang_beschrijving->execute();
       echo '<script type="text/javascript">window.location.href = "'.$_SESSION['url'].'products.php'.'";</script>';
     } else{
       echo "geen product geselecteerd!";

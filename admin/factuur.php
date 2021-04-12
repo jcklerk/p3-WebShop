@@ -28,7 +28,7 @@ $totaal = array();
     </div>
     <div class="col float-end">
       <p>
-          <h5>Wok & Roll <br> Nederland, Harderwijk, Westeinde 33 <br>KvK: 00987</h5>
+          <h3>Wok & Roll</h3><h5> Nederland, Harderwijk, Westeinde 33 <br>KvK: 00987</h5>
       </p>
     </div>
   </div>

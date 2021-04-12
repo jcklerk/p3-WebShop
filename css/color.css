@@ -22,6 +22,11 @@
 
 .c-red{
     color: #cd071e;
+
+}
+.a-c-red{
+  color: #cd071e;
+  text-decoration: none;
 }
 .c-black{
     color: #000;
@@ -48,4 +53,8 @@
 }
 .c-yellow:hover{
     color: #C1B90A;
+}
+.a-c-red:hover{
+  color: white;
+  text-decoration: none;
 }

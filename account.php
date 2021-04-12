@@ -31,14 +31,11 @@ require "include/class/FactuurClass.php";
     <tbody>
     <tr class="c-border">
         <th scope="col" ><?php echo $arraytekst['order_nr']; ?> </th>
-        <th scope="col"><?php echo $arraytekst['product']; ?></th>
         <th scope="col"><?php echo $arraytekst['datum']; ?></th>
-        <th scope="col"><?php echo $arraytekst['aantal']; ?></th>
-        <th scope="col"><?php echo $arraytekst['totaal']; ?></th>
         <th scope="col"><?php echo $arraytekst['verzend']; ?></th>
     </tr>
 
-    <?php (new FactuurClass())->GetFacatuur($_SESSION['user_id']); ?>
+    <?php (new FactuurClass())->GetFacatuur($_SESSION['user_id'], $url); ?>
 
     </tbody>
 </table>

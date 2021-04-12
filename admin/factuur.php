@@ -16,6 +16,12 @@ if (!empty($_SESSION['user_type'])) {
 require "../include/class/FactuurClass.php";
 ?>
 <title>Factuur - Wok & Roll</title>
+<style type="text/css" media="print">
+@page {
+    size: auto;   /* auto is the initial value */
+    margin: 0;  /* this affects the margin in the printer settings */
+}
+</style>
 <body class="d-flex flex-column h-100">
 <?php $factuur = (new FactuurClass())->GetFacatuurByNR($_GET['user'], $_GET['nr']);
 $totaal = array();

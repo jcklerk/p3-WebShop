@@ -38,14 +38,11 @@ $empty = '';
     <tr class="c-border">
         <th scope="col" >Order nummer</th>
         <th scope="col" >User ID</th>
-        <th scope="col">Product</th>
         <th scope="col">Date</th>
-        <th scope="col">Amount</th>
-        <th scope="col">total product</th>
         <th scope="col">shipping costs</th>
     </tr>
 
-    <?php (new FactuurClass($empty))->GetAllFacatuur(); ?>
+    <?php (new FactuurClass($empty))->GetAllFacatuur($url); ?>
 
     </tbody>
 </table>

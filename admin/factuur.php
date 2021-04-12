@@ -1,30 +1,30 @@
 <?php
-require "include/config.php";
+require "../include/config.php";
 if (!empty($_SESSION['user_type'])) {
-  if ($_SESSION['user_type'] == 'admin') {
-    echo '<script type="text/javascript">window.location.href = "'.$_SESSION['url'].'admin/";</script>';
+  if ($_SESSION['user_type'] == 'klant') {
+    echo '<script type="text/javascript">window.location.href = "'.$srv_url.'account.php";</script>';
     exit;
-  } elseif ($_SESSION['user_type'] !== 'klant') {
+  } elseif ($_SESSION['user_type'] !== 'admin') {
     session_destroy();
-    echo '<script type="text/javascript">window.location.href = "'.$_SESSION['url'].'login.php/";</script>';
+    echo '<script type="text/javascript">window.location.href = "'.$srv_url.'login.php/";</script>';
     exit;
   }
 } else {
-  echo '<script type="text/javascript">window.location.href = "'.$_SESSION['url'].'login.php/";</script>';
+  echo '<script type="text/javascript">window.location.href = "'.$srv_url.'login.php/";</script>';
   exit;
 }
-require "include/class/FactuurClass.php";
+require "../include/class/FactuurClass.php";
 ?>
 <title>Factuur - Wok & Roll</title>
 <body class="d-flex flex-column h-100">
-<?php $factuur = (new FactuurClass())->GetFacatuurByNR($_SESSION['user_id'], $_GET['nr']);
+<?php $factuur = (new FactuurClass())->GetFacatuurByNR($_GET['user'], $_GET['nr']);
 $totaal = array();
 ?>
 <br>
 <div class="container">
   <div class="row">
     <div class="col float-start">
-      <a class="navbar-brand c-yellow" href="<?php echo $url.'account.php'; ?>"> <img style="height: 200px;" src="<?php echo $url; ?>/img/logo.png" alt=""> </a>
+      <a class="navbar-brand c-yellow" href="<?php echo $url.'admin'; ?>"> <img style="height: 200px;" src="<?php echo $url; ?>/img/logo.png" alt=""> </a>
     </div>
     <div class="col float-end">
       <p>

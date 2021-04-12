@@ -20,30 +20,25 @@ class FactuurClass {
 
         foreach ($productfactuur as $x) {
             ?>
-             <tr>
-                <th scope="row"><a class="a-c-red" href="<?php echo $url.'factuur.php?nr='.$x['factuur_nr'];?>"><?php echo $x['factuur_nr']; ?></a></th>
-                <td><a class="a-c-red" href="<?php echo $url.'factuur.php?nr='.$x['factuur_nr'];?>"><?php echo $x['factuur_datum']; ?></a></td>
-                <td><a class="a-c-red" href="<?php echo $url.'factuur.php?nr='.$x['factuur_nr'];?>">€<?php echo str_replace('.',',', $x['verzend_kosten']); ?></a></td>
+             <tr class="a-c-red" onclick="location.href='<?php echo $url.'factuur.php?nr='.$x['factuur_nr'];?>';">
+                <th scope="row"><?php echo $x['factuur_nr']; ?></th>
+                <td><?php echo $x['factuur_datum']; ?></td>
+                <td>€<?php echo str_replace('.',',', $x['verzend_kosten']); ?></td>
             </tr>
         <?php }
     }
-    public function GetAllFacatuur(){
+    public function GetAllFacatuur($url){
         $pdo = $this->dbClass->makeConnection();
-        $getproductfacatuur = $pdo->prepare("SELECT *, naam.tekst AS naam FROM factuur JOIN product_factuur ON product_factuur.factuur_nr=factuur.factuur_nr LEFT JOIN product ON product.product_nr = product_factuur.product_nr JOIN taal_tekst AS naam on product.product_nr = naam.tekst_nr WHERE naam.tekst_id LIKE 'naam' AND `naam`.`taal_id` = :taal_id; ORDER BY `product_factuur`.`factuur_nr` DESC");
-        $getproductfacatuur->bindParam(':taal_id', $_SESSION['lang_id']);
+        $getproductfacatuur = $pdo->prepare("SELECT * FROM `factuur` ORDER BY `factuur_nr` DESC");
         $getproductfacatuur->execute();
         $productfactuur = $getproductfacatuur->fetchAll();
 
         foreach ($productfactuur as $x) {
-            $totaal = $x['prijs'] * $x['product_aantal']
             ?>
-            <tr>
+            <tr class="a-c-red" onclick="location.href='<?php echo $url.'admin/factuur.php?nr='.$x['factuur_nr'].'&user='.$x['user_id'];?>';">
                 <th scope="row"><?php echo $x['factuur_nr']; ?></th>
                 <td><?php echo $x['user_id']; ?></td>
-                <td><?php echo $x['naam']; ?></td>
                 <td><?php echo $x['factuur_datum']; ?></td>
-                <td><?php echo $x['product_aantal']; ?></td>
-                <td>€<?php echo $totaal; ?></td>
                 <td>€<?php echo str_replace('.',',', $x['verzend_kosten']); ?></td>
             </tr>
         <?php }

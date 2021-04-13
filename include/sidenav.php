@@ -1,6 +1,6 @@
 
 
-    <div class="col-3">
+    <div class="col-md-3">
         <table>
             <tr><td>Menu</td></tr>
             <tr><td><hr></td></tr>

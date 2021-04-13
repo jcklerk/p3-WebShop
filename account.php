@@ -27,7 +27,7 @@ require "include/class/FactuurClass.php";
 <br>
 <body class="bc-gray-lblack d-flex flex-column h-100">
 
-<table class="table table-edit c-red" style="">
+<table class="table table-edit c-red fos-3" style="height: auto; margin-bottom: 6rem;">
     <tbody>
     <tr class="c-border">
         <th scope="col" ><?php echo $arraytekst['order_nr']; ?> </th>
@@ -39,6 +39,7 @@ require "include/class/FactuurClass.php";
 
     </tbody>
 </table>
+
 
 
 

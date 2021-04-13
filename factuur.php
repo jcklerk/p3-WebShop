@@ -22,7 +22,7 @@ require "include/class/FactuurClass.php";
     margin: 0;  /* this affects the margin in the printer settings */
 }
 </style>
-<body class="d-flex flex-column h-100" onload="window.print()">
+<body class="d-flex flex-column h-100 fos-2" onload="window.print()">
 <?php $factuur = (new FactuurClass())->GetFacatuurByNR($_SESSION['user_id'], $_GET['nr']);
 $totaal = array();
 ?>

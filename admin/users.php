@@ -34,7 +34,7 @@ $empty = '';
       ?>
     <div class="col-9">
 
-<table class="table table-edit c-red" style="width: 100%;">
+<table class="table table-edit c-red" style="height: auto; width: 100%;">
     <tbody>
     <tr class="c-border">
         <th scope="col" >User ID</th>

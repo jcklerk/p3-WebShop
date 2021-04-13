@@ -69,18 +69,18 @@ $totaal = array();
   <table class="table">
       <tbody>
       <tr class="c-border">
-          <th scope="col" ><?php echo $arraytekst['aantal']; ?> </th>
           <th scope="col"><?php echo $arraytekst['product']; ?></th>
           <th scope="col"><?php echo $arraytekst['prijs']; ?></th>
+          <th scope="col" ><?php echo $arraytekst['aantal']; ?> </th>
           <th scope="col"><?php echo $arraytekst['totaal']; ?></th>
           <th scope="col">BTW</th>
       </tr>
 
       <?php foreach ($factuur['factuur'] as $product): ?>
         <tr>
-        <th scope="col" ><?php echo $product['product_aantal']; ?> </th>
         <th scope="col"><?php echo $product['naam']; ?></th>
         <th scope="col"><?php echo '€ '.$product['prijs']; ?></th>
+        <th scope="col" ><?php echo $product['product_aantal']; ?> </th>
         <th scope="col"><?php echo '€ '.$product['prijs'] * $product['product_aantal']; $totaal[] = $product['prijs'] * $product['product_aantal'];?></th>
         <th scope="col"><?php echo $product['btw'].'%'; ?></th>
         </tr>

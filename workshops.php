@@ -28,7 +28,7 @@ $arrayworkshop
       <h4><?php echo $arrayworkshop['benodigdheden']?></h4>
    </div>
    <div class="col-sm">
-     <iframe style="float: right" width="560" height="315" src="<?php echo $arrayworkshop['video'];?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+     <iframe style="float: right; width:100%; height:100%; max-width:560px; max-height:315px;" src="<?php echo $arrayworkshop['video'];?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    </div>
    </div>
    <div class="row" style="--bs-gutter-x: 0 rem !important;">

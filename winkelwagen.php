@@ -64,7 +64,9 @@
 <div class="col-md-3 center align-middle text-center" style="">
   <?php if (!empty($_SESSION['cart'])): ?>
     <?php if (array_sum($totaal) >= 50) {
-        echo 'prijs: € ', array_sum($totaal), '<br> verzendkosten: gratis', '<br> totaal: € ', array_sum($totaal); $_SESSION['verzendkosten'] = '0.00';} else {echo '<br> prijs: € ', array_sum($totaal), '<br> verzendkosten: € 13,50', '<br> totaal: € ', array_sum($totaal) + 13.5; $_SESSION['verzendkosten'] = '13.50';
+        echo $arraytekst['prijs'].': € ', array_sum($totaal), '<br> '.$arraytekst['verzend'].': '.$arraytekst['gratis'], '<br> '.$arraytekst['totaal_1'].' € ', array_sum($totaal); $_SESSION['verzendkosten'] = '0.00';
+      } else {
+        echo '<br> '.$arraytekst['prijs'].': € ', array_sum($totaal), '<br> '.$arraytekst['verzend'].': € 13,50', '<br> '.$arraytekst['totaal_1'].' € ', array_sum($totaal) + 13.5; $_SESSION['verzendkosten'] = '13.50';
         }
         ?>
         <br>

@@ -47,7 +47,7 @@ $totaal = array();
     </div>
   </div>
   <br>
-  <h2>Factuur</h2>
+  <h2><?php echo $arraytekst['factuur']; ?></h2>
   <div class="row">
     <div class="col-6">
       <table class="table" style="border-style: none !important;">
